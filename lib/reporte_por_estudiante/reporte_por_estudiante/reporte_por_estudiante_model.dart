@@ -1,8 +1,9 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'reportes_widget.dart' show ReportesWidget;
+import 'reporte_por_estudiante_widget.dart' show ReportePorEstudianteWidget;
 import 'package:flutter/material.dart';
 
-class ReportesModel extends FlutterFlowModel<ReportesWidget> {
+class ReportePorEstudianteModel
+    extends FlutterFlowModel<ReportePorEstudianteWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

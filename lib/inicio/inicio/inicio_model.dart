@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 class InicioModel extends FlutterFlowModel<InicioWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // State field(s) for Pagina_Fotos_Secuenciales_1 widget.
   PageController? paginaFotosSecuenciales1Controller;
 
@@ -28,7 +27,6 @@ class InicioModel extends FlutterFlowModel<InicioWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     menuModel.dispose();
   }
 

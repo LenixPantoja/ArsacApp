@@ -99,9 +99,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const HorarioWidget(),
         ),
         FFRoute(
-          name: 'Reportes',
-          path: '/reportes',
-          builder: (context, params) => const ReportesWidget(),
+          name: 'ReportePoAsistencia',
+          path: '/reportePoAsistencia',
+          builder: (context, params) => const ReportePoAsistenciaWidget(),
         ),
         FFRoute(
           name: 'CarnetAsitencia',
@@ -142,6 +142,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Notificaiones',
           path: '/notificaiones',
           builder: (context, params) => const NotificaionesWidget(),
+        ),
+        FFRoute(
+          name: 'ReportePorEstudiante',
+          path: '/reportePorEstudiante',
+          builder: (context, params) => const ReportePorEstudianteWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

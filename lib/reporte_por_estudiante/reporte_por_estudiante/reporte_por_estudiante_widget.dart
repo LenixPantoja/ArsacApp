@@ -1,25 +1,27 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'reportes_model.dart';
-export 'reportes_model.dart';
+import 'reporte_por_estudiante_model.dart';
+export 'reporte_por_estudiante_model.dart';
 
-class ReportesWidget extends StatefulWidget {
-  const ReportesWidget({super.key});
+class ReportePorEstudianteWidget extends StatefulWidget {
+  const ReportePorEstudianteWidget({super.key});
 
   @override
-  State<ReportesWidget> createState() => _ReportesWidgetState();
+  State<ReportePorEstudianteWidget> createState() =>
+      _ReportePorEstudianteWidgetState();
 }
 
-class _ReportesWidgetState extends State<ReportesWidget> {
-  late ReportesModel _model;
+class _ReportePorEstudianteWidgetState
+    extends State<ReportePorEstudianteWidget> {
+  late ReportePorEstudianteModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ReportesModel());
+    _model = createModel(context, () => ReportePorEstudianteModel());
   }
 
   @override

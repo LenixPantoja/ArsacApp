@@ -9,7 +9,8 @@ export '/autenticacion1/editar_informacion/editar_informacion_widget.dart'
 export '/autenticacion1/profile/profile_widget.dart' show ProfileWidget;
 export '/inicio/inicio/inicio_widget.dart' show InicioWidget;
 export '/horario/horario/horario_widget.dart' show HorarioWidget;
-export '/reportes/reportes/reportes_widget.dart' show ReportesWidget;
+export '/reporte_por_asistencia/reporte_po_asistencia/reporte_po_asistencia_widget.dart'
+    show ReportePoAsistenciaWidget;
 export '/carnet_asistencia/carnet_asitencia/carnet_asitencia_widget.dart'
     show CarnetAsitenciaWidget;
 export '/reporte_por_fecha/reporte_por_fecha/reporte_por_fecha_widget.dart'
@@ -25,3 +26,5 @@ export '/barra_busqueda/barra_busqueda/barra_busqueda_widget.dart'
     show BarraBusquedaWidget;
 export '/notificaciones/notificaiones/notificaiones_widget.dart'
     show NotificaionesWidget;
+export '/reporte_por_estudiante/reporte_por_estudiante/reporte_por_estudiante_widget.dart'
+    show ReportePorEstudianteWidget;
