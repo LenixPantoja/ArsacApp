@@ -61,7 +61,7 @@ class _EditarInformacionWidgetState extends State<EditarInformacionWidget> {
               child: Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 60.0, 12.0, 0.0),
                 child: GradientText(
-                  'Edit Profile',
+                  'Editar Perfil',
                   style: FlutterFlowTheme.of(context).headlineMedium.override(
                         fontFamily: 'Outfit',
                         color: const Color(0xFF15161E),
