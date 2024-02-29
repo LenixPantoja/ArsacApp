@@ -86,13 +86,14 @@ class _CambiarContrasenaWidgetState extends State<CambiarContrasenaWidget>
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
         ),
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            Flexible(
-              child: Container(
+        child: SingleChildScrollView(
+          primary: false,
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Container(
                 width: double.infinity,
-                height: double.infinity,
+                height: 854.0,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).secondaryBackground,
                 ),
@@ -124,27 +125,20 @@ class _CambiarContrasenaWidgetState extends State<CambiarContrasenaWidget>
                           mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Align(
-                              alignment: const AlignmentDirectional(0.0, -1.0),
-                              child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 35.0, 0.0, 0.0),
-                                child: GradientText(
-                                  'Cambiar Contraseña',
-                                  style: FlutterFlowTheme.of(context)
-                                      .headlineMedium
-                                      .override(
-                                        fontFamily: 'Outfit',
-                                        color: const Color(0xFF15161E),
-                                        fontSize: 24.0,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                  colors: const [
-                                    Color(0xFFEDB42C),
-                                    Color(0xFFF6422C)
-                                  ],
-                                  gradientDirection: GradientDirection.ltr,
-                                  gradientType: GradientType.linear,
+                            Container(
+                              width: double.infinity,
+                              height: 130.0,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                              ),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(8.0),
+                                child: Image.asset(
+                                  'assets/images/Reporte_(8).png',
+                                  width: 300.0,
+                                  height: 209.0,
+                                  fit: BoxFit.fill,
                                 ),
                               ),
                             ),
@@ -499,27 +493,27 @@ class _CambiarContrasenaWidgetState extends State<CambiarContrasenaWidget>
                   ],
                 ),
               ),
-            ),
-            Container(
-              width: double.infinity,
-              height: 70.0,
-              decoration: BoxDecoration(
-                color: FlutterFlowTheme.of(context).secondaryBackground,
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Expanded(
-                    child: wrapWithModel(
-                      model: _model.menuModel,
-                      updateCallback: () => setState(() {}),
-                      child: const MenuWidget(),
+              Container(
+                width: double.infinity,
+                height: 70.0,
+                decoration: BoxDecoration(
+                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Expanded(
+                      child: wrapWithModel(
+                        model: _model.menuModel,
+                        updateCallback: () => setState(() {}),
+                        child: const MenuWidget(),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

@@ -97,7 +97,7 @@ class _MenuWidgetState extends State<MenuWidget> {
               hoverColor: Colors.transparent,
               highlightColor: Colors.transparent,
               onTap: () async {
-                context.pushNamed('Profile');
+                context.pushNamed('profile');
               },
               child: const Icon(
                 Icons.person,

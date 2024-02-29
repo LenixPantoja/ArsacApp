@@ -106,7 +106,7 @@ class _AyudaSoporteWidgetState extends State<AyudaSoporteWidget> {
                                           'assets/images/jamie_jhonson_(8).png',
                                           width: 300.0,
                                           height: double.infinity,
-                                          fit: BoxFit.fitWidth,
+                                          fit: BoxFit.cover,
                                         ),
                                       ),
                                     ),

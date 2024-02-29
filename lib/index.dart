@@ -6,7 +6,6 @@ export '/autenticacion1/ayuda_soporte/ayuda_soporte_widget.dart'
     show AyudaSoporteWidget;
 export '/autenticacion1/editar_informacion/editar_informacion_widget.dart'
     show EditarInformacionWidget;
-export '/autenticacion1/profile/profile_widget.dart' show ProfileWidget;
 export '/horario/horario/horario_widget.dart' show HorarioWidget;
 export '/carnet_asistencia/carnet_asitencia/carnet_asitencia_widget.dart'
     show CarnetAsitenciaWidget;
@@ -32,3 +31,4 @@ export '/seleccionar_reporte/seleccionar_reporte/seleccionar_reporte_widget.dart
 export '/reporte_por_asistencia/rportte_por_asistencia/rportte_por_asistencia_widget.dart'
     show RporttePorAsistenciaWidget;
 export '/inicio/inicio/inicio_widget.dart' show InicioWidget;
+export '/autenticacion1/profile/profile_widget.dart' show ProfileWidget;

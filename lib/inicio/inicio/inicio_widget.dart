@@ -293,8 +293,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                         size: 80.0,
                                       ),
                                       onPressed: () async {
-                                        context
-                                            .pushNamed('RporttePorAsistencia');
+                                        context.pushNamed('Asistencia');
                                       },
                                     ),
                                   ),
@@ -351,8 +350,9 @@ class _InicioWidgetState extends State<InicioWidget> {
                                         color: Color(0xFFFAF3E3),
                                         size: 80.0,
                                       ),
-                                      onPressed: () {
-                                        print('Icono_Reportes_3 pressed ...');
+                                      onPressed: () async {
+                                        context
+                                            .pushNamed('RporttePorAsistencia');
                                       },
                                     ),
                                   ),
