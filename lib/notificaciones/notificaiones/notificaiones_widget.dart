@@ -152,8 +152,8 @@ class _NotificaionesWidgetState extends State<NotificaionesWidget>
                                     size: 20.0,
                                   ),
                                   showLoadingIndicator: true,
-                                  onPressed: () async {
-                                    context.pushNamed('Inicio');
+                                  onPressed: () {
+                                    print('Icono_Cerrar pressed ...');
                                   },
                                 ),
                               ),

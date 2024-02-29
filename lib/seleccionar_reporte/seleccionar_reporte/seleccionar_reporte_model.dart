@@ -1,18 +1,12 @@
 import '/componentes/menu/menu_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/form_field_controller.dart';
-import 'reporte_por_fecha_widget.dart' show ReportePorFechaWidget;
+import 'seleccionar_reporte_widget.dart' show SeleccionarReporteWidget;
 import 'package:flutter/material.dart';
 
-class ReportePorFechaModel extends FlutterFlowModel<ReportePorFechaWidget> {
+class SeleccionarReporteModel
+    extends FlutterFlowModel<SeleccionarReporteWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // State field(s) for DropDown widget.
-  String? dropDownValue1;
-  FormFieldController<String>? dropDownValueController1;
-  // State field(s) for DropDown widget.
-  String? dropDownValue2;
-  FormFieldController<String>? dropDownValueController2;
   // Model for Menu component.
   late MenuModel menuModel;
 

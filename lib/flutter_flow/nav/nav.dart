@@ -89,19 +89,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const ProfileWidget(),
         ),
         FFRoute(
-          name: 'Inicio',
-          path: '/inicio',
-          builder: (context, params) => const InicioWidget(),
-        ),
-        FFRoute(
           name: 'Horario',
           path: '/horario',
           builder: (context, params) => const HorarioWidget(),
-        ),
-        FFRoute(
-          name: 'ReportePoAsistencia',
-          path: '/reportePoAsistencia',
-          builder: (context, params) => const ReportePoAsistenciaWidget(),
         ),
         FFRoute(
           name: 'CarnetAsitencia',
@@ -147,6 +137,26 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'ReportePorEstudiante',
           path: '/reportePorEstudiante',
           builder: (context, params) => const ReportePorEstudianteWidget(),
+        ),
+        FFRoute(
+          name: 'SeleccioneReporte',
+          path: '/seleccioneReporte',
+          builder: (context, params) => const SeleccioneReporteWidget(),
+        ),
+        FFRoute(
+          name: 'SeleccionarReporte',
+          path: '/seleccionarReporte',
+          builder: (context, params) => const SeleccionarReporteWidget(),
+        ),
+        FFRoute(
+          name: 'RporttePorAsistencia',
+          path: '/rporttePorAsistencia',
+          builder: (context, params) => const RporttePorAsistenciaWidget(),
+        ),
+        FFRoute(
+          name: 'Inicio',
+          path: '/inicio',
+          builder: (context, params) => const InicioWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
