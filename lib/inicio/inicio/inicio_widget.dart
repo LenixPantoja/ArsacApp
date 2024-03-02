@@ -131,7 +131,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                       children: [
                                         ClipRRect(
                                           borderRadius:
-                                              BorderRadius.circular(8.0),
+                                              BorderRadius.circular(0.0),
                                           child: Image.network(
                                             'https://picsum.photos/seed/602/600',
                                             width: 300.0,
@@ -351,8 +351,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                         size: 80.0,
                                       ),
                                       onPressed: () async {
-                                        context
-                                            .pushNamed('RporttePorAsistencia');
+                                        context.pushNamed('SeleccionarReporte');
                                       },
                                     ),
                                   ),
@@ -389,8 +388,8 @@ class _InicioWidgetState extends State<InicioWidget> {
                                         color: Color(0xFFFAF3E3),
                                         size: 80.0,
                                       ),
-                                      onPressed: () {
-                                        print('Icono_Boton_4 pressed ...');
+                                      onPressed: () async {
+                                        context.pushNamed('Observaciones');
                                       },
                                     ),
                                   ),

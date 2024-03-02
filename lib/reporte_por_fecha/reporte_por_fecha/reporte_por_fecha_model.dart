@@ -13,6 +13,9 @@ class ReportePorFechaModel extends FlutterFlowModel<ReportePorFechaWidget> {
   // State field(s) for DropDown widget.
   String? dropDownValue2;
   FormFieldController<String>? dropDownValueController2;
+  // State field(s) for DropDown widget.
+  String? dropDownValue3;
+  FormFieldController<String>? dropDownValueController3;
   // Model for Menu component.
   late MenuModel menuModel;
 

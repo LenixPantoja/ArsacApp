@@ -20,13 +20,13 @@ export '/crear_observaciones/crear_observaciones/crear_observaciones_widget.dart
     show CrearObservacionesWidget;
 export '/barra_busqueda/barra_busqueda/barra_busqueda_widget.dart'
     show BarraBusquedaWidget;
-export '/notificaciones/notificaiones/notificaiones_widget.dart'
-    show NotificaionesWidget;
 export '/reporte_por_estudiante/reporte_por_estudiante/reporte_por_estudiante_widget.dart'
     show ReportePorEstudianteWidget;
 export '/seleccionar_reporte/seleccionar_reporte/seleccionar_reporte_widget.dart'
     show SeleccionarReporteWidget;
-export '/reporte_por_asistencia/rportte_por_asistencia/rportte_por_asistencia_widget.dart'
-    show RporttePorAsistenciaWidget;
+export '/reporte_por_asistencia/reporte_por_asistencia/reporte_por_asistencia_widget.dart'
+    show ReportePorAsistenciaWidget;
 export '/inicio/inicio/inicio_widget.dart' show InicioWidget;
 export '/autenticacion1/profile/profile_widget.dart' show ProfileWidget;
+export '/notificaciones/notificaciones/notificaciones_widget.dart'
+    show NotificacionesWidget;

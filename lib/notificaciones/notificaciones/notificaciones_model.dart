@@ -1,9 +1,9 @@
 import '/componentes/menu/menu_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'notificaiones_widget.dart' show NotificaionesWidget;
+import 'notificaciones_widget.dart' show NotificacionesWidget;
 import 'package:flutter/material.dart';
 
-class NotificaionesModel extends FlutterFlowModel<NotificaionesWidget> {
+class NotificacionesModel extends FlutterFlowModel<NotificacionesWidget> {
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for TabBar widget.

@@ -44,12 +44,21 @@ class _MenuWidgetState extends State<MenuWidget> {
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
-            child: Icon(
-              Icons.home,
-              color: Color(0xFF293035),
-              size: 32.0,
+          Padding(
+            padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+            child: InkWell(
+              splashColor: Colors.transparent,
+              focusColor: Colors.transparent,
+              hoverColor: Colors.transparent,
+              highlightColor: Colors.transparent,
+              onTap: () async {
+                context.pushNamed('Inicio');
+              },
+              child: const Icon(
+                Icons.home,
+                color: Color(0xFF293035),
+                size: 32.0,
+              ),
             ),
           ),
           InkWell(
@@ -73,7 +82,7 @@ class _MenuWidgetState extends State<MenuWidget> {
             highlightColor: Colors.transparent,
             onTap: () async {
               context.pushNamed(
-                'Notificaiones',
+                'Notificaciones',
                 extra: <String, dynamic>{
                   kTransitionInfoKey: const TransitionInfo(
                     hasTransition: true,

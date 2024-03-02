@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class CarnetAsitenciaModel extends FlutterFlowModel<CarnetAsitenciaWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
+  var scanner = '';
 
   /// Initialization and disposal methods.
 
@@ -13,9 +13,7 @@ class CarnetAsitenciaModel extends FlutterFlowModel<CarnetAsitenciaWidget> {
   void initState(BuildContext context) {}
 
   @override
-  void dispose() {
-    unfocusNode.dispose();
-  }
+  void dispose() {}
 
   /// Action blocks are added here.
 

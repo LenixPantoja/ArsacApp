@@ -30,7 +30,11 @@ dependencies:
   collection: 1.17.2
   dropdown_button2: 2.3.9
   flutter_animate: 4.1.1+1
+  flutter_barcode_scanner: 
+    git:
+      url: https://github.com/FlutterFlow/flutter_barcode_scanner
   flutter_cache_manager: 3.3.1
+  flutter_plugin_android_lifecycle: 2.0.17
   flutter_svg: 2.0.9
   font_awesome_flutter: 10.6.0
   from_css_color: 2.0.0
@@ -52,7 +56,6 @@ dependencies:
   simple_gradient_text: 1.2.3
   smooth_page_indicator: 1.1.0
   sqflite: 2.2.6
-  table_calendar: 3.0.9
   timeago: 3.2.2
   url_launcher: 6.1.10
   url_launcher_android: 6.0.27

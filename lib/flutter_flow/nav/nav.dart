@@ -124,11 +124,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const BarraBusquedaWidget(),
         ),
         FFRoute(
-          name: 'Notificaiones',
-          path: '/notificaiones',
-          builder: (context, params) => const NotificaionesWidget(),
-        ),
-        FFRoute(
           name: 'ReportePorEstudiante',
           path: '/reportePorEstudiante',
           builder: (context, params) => const ReportePorEstudianteWidget(),
@@ -139,9 +134,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const SeleccionarReporteWidget(),
         ),
         FFRoute(
-          name: 'RporttePorAsistencia',
-          path: '/rporttePorAsistencia',
-          builder: (context, params) => const RporttePorAsistenciaWidget(),
+          name: 'ReportePorAsistencia',
+          path: '/reportePorAsistencia',
+          builder: (context, params) => const ReportePorAsistenciaWidget(),
         ),
         FFRoute(
           name: 'Inicio',
@@ -152,6 +147,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'profile',
           path: '/profile',
           builder: (context, params) => const ProfileWidget(),
+        ),
+        FFRoute(
+          name: 'Notificaciones',
+          path: '/notificaciones',
+          builder: (context, params) => const NotificacionesWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

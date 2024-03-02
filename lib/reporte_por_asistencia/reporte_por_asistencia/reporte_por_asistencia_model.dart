@@ -1,10 +1,10 @@
 import '/componentes/menu/menu_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'rportte_por_asistencia_widget.dart' show RporttePorAsistenciaWidget;
+import 'reporte_por_asistencia_widget.dart' show ReportePorAsistenciaWidget;
 import 'package:flutter/material.dart';
 
-class RporttePorAsistenciaModel
-    extends FlutterFlowModel<RporttePorAsistenciaWidget> {
+class ReportePorAsistenciaModel
+    extends FlutterFlowModel<ReportePorAsistenciaWidget> {
   ///  State fields for stateful widgets in this page.
 
   // Model for Menu component.
