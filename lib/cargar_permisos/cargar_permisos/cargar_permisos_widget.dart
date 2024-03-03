@@ -1,3 +1,4 @@
+import '/componentes/menu/menu_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -363,6 +364,25 @@ class _CargarPermisosWidgetState extends State<CargarPermisosWidget> {
                     ),
                   ],
                 ),
+              ),
+            ),
+            Container(
+              width: double.infinity,
+              height: 70.0,
+              decoration: BoxDecoration(
+                color: FlutterFlowTheme.of(context).secondaryBackground,
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Expanded(
+                    child: wrapWithModel(
+                      model: _model.menuModel,
+                      updateCallback: () => setState(() {}),
+                      child: const MenuWidget(),
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
