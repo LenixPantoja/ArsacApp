@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'login_widget.dart' show LoginWidget;
 import 'package:flutter/material.dart';
@@ -14,6 +15,8 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
   TextEditingController? txtContrasenaController;
   late bool txtContrasenaVisibility;
   String? Function(BuildContext, String?)? txtContrasenaControllerValidator;
+  // Stores action output result for [Backend Call - API (Login)] action in Button widget.
+  ApiCallResponse? apiResulteti;
 
   /// Initialization and disposal methods.
 

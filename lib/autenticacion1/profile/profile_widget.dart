@@ -351,8 +351,18 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                           Align(
                             alignment: const AlignmentDirectional(0.0, 0.0),
                             child: FFButtonWidget(
-                              onPressed: () {
-                                print('Boton_Cerrar_Sesion pressed ...');
+                              onPressed: () async {
+                                context.pushNamed(
+                                  'Login',
+                                  extra: <String, dynamic>{
+                                    kTransitionInfoKey: const TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType:
+                                          PageTransitionType.bottomToTop,
+                                      duration: Duration(milliseconds: 300),
+                                    ),
+                                  },
+                                );
                               },
                               text: 'Cerrar Sesión',
                               icon: const Icon(
