@@ -181,7 +181,7 @@ class _AsistenciaWidgetState extends State<AsistenciaWidget> {
                                               textStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium,
-                                              hintText: 'Curso',
+                                              hintText: 'Grado',
                                               fillColor:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,

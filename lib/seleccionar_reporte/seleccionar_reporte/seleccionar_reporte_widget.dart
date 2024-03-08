@@ -84,7 +84,7 @@ class _SeleccionarReporteWidgetState extends State<SeleccionarReporteWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed('ReportePorAsistencia');
+                            context.pushNamed('ReporteDiario');
                           },
                           child: Row(
                             mainAxisSize: MainAxisSize.max,

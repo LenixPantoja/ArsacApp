@@ -134,9 +134,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const SeleccionarReporteWidget(),
         ),
         FFRoute(
-          name: 'ReportePorAsistencia',
-          path: '/reportePorAsistencia',
-          builder: (context, params) => const ReportePorAsistenciaWidget(),
+          name: 'ReporteDiario',
+          path: '/reporteDiario',
+          builder: (context, params) => const ReporteDiarioWidget(),
         ),
         FFRoute(
           name: 'Inicio',

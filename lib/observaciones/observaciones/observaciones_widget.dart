@@ -797,8 +797,8 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                             child:
                                                                                 ClipRRect(
                                                                               borderRadius: BorderRadius.circular(8.0),
-                                                                              child: SvgPicture.asset(
-                                                                                'assets/images/Diseo_sin_ttulo_(2).svg',
+                                                                              child: Image.asset(
+                                                                                'assets/images/lapiz__2_-removebg-preview.png',
                                                                                 width: 306.0,
                                                                                 height: 200.0,
                                                                                 fit: BoxFit.contain,
@@ -979,8 +979,8 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                             child:
                                                                                 ClipRRect(
                                                                               borderRadius: BorderRadius.circular(8.0),
-                                                                              child: SvgPicture.asset(
-                                                                                'assets/images/Diseo_sin_ttulo_(2).svg',
+                                                                              child: Image.asset(
+                                                                                'assets/images/lapiz__2_-removebg-preview.png',
                                                                                 width: 306.0,
                                                                                 height: 200.0,
                                                                                 fit: BoxFit.contain,
@@ -1161,8 +1161,8 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                             child:
                                                                                 ClipRRect(
                                                                               borderRadius: BorderRadius.circular(8.0),
-                                                                              child: SvgPicture.asset(
-                                                                                'assets/images/Diseo_sin_ttulo_(2).svg',
+                                                                              child: Image.asset(
+                                                                                'assets/images/lapiz__2_-removebg-preview.png',
                                                                                 width: 306.0,
                                                                                 height: 200.0,
                                                                                 fit: BoxFit.contain,
@@ -1343,8 +1343,8 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                             child:
                                                                                 ClipRRect(
                                                                               borderRadius: BorderRadius.circular(8.0),
-                                                                              child: SvgPicture.asset(
-                                                                                'assets/images/Diseo_sin_ttulo_(2).svg',
+                                                                              child: Image.asset(
+                                                                                'assets/images/lapiz__2_-removebg-preview.png',
                                                                                 width: 306.0,
                                                                                 height: 200.0,
                                                                                 fit: BoxFit.contain,
@@ -1525,8 +1525,8 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                             child:
                                                                                 ClipRRect(
                                                                               borderRadius: BorderRadius.circular(8.0),
-                                                                              child: SvgPicture.asset(
-                                                                                'assets/images/Diseo_sin_ttulo_(2).svg',
+                                                                              child: Image.asset(
+                                                                                'assets/images/lapiz__2_-removebg-preview.png',
                                                                                 width: 306.0,
                                                                                 height: 200.0,
                                                                                 fit: BoxFit.contain,
@@ -1707,8 +1707,8 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                             child:
                                                                                 ClipRRect(
                                                                               borderRadius: BorderRadius.circular(8.0),
-                                                                              child: SvgPicture.asset(
-                                                                                'assets/images/Diseo_sin_ttulo_(2).svg',
+                                                                              child: Image.asset(
+                                                                                'assets/images/lapiz__2_-removebg-preview.png',
                                                                                 width: 306.0,
                                                                                 height: 200.0,
                                                                                 fit: BoxFit.contain,
@@ -1889,8 +1889,8 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                             child:
                                                                                 ClipRRect(
                                                                               borderRadius: BorderRadius.circular(8.0),
-                                                                              child: SvgPicture.asset(
-                                                                                'assets/images/Diseo_sin_ttulo_(2).svg',
+                                                                              child: Image.asset(
+                                                                                'assets/images/lapiz__2_-removebg-preview.png',
                                                                                 width: 306.0,
                                                                                 height: 200.0,
                                                                                 fit: BoxFit.contain,
@@ -2071,8 +2071,8 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                             child:
                                                                                 ClipRRect(
                                                                               borderRadius: BorderRadius.circular(8.0),
-                                                                              child: SvgPicture.asset(
-                                                                                'assets/images/Diseo_sin_ttulo_(2).svg',
+                                                                              child: Image.asset(
+                                                                                'assets/images/lapiz__2_-removebg-preview.png',
                                                                                 width: 306.0,
                                                                                 height: 200.0,
                                                                                 fit: BoxFit.contain,
@@ -2253,8 +2253,8 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                             child:
                                                                                 ClipRRect(
                                                                               borderRadius: BorderRadius.circular(8.0),
-                                                                              child: SvgPicture.asset(
-                                                                                'assets/images/Diseo_sin_ttulo_(2).svg',
+                                                                              child: Image.asset(
+                                                                                'assets/images/lapiz__2_-removebg-preview.png',
                                                                                 width: 306.0,
                                                                                 height: 200.0,
                                                                                 fit: BoxFit.contain,
@@ -2435,8 +2435,8 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                             child:
                                                                                 ClipRRect(
                                                                               borderRadius: BorderRadius.circular(8.0),
-                                                                              child: SvgPicture.asset(
-                                                                                'assets/images/Diseo_sin_ttulo_(2).svg',
+                                                                              child: Image.asset(
+                                                                                'assets/images/lapiz__2_-removebg-preview.png',
                                                                                 width: 306.0,
                                                                                 height: 200.0,
                                                                                 fit: BoxFit.contain,
@@ -2617,8 +2617,8 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                             child:
                                                                                 ClipRRect(
                                                                               borderRadius: BorderRadius.circular(8.0),
-                                                                              child: SvgPicture.asset(
-                                                                                'assets/images/Diseo_sin_ttulo_(2).svg',
+                                                                              child: Image.asset(
+                                                                                'assets/images/lapiz__2_-removebg-preview.png',
                                                                                 width: 306.0,
                                                                                 height: 200.0,
                                                                                 fit: BoxFit.contain,
@@ -2799,8 +2799,8 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                             child:
                                                                                 ClipRRect(
                                                                               borderRadius: BorderRadius.circular(8.0),
-                                                                              child: SvgPicture.asset(
-                                                                                'assets/images/Diseo_sin_ttulo_(2).svg',
+                                                                              child: Image.asset(
+                                                                                'assets/images/lapiz__2_-removebg-preview.png',
                                                                                 width: 306.0,
                                                                                 height: 200.0,
                                                                                 fit: BoxFit.contain,
@@ -2981,8 +2981,8 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                             child:
                                                                                 ClipRRect(
                                                                               borderRadius: BorderRadius.circular(8.0),
-                                                                              child: SvgPicture.asset(
-                                                                                'assets/images/Diseo_sin_ttulo_(2).svg',
+                                                                              child: Image.asset(
+                                                                                'assets/images/lapiz__2_-removebg-preview.png',
                                                                                 width: 306.0,
                                                                                 height: 200.0,
                                                                                 fit: BoxFit.contain,
@@ -3163,8 +3163,8 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                             child:
                                                                                 ClipRRect(
                                                                               borderRadius: BorderRadius.circular(8.0),
-                                                                              child: SvgPicture.asset(
-                                                                                'assets/images/Diseo_sin_ttulo_(2).svg',
+                                                                              child: Image.asset(
+                                                                                'assets/images/lapiz__2_-removebg-preview.png',
                                                                                 width: 306.0,
                                                                                 height: 200.0,
                                                                                 fit: BoxFit.contain,
@@ -3345,8 +3345,8 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                             child:
                                                                                 ClipRRect(
                                                                               borderRadius: BorderRadius.circular(8.0),
-                                                                              child: SvgPicture.asset(
-                                                                                'assets/images/Diseo_sin_ttulo_(2).svg',
+                                                                              child: Image.asset(
+                                                                                'assets/images/lapiz__2_-removebg-preview.png',
                                                                                 width: 306.0,
                                                                                 height: 200.0,
                                                                                 fit: BoxFit.contain,
@@ -3527,8 +3527,8 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                             child:
                                                                                 ClipRRect(
                                                                               borderRadius: BorderRadius.circular(8.0),
-                                                                              child: SvgPicture.asset(
-                                                                                'assets/images/Diseo_sin_ttulo_(2).svg',
+                                                                              child: Image.asset(
+                                                                                'assets/images/lapiz__2_-removebg-preview.png',
                                                                                 width: 306.0,
                                                                                 height: 200.0,
                                                                                 fit: BoxFit.contain,
@@ -3709,8 +3709,8 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                             child:
                                                                                 ClipRRect(
                                                                               borderRadius: BorderRadius.circular(8.0),
-                                                                              child: SvgPicture.asset(
-                                                                                'assets/images/Diseo_sin_ttulo_(2).svg',
+                                                                              child: Image.asset(
+                                                                                'assets/images/lapiz__2_-removebg-preview.png',
                                                                                 width: 306.0,
                                                                                 height: 200.0,
                                                                                 fit: BoxFit.contain,
@@ -3891,8 +3891,8 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                             child:
                                                                                 ClipRRect(
                                                                               borderRadius: BorderRadius.circular(8.0),
-                                                                              child: SvgPicture.asset(
-                                                                                'assets/images/Diseo_sin_ttulo_(2).svg',
+                                                                              child: Image.asset(
+                                                                                'assets/images/lapiz__2_-removebg-preview.png',
                                                                                 width: 306.0,
                                                                                 height: 200.0,
                                                                                 fit: BoxFit.contain,
@@ -4073,8 +4073,8 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                             child:
                                                                                 ClipRRect(
                                                                               borderRadius: BorderRadius.circular(8.0),
-                                                                              child: SvgPicture.asset(
-                                                                                'assets/images/Diseo_sin_ttulo_(2).svg',
+                                                                              child: Image.asset(
+                                                                                'assets/images/lapiz__2_-removebg-preview.png',
                                                                                 width: 306.0,
                                                                                 height: 200.0,
                                                                                 fit: BoxFit.contain,
@@ -4255,8 +4255,8 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                             child:
                                                                                 ClipRRect(
                                                                               borderRadius: BorderRadius.circular(8.0),
-                                                                              child: SvgPicture.asset(
-                                                                                'assets/images/Diseo_sin_ttulo_(2).svg',
+                                                                              child: Image.asset(
+                                                                                'assets/images/lapiz__2_-removebg-preview.png',
                                                                                 width: 306.0,
                                                                                 height: 200.0,
                                                                                 fit: BoxFit.contain,
@@ -4437,8 +4437,8 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                             child:
                                                                                 ClipRRect(
                                                                               borderRadius: BorderRadius.circular(8.0),
-                                                                              child: SvgPicture.asset(
-                                                                                'assets/images/Diseo_sin_ttulo_(2).svg',
+                                                                              child: Image.asset(
+                                                                                'assets/images/lapiz__2_-removebg-preview.png',
                                                                                 width: 306.0,
                                                                                 height: 200.0,
                                                                                 fit: BoxFit.contain,
@@ -4619,8 +4619,8 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                             child:
                                                                                 ClipRRect(
                                                                               borderRadius: BorderRadius.circular(8.0),
-                                                                              child: SvgPicture.asset(
-                                                                                'assets/images/Diseo_sin_ttulo_(2).svg',
+                                                                              child: Image.asset(
+                                                                                'assets/images/lapiz__2_-removebg-preview.png',
                                                                                 width: 306.0,
                                                                                 height: 200.0,
                                                                                 fit: BoxFit.contain,
@@ -4801,8 +4801,8 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                             child:
                                                                                 ClipRRect(
                                                                               borderRadius: BorderRadius.circular(8.0),
-                                                                              child: SvgPicture.asset(
-                                                                                'assets/images/Diseo_sin_ttulo_(2).svg',
+                                                                              child: Image.asset(
+                                                                                'assets/images/lapiz__2_-removebg-preview.png',
                                                                                 width: 306.0,
                                                                                 height: 200.0,
                                                                                 fit: BoxFit.contain,

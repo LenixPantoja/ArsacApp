@@ -1,3 +1,4 @@
+import '/componentes/menu/menu_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -62,7 +63,7 @@ class _CarnetAsitenciaWidgetState extends State<CarnetAsitenciaWidget> {
                     'assets/images/Reporte_(10).svg',
                     width: 300.0,
                     height: 200.0,
-                    fit: BoxFit.fill,
+                    fit: BoxFit.cover,
                   ),
                 ),
               ),
@@ -70,7 +71,7 @@ class _CarnetAsitenciaWidgetState extends State<CarnetAsitenciaWidget> {
                 alignment: const AlignmentDirectional(0.0, 0.0),
                 child: Container(
                   width: 399.0,
-                  height: 802.0,
+                  height: 700.0,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).secondaryBackground,
                   ),
@@ -163,6 +164,25 @@ class _CarnetAsitenciaWidgetState extends State<CarnetAsitenciaWidget> {
                       ),
                     ],
                   ),
+                ),
+              ),
+              Container(
+                width: double.infinity,
+                height: 70.0,
+                decoration: BoxDecoration(
+                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Expanded(
+                      child: wrapWithModel(
+                        model: _model.menuModel,
+                        updateCallback: () => setState(() {}),
+                        child: const MenuWidget(),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],

@@ -6,6 +6,10 @@ import 'package:flutter/material.dart';
 class CargarPermisosModel extends FlutterFlowModel<CargarPermisosWidget> {
   ///  State fields for stateful widgets in this page.
 
+  bool isDataUploading = false;
+  FFUploadedFile uploadedLocalFile =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+
   // Model for Menu component.
   late MenuModel menuModel;
 

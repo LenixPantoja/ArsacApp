@@ -24,8 +24,8 @@ export '/reporte_por_estudiante/reporte_por_estudiante/reporte_por_estudiante_wi
     show ReportePorEstudianteWidget;
 export '/seleccionar_reporte/seleccionar_reporte/seleccionar_reporte_widget.dart'
     show SeleccionarReporteWidget;
-export '/reporte_por_asistencia/reporte_por_asistencia/reporte_por_asistencia_widget.dart'
-    show ReportePorAsistenciaWidget;
+export '/reporte_diario/reporte_diario/reporte_diario_widget.dart'
+    show ReporteDiarioWidget;
 export '/inicio/inicio/inicio_widget.dart' show InicioWidget;
 export '/autenticacion1/profile/profile_widget.dart' show ProfileWidget;
 export '/notificaciones/notificaciones/notificaciones_widget.dart'
