@@ -59,7 +59,6 @@ class _ReportePorEstudianteWidgetState
           color: FlutterFlowTheme.of(context).secondaryBackground,
         ),
         child: SingleChildScrollView(
-          primary: false,
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
@@ -1238,83 +1237,88 @@ class _ReportePorEstudianteWidgetState
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
                               ),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Align(
-                                    alignment: const AlignmentDirectional(0.0, 1.0),
-                                    child: Row(
+                              child: SingleChildScrollView(
+                                primary: false,
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    Align(
+                                      alignment: const AlignmentDirectional(0.0, 1.0),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceAround,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.end,
+                                        children: [
+                                          FlutterFlowIconButton(
+                                            borderColor: const Color(0xFFFBFAFF),
+                                            borderRadius: 122.0,
+                                            borderWidth: 1.0,
+                                            buttonSize: 80.0,
+                                            fillColor: const Color(0xE0EA0B1A),
+                                            icon: Icon(
+                                              Icons.picture_as_pdf_rounded,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                              size: 50.0,
+                                            ),
+                                            onPressed: () {
+                                              print('IconButton pressed ...');
+                                            },
+                                          ),
+                                          FlutterFlowIconButton(
+                                            borderColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .secondaryBackground,
+                                            borderRadius: 122.0,
+                                            borderWidth: 1.0,
+                                            buttonSize: 80.0,
+                                            fillColor: const Color(0xC626E11B),
+                                            icon: Icon(
+                                              Icons.explicit,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                              size: 50.0,
+                                            ),
+                                            onPressed: () {
+                                              print('IconButton pressed ...');
+                                            },
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceAround,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.end,
                                       children: [
-                                        FlutterFlowIconButton(
-                                          borderColor: const Color(0xFFFBFAFF),
-                                          borderRadius: 122.0,
-                                          borderWidth: 1.0,
-                                          buttonSize: 80.0,
-                                          fillColor: const Color(0xE0EA0B1A),
-                                          icon: Icon(
-                                            Icons.picture_as_pdf_rounded,
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            size: 50.0,
-                                          ),
-                                          onPressed: () {
-                                            print('IconButton pressed ...');
-                                          },
+                                        Text(
+                                          'Descargar PDF',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                fontWeight: FontWeight.bold,
+                                              ),
                                         ),
-                                        FlutterFlowIconButton(
-                                          borderColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .secondaryBackground,
-                                          borderRadius: 122.0,
-                                          borderWidth: 1.0,
-                                          buttonSize: 80.0,
-                                          fillColor: const Color(0xC626E11B),
-                                          icon: Icon(
-                                            Icons.explicit,
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            size: 50.0,
-                                          ),
-                                          onPressed: () {
-                                            print('IconButton pressed ...');
-                                          },
+                                        Text(
+                                          'Descargar Excel',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                fontWeight: FontWeight.bold,
+                                              ),
                                         ),
                                       ],
                                     ),
-                                  ),
-                                  Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceAround,
-                                    children: [
-                                      Text(
-                                        'Descargar PDF',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Readex Pro',
-                                              fontWeight: FontWeight.bold,
-                                            ),
-                                      ),
-                                      Text(
-                                        'Descargar Excel',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Readex Pro',
-                                              fontWeight: FontWeight.bold,
-                                            ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                           ),

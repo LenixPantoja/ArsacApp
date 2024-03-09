@@ -5,28 +5,26 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'crear_observaciones_model.dart';
-export 'crear_observaciones_model.dart';
+import 'editar_observacion_model.dart';
+export 'editar_observacion_model.dart';
 
-class CrearObservacionesWidget extends StatefulWidget {
-  const CrearObservacionesWidget({super.key});
+class EditarObservacionWidget extends StatefulWidget {
+  const EditarObservacionWidget({super.key});
 
   @override
-  State<CrearObservacionesWidget> createState() =>
-      _CrearObservacionesWidgetState();
+  State<EditarObservacionWidget> createState() =>
+      _EditarObservacionWidgetState();
 }
 
-class _CrearObservacionesWidgetState extends State<CrearObservacionesWidget> {
-  late CrearObservacionesModel _model;
+class _EditarObservacionWidgetState extends State<EditarObservacionWidget> {
+  late EditarObservacionModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => CrearObservacionesModel());
+    _model = createModel(context, () => EditarObservacionModel());
 
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
@@ -63,8 +61,8 @@ class _CrearObservacionesWidgetState extends State<CrearObservacionesWidget> {
                 ),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(0.0),
-                  child: SvgPicture.asset(
-                    'assets/images/Reporte_(14).svg',
+                  child: Image.asset(
+                    'assets/images/Reporte_(14).png',
                     width: 300.0,
                     height: 200.0,
                     fit: BoxFit.fill,
@@ -196,7 +194,7 @@ class _CrearObservacionesWidgetState extends State<CrearObservacionesWidget> {
                                                 borderRadius:
                                                     BorderRadius.circular(8.0),
                                                 child: Image.asset(
-                                                  'assets/images/graduado.png',
+                                                  'assets/images/estudiante.png',
                                                   width: 300.0,
                                                   height: 200.0,
                                                   fit: BoxFit.cover,
@@ -317,8 +315,6 @@ class _CrearObservacionesWidgetState extends State<CrearObservacionesWidget> {
                       style: FlutterFlowTheme.of(context).bodyMedium,
                       maxLines: null,
                       minLines: 1,
-                      maxLength: 1000,
-                      maxLengthEnforcement: MaxLengthEnforcement.enforced,
                       validator:
                           _model.textControllerValidator.asValidator(context),
                     ),

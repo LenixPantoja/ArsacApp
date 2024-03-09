@@ -152,6 +152,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Notificaciones',
           path: '/notificaciones',
           builder: (context, params) => const NotificacionesWidget(),
+        ),
+        FFRoute(
+          name: 'boton',
+          path: '/boton',
+          builder: (context, params) => const BotonWidget(),
+        ),
+        FFRoute(
+          name: 'EditarObservacion',
+          path: '/editarObservacion',
+          builder: (context, params) => const EditarObservacionWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

@@ -8,7 +8,7 @@ const _kPrivateApiFunctionName = 'ffPrivateApiCall';
 
 class LoginCall {
   static Future<ApiCallResponse> call({
-    String? usename = '',
+    String? username = '',
     String? password = '',
   }) async {
     const ffApiRequestBody = '''
@@ -19,7 +19,7 @@ class LoginCall {
 ''';
     return ApiManager.instance.makeApiCall(
       callName: 'Login',
-      apiUrl: 'https://3302-8-242-169-7.ngrok-free.app/api/Login/',
+      apiUrl: 'https://06e8-8-242-169-8.ngrok-free.app/api/Login/',
       callType: ApiCallType.POST,
       headers: {},
       params: {},

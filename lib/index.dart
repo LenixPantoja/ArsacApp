@@ -30,3 +30,6 @@ export '/inicio/inicio/inicio_widget.dart' show InicioWidget;
 export '/autenticacion1/profile/profile_widget.dart' show ProfileWidget;
 export '/notificaciones/notificaciones/notificaciones_widget.dart'
     show NotificacionesWidget;
+export '/boton/boton/boton_widget.dart' show BotonWidget;
+export '/editar_observacion/editar_observacion/editar_observacion_widget.dart'
+    show EditarObservacionWidget;

@@ -39,6 +39,39 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+      floatingActionButton: Align(
+        alignment: const AlignmentDirectional(1.0, -1.0),
+        child: Padding(
+          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
+          child: FloatingActionButton(
+            onPressed: () async {
+              context.pushNamed(
+                'CrearObservaciones',
+                extra: <String, dynamic>{
+                  kTransitionInfoKey: const TransitionInfo(
+                    hasTransition: true,
+                    transitionType: PageTransitionType.bottomToTop,
+                    duration: Duration(milliseconds: 300),
+                  ),
+                },
+              );
+            },
+            backgroundColor: FlutterFlowTheme.of(context).info,
+            elevation: 20.0,
+            child: Container(
+              clipBehavior: Clip.antiAlias,
+              decoration: const BoxDecoration(
+                shape: BoxShape.circle,
+              ),
+              child: Image.asset(
+                'assets/images/Diseo_sin_ttulo_(2).png',
+                fit: BoxFit.fill,
+                alignment: const Alignment(0.0, 0.0),
+              ),
+            ),
+          ),
+        ),
+      ),
       body: Container(
         width: double.infinity,
         height: double.infinity,
@@ -121,51 +154,6 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                             Padding(
                                               padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
-                                                      0.0, 12.0, 0.0, 12.0),
-                                              child: Container(
-                                                width: double.infinity,
-                                                height: 50.0,
-                                                decoration: BoxDecoration(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryBackground,
-                                                ),
-                                                child: Card(
-                                                  clipBehavior: Clip
-                                                      .antiAliasWithSaveLayer,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryBackground,
-                                                  elevation: 4.0,
-                                                  shape: RoundedRectangleBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            8.0),
-                                                  ),
-                                                  child: Align(
-                                                    alignment:
-                                                        const AlignmentDirectional(
-                                                            0.0, 0.0),
-                                                    child: Text(
-                                                      'Seleccione Por Fechas',
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Readex Pro',
-                                                            fontSize: 20.0,
-                                                            fontWeight:
-                                                                FontWeight.bold,
-                                                          ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                            Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
                                                       0.0, 12.0, 0.0, 0.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -173,207 +161,191 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                     MainAxisAlignment
                                                         .spaceAround,
                                                 children: [
-                                                  Padding(
-                                                    padding:
-                                                        const EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                12.0, 0.0),
-                                                    child: Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .spaceEvenly,
-                                                      children: [
-                                                        Container(
-                                                          width: 214.0,
-                                                          height: 73.0,
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .secondaryBackground,
-                                                          ),
-                                                          child: Column(
+                                                  Expanded(
+                                                    child: Container(
+                                                      width: 100.0,
+                                                      height: 100.0,
+                                                      decoration: BoxDecoration(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
+                                                      ),
+                                                      child: Card(
+                                                        clipBehavior: Clip
+                                                            .antiAliasWithSaveLayer,
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
+                                                        shape:
+                                                            RoundedRectangleBorder(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      0.0),
+                                                        ),
+                                                        child: Padding(
+                                                          padding:
+                                                              const EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      12.0),
+                                                          child: Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
                                                                     .max,
                                                             children: [
                                                               Expanded(
-                                                                child: Card(
-                                                                  clipBehavior:
-                                                                      Clip.antiAliasWithSaveLayer,
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryBackground,
-                                                                  elevation:
-                                                                      12.0,
-                                                                  shape:
-                                                                      RoundedRectangleBorder(
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            8.0),
-                                                                  ),
-                                                                  child:
-                                                                      FlutterFlowDropDown<
-                                                                          String>(
-                                                                    controller: _model
-                                                                        .dropDownValueController1 ??= FormFieldController<
-                                                                            String>(
-                                                                        null),
-                                                                    options: const [
-                                                                      'Option 1'
-                                                                    ],
-                                                                    onChanged: (val) =>
-                                                                        setState(() =>
-                                                                            _model.dropDownValue1 =
-                                                                                val),
-                                                                    width:
-                                                                        312.0,
-                                                                    height:
-                                                                        53.0,
-                                                                    textStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium,
-                                                                    hintText:
-                                                                        'Desde',
-                                                                    icon: Icon(
-                                                                      Icons
-                                                                          .date_range_sharp,
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryText,
-                                                                      size:
-                                                                          24.0,
+                                                                child: Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .spaceEvenly,
+                                                                  children: [
+                                                                    Expanded(
+                                                                      child:
+                                                                          Padding(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            8.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            Container(
+                                                                          width:
+                                                                              149.0,
+                                                                          height:
+                                                                              73.0,
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                          ),
+                                                                          child:
+                                                                              Column(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            children: [
+                                                                              Expanded(
+                                                                                child: Card(
+                                                                                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                                                                                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                  elevation: 12.0,
+                                                                                  shape: RoundedRectangleBorder(
+                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                  ),
+                                                                                  child: FlutterFlowDropDown<String>(
+                                                                                    controller: _model.dropDownValueController1 ??= FormFieldController<String>(null),
+                                                                                    options: const [
+                                                                                      'Option 1'
+                                                                                    ],
+                                                                                    onChanged: (val) => setState(() => _model.dropDownValue1 = val),
+                                                                                    width: 292.0,
+                                                                                    height: 53.0,
+                                                                                    textStyle: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                    hintText: 'Materia',
+                                                                                    icon: Icon(
+                                                                                      Icons.date_range_sharp,
+                                                                                      color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                      size: 24.0,
+                                                                                    ),
+                                                                                    fillColor: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                    elevation: 2.0,
+                                                                                    borderColor: FlutterFlowTheme.of(context).alternate,
+                                                                                    borderWidth: 2.0,
+                                                                                    borderRadius: 8.0,
+                                                                                    margin: const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 4.0),
+                                                                                    hidesUnderline: true,
+                                                                                    isOverButton: true,
+                                                                                    isSearchable: false,
+                                                                                    isMultiSelect: false,
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            ],
+                                                                          ),
+                                                                        ),
+                                                                      ),
                                                                     ),
-                                                                    fillColor: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .secondaryBackground,
-                                                                    elevation:
-                                                                        2.0,
-                                                                    borderColor:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .alternate,
-                                                                    borderWidth:
-                                                                        2.0,
-                                                                    borderRadius:
-                                                                        8.0,
-                                                                    margin: const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            16.0,
-                                                                            4.0,
-                                                                            16.0,
-                                                                            4.0),
-                                                                    hidesUnderline:
-                                                                        true,
-                                                                    isOverButton:
-                                                                        true,
-                                                                    isSearchable:
-                                                                        false,
-                                                                    isMultiSelect:
-                                                                        false,
-                                                                  ),
+                                                                    Align(
+                                                                      alignment:
+                                                                          const AlignmentDirectional(
+                                                                              0.0,
+                                                                              1.0),
+                                                                      child:
+                                                                          Padding(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            3.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            Container(
+                                                                          width:
+                                                                              162.0,
+                                                                          height:
+                                                                              74.0,
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                          ),
+                                                                          child:
+                                                                              Column(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            children: [
+                                                                              Expanded(
+                                                                                child: Card(
+                                                                                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                                                                                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                  elevation: 12.0,
+                                                                                  shape: RoundedRectangleBorder(
+                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                  ),
+                                                                                  child: FlutterFlowDropDown<String>(
+                                                                                    controller: _model.dropDownValueController2 ??= FormFieldController<String>(null),
+                                                                                    options: const [
+                                                                                      'Option 1'
+                                                                                    ],
+                                                                                    onChanged: (val) => setState(() => _model.dropDownValue2 = val),
+                                                                                    width: 292.0,
+                                                                                    height: 43.0,
+                                                                                    textStyle: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                    hintText: 'Curso',
+                                                                                    icon: Icon(
+                                                                                      Icons.date_range,
+                                                                                      color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                      size: 24.0,
+                                                                                    ),
+                                                                                    fillColor: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                    elevation: 2.0,
+                                                                                    borderColor: FlutterFlowTheme.of(context).alternate,
+                                                                                    borderWidth: 2.0,
+                                                                                    borderRadius: 8.0,
+                                                                                    margin: const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 4.0),
+                                                                                    hidesUnderline: true,
+                                                                                    isOverButton: true,
+                                                                                    isSearchable: false,
+                                                                                    isMultiSelect: false,
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            ],
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ],
                                                                 ),
                                                               ),
                                                             ],
                                                           ),
                                                         ),
-                                                        Align(
-                                                          alignment:
-                                                              const AlignmentDirectional(
-                                                                  0.0, 1.0),
-                                                          child: Container(
-                                                            width: 150.0,
-                                                            height: 74.0,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .secondaryBackground,
-                                                            ),
-                                                            child: Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Expanded(
-                                                                  child: Card(
-                                                                    clipBehavior:
-                                                                        Clip.antiAliasWithSaveLayer,
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .secondaryBackground,
-                                                                    elevation:
-                                                                        12.0,
-                                                                    shape:
-                                                                        RoundedRectangleBorder(
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              8.0),
-                                                                    ),
-                                                                    child: FlutterFlowDropDown<
-                                                                        String>(
-                                                                      controller: _model
-                                                                          .dropDownValueController2 ??= FormFieldController<
-                                                                              String>(
-                                                                          null),
-                                                                      options: const [
-                                                                        'Option 1'
-                                                                      ],
-                                                                      onChanged:
-                                                                          (val) =>
-                                                                              setState(() => _model.dropDownValue2 = val),
-                                                                      width:
-                                                                          296.0,
-                                                                      height:
-                                                                          43.0,
-                                                                      textStyle:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .bodyMedium,
-                                                                      hintText:
-                                                                          'Hasta',
-                                                                      icon:
-                                                                          Icon(
-                                                                        Icons
-                                                                            .date_range,
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryText,
-                                                                        size:
-                                                                            24.0,
-                                                                      ),
-                                                                      fillColor:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .secondaryBackground,
-                                                                      elevation:
-                                                                          2.0,
-                                                                      borderColor:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .alternate,
-                                                                      borderWidth:
-                                                                          2.0,
-                                                                      borderRadius:
-                                                                          8.0,
-                                                                      margin: const EdgeInsetsDirectional.fromSTEB(
-                                                                          16.0,
-                                                                          4.0,
-                                                                          16.0,
-                                                                          4.0),
-                                                                      hidesUnderline:
-                                                                          true,
-                                                                      isOverButton:
-                                                                          true,
-                                                                      isSearchable:
-                                                                          false,
-                                                                      isMultiSelect:
-                                                                          false,
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ],
+                                                      ),
                                                     ),
                                                   ),
                                                 ],
@@ -385,7 +357,7 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                       0.0, 12.0, 0.0, 0.0),
                                               child: Container(
                                                 width: double.infinity,
-                                                height: 72.0,
+                                                height: 84.0,
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
@@ -422,13 +394,24 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                 val),
                                                         width: 365.0,
                                                         height: 61.0,
+                                                        searchHintTextStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium,
+                                                        searchTextStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium,
                                                         textStyle:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .bodyMedium,
-                                                        hintText: 'Materias',
+                                                        hintText:
+                                                            'Lista Estudiantes',
+                                                        searchHintText:
+                                                            'Lista Estudiantes',
                                                         icon: Icon(
-                                                          Icons.margin,
+                                                          Icons.arrow_drop_down,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryText,
@@ -453,7 +436,7 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                     4.0),
                                                         hidesUnderline: true,
                                                         isOverButton: true,
-                                                        isSearchable: false,
+                                                        isSearchable: true,
                                                         isMultiSelect: false,
                                                       ),
                                                     ),
@@ -466,70 +449,96 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                   .fromSTEB(
                                                       0.0, 12.0, 0.0, 0.0),
                                               child: Container(
-                                                width: 150.0,
-                                                height: 50.0,
+                                                width: 320.0,
+                                                height: 73.0,
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryBackground,
                                                 ),
-                                                child: Card(
-                                                  clipBehavior: Clip
-                                                      .antiAliasWithSaveLayer,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryBackground,
-                                                  elevation: 12.0,
-                                                  shape: RoundedRectangleBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            14.0),
-                                                  ),
-                                                  child: FFButtonWidget(
-                                                    onPressed: () {
-                                                      print(
-                                                          'Button pressed ...');
-                                                    },
-                                                    text: 'Generar',
-                                                    options: FFButtonOptions(
-                                                      height: 40.0,
-                                                      padding:
-                                                          const EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  24.0,
-                                                                  0.0,
-                                                                  24.0,
-                                                                  0.0),
-                                                      iconPadding:
-                                                          const EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0),
-                                                      color: const Color(0xFF57E84E),
-                                                      textStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleSmall
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Readex Pro',
-                                                                color: FlutterFlowTheme.of(
+                                                child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  children: [
+                                                    Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .end,
+                                                      children: [
+                                                        Expanded(
+                                                          child: Card(
+                                                            clipBehavior: Clip
+                                                                .antiAliasWithSaveLayer,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryBackground,
+                                                            elevation: 12.0,
+                                                            shape:
+                                                                RoundedRectangleBorder(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          14.0),
+                                                            ),
+                                                            child:
+                                                                FFButtonWidget(
+                                                              onPressed: () {
+                                                                print(
+                                                                    'Button pressed ...');
+                                                              },
+                                                              text:
+                                                                  'Generar Lista',
+                                                              options:
+                                                                  FFButtonOptions(
+                                                                height: 40.0,
+                                                                padding:
+                                                                    const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                iconPadding:
+                                                                    const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                color: const Color(
+                                                                    0xFF57E84E),
+                                                                textStyle: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .primaryText,
+                                                                    .titleSmall
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Readex Pro',
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryText,
+                                                                    ),
+                                                                elevation: 3.0,
+                                                                borderSide:
+                                                                    const BorderSide(
+                                                                  color: Colors
+                                                                      .transparent,
+                                                                  width: 1.0,
+                                                                ),
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            8.0),
                                                               ),
-                                                      elevation: 3.0,
-                                                      borderSide: const BorderSide(
-                                                        color:
-                                                            Colors.transparent,
-                                                        width: 1.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
                                                     ),
-                                                  ),
+                                                  ],
                                                 ),
                                               ),
                                             ),
@@ -570,7 +579,7 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                             const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Text(
-                                                          'Lista Estudiantes\n Observaciones',
+                                                          'Lista De Observaciones Estudiante',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodyMedium
@@ -590,63 +599,168 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                               ),
                                             ),
                                             Expanded(
-                                              child: Container(
-                                                width: 340.0,
-                                                decoration: BoxDecoration(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryBackground,
-                                                  border: Border.all(
+                                              child: Align(
+                                                alignment: const AlignmentDirectional(
+                                                    0.0, 0.0),
+                                                child: Container(
+                                                  width: 340.0,
+                                                  height: 660.0,
+                                                  decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .secondaryBackground,
+                                                    border: Border.all(
+                                                      color: FlutterFlowTheme
+                                                              .of(context)
+                                                          .secondaryBackground,
+                                                    ),
                                                   ),
-                                                ),
-                                                child: Card(
-                                                  clipBehavior: Clip
-                                                      .antiAliasWithSaveLayer,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryBackground,
-                                                  elevation: 12.0,
-                                                  shape: RoundedRectangleBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            8.0),
-                                                  ),
-                                                  child: SingleChildScrollView(
-                                                    primary: false,
-                                                    child: Column(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      children: [
-                                                        Padding(
-                                                          padding:
-                                                              const EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      12.0),
-                                                          child: Row(
+                                                  child: Card(
+                                                    clipBehavior: Clip
+                                                        .antiAliasWithSaveLayer,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryBackground,
+                                                    elevation: 12.0,
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
+                                                    ),
+                                                    child:
+                                                        SingleChildScrollView(
+                                                      primary: false,
+                                                      child: Column(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Padding(
+                                                            padding:
+                                                                const EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        12.0),
+                                                            child: Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .spaceAround,
+                                                              children: [
+                                                                Flexible(
+                                                                  child: Column(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .center,
+                                                                    crossAxisAlignment:
+                                                                        CrossAxisAlignment
+                                                                            .center,
+                                                                    children: [
+                                                                      Align(
+                                                                        alignment: const AlignmentDirectional(
+                                                                            0.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            Row(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          mainAxisAlignment:
+                                                                              MainAxisAlignment.center,
+                                                                          children: [
+                                                                            Text(
+                                                                              'Nombres',
+                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                    fontFamily: 'Readex Pro',
+                                                                                    fontSize: 16.0,
+                                                                                    fontWeight: FontWeight.bold,
+                                                                                  ),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                      ),
+                                                                    ],
+                                                                  ),
+                                                                ),
+                                                                Flexible(
+                                                                  child: Align(
+                                                                    alignment:
+                                                                        const AlignmentDirectional(
+                                                                            1.0,
+                                                                            0.0),
+                                                                    child: Row(
+                                                                      mainAxisSize:
+                                                                          MainAxisSize
+                                                                              .max,
+                                                                      mainAxisAlignment:
+                                                                          MainAxisAlignment
+                                                                              .spaceBetween,
+                                                                      children: [
+                                                                        Flexible(
+                                                                          child:
+                                                                              Align(
+                                                                            alignment:
+                                                                                const AlignmentDirectional(1.0, 0.0),
+                                                                            child:
+                                                                                Padding(
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 18.0, 0.0),
+                                                                              child: Text(
+                                                                                'Opciones',
+                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                      fontFamily: 'Readex Pro',
+                                                                                      fontSize: 16.0,
+                                                                                      fontWeight: FontWeight.bold,
+                                                                                    ),
+                                                                              ),
+                                                                            ),
+                                                                          ),
+                                                                        ),
+                                                                      ],
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              ],
+                                                            ),
+                                                          ),
+                                                          Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
                                                                     .max,
                                                             mainAxisAlignment:
                                                                 MainAxisAlignment
-                                                                    .spaceAround,
+                                                                    .spaceBetween,
                                                             children: [
-                                                              Flexible(
-                                                                child: Column(
+                                                              Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: [
+                                                                  Text(
+                                                                    'ronal estebanfigueroa mora',
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium,
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                              Align(
+                                                                alignment:
+                                                                    const AlignmentDirectional(
+                                                                        0.0,
+                                                                        0.0),
+                                                                child: Row(
                                                                   mainAxisSize:
                                                                       MainAxisSize
                                                                           .max,
                                                                   mainAxisAlignment:
                                                                       MainAxisAlignment
-                                                                          .center,
-                                                                  crossAxisAlignment:
-                                                                      CrossAxisAlignment
-                                                                          .center,
+                                                                          .spaceEvenly,
                                                                   children: [
                                                                     Align(
                                                                       alignment:
@@ -654,107 +768,411 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                               0.0,
                                                                               0.0),
                                                                       child:
-                                                                          Row(
-                                                                        mainAxisSize:
-                                                                            MainAxisSize.max,
-                                                                        mainAxisAlignment:
-                                                                            MainAxisAlignment.center,
-                                                                        children: [
-                                                                          Text(
-                                                                            'Nombres',
-                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Readex Pro',
-                                                                                  fontSize: 16.0,
-                                                                                  fontWeight: FontWeight.bold,
-                                                                                ),
+                                                                          Padding(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            30.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            Container(
+                                                                          width:
+                                                                              38.0,
+                                                                          height:
+                                                                              40.0,
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
                                                                           ),
-                                                                        ],
+                                                                          child:
+                                                                              Card(
+                                                                            clipBehavior:
+                                                                                Clip.antiAliasWithSaveLayer,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                            elevation:
+                                                                                4.0,
+                                                                            shape:
+                                                                                RoundedRectangleBorder(
+                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                            ),
+                                                                            child:
+                                                                                InkWell(
+                                                                              splashColor: Colors.transparent,
+                                                                              focusColor: Colors.transparent,
+                                                                              hoverColor: Colors.transparent,
+                                                                              highlightColor: Colors.transparent,
+                                                                              onTap: () async {
+                                                                                context.pushNamed('EditarObservacion');
+                                                                              },
+                                                                              child: ClipRRect(
+                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                                child: Image.asset(
+                                                                                  'assets/images/lapiz__2_-removebg-preview.png',
+                                                                                  width: 306.0,
+                                                                                  height: 200.0,
+                                                                                  fit: BoxFit.contain,
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                    Padding(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          12.0,
+                                                                          0.0),
+                                                                      child:
+                                                                          Container(
+                                                                        width:
+                                                                            38.0,
+                                                                        height:
+                                                                            40.0,
+                                                                        decoration:
+                                                                            BoxDecoration(
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).secondaryBackground,
+                                                                        ),
+                                                                        child:
+                                                                            Card(
+                                                                          clipBehavior:
+                                                                              Clip.antiAliasWithSaveLayer,
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).secondaryBackground,
+                                                                          elevation:
+                                                                              4.0,
+                                                                          shape:
+                                                                              RoundedRectangleBorder(
+                                                                            borderRadius:
+                                                                                BorderRadius.circular(8.0),
+                                                                          ),
+                                                                          child:
+                                                                              InkWell(
+                                                                            splashColor:
+                                                                                Colors.transparent,
+                                                                            focusColor:
+                                                                                Colors.transparent,
+                                                                            hoverColor:
+                                                                                Colors.transparent,
+                                                                            highlightColor:
+                                                                                Colors.transparent,
+                                                                            onTap:
+                                                                                () async {
+                                                                              var confirmDialogResponse = await showDialog<bool>(
+                                                                                    context: context,
+                                                                                    builder: (alertDialogContext) {
+                                                                                      return AlertDialog(
+                                                                                        title: const Text('Eliminar Observación'),
+                                                                                        content: const Text('¿Esta Seguro(@) de eliminar la observacion del estudiante?'),
+                                                                                        actions: [
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                            child: const Text('Cancelar'),
+                                                                                          ),
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                            child: const Text('Confirmar'),
+                                                                                          ),
+                                                                                        ],
+                                                                                      );
+                                                                                    },
+                                                                                  ) ??
+                                                                                  false;
+                                                                            },
+                                                                            child:
+                                                                                ClipRRect(
+                                                                              borderRadius: BorderRadius.circular(0.0),
+                                                                              child: Image.asset(
+                                                                                'assets/images/borrar_(1).png',
+                                                                                width: 300.0,
+                                                                                height: 200.0,
+                                                                                fit: BoxFit.contain,
+                                                                              ),
+                                                                            ),
+                                                                          ),
+                                                                        ),
                                                                       ),
                                                                     ),
                                                                   ],
                                                                 ),
                                                               ),
-                                                              Flexible(
-                                                                child: Align(
-                                                                  alignment:
-                                                                      const AlignmentDirectional(
-                                                                          1.0,
-                                                                          0.0),
-                                                                  child: Row(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    mainAxisAlignment:
-                                                                        MainAxisAlignment
-                                                                            .spaceBetween,
-                                                                    children: [
-                                                                      Flexible(
-                                                                        child:
-                                                                            Align(
-                                                                          alignment: const AlignmentDirectional(
-                                                                              1.0,
+                                                            ],
+                                                          ),
+                                                          Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .spaceBetween,
+                                                            children: [
+                                                              Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: [
+                                                                  Text(
+                                                                    'ronal estebanfigueroa mora',
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium,
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                              Align(
+                                                                alignment:
+                                                                    const AlignmentDirectional(
+                                                                        0.0,
+                                                                        0.0),
+                                                                child: Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .spaceEvenly,
+                                                                  children: [
+                                                                    Align(
+                                                                      alignment:
+                                                                          const AlignmentDirectional(
+                                                                              0.0,
                                                                               0.0),
+                                                                      child:
+                                                                          Padding(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            30.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            Container(
+                                                                          width:
+                                                                              38.0,
+                                                                          height:
+                                                                              40.0,
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                          ),
                                                                           child:
-                                                                              Text(
-                                                                            'Elegir Opciones',
-                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Readex Pro',
-                                                                                  fontSize: 16.0,
-                                                                                  fontWeight: FontWeight.bold,
+                                                                              Card(
+                                                                            clipBehavior:
+                                                                                Clip.antiAliasWithSaveLayer,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                            elevation:
+                                                                                4.0,
+                                                                            shape:
+                                                                                RoundedRectangleBorder(
+                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                            ),
+                                                                            child:
+                                                                                InkWell(
+                                                                              splashColor: Colors.transparent,
+                                                                              focusColor: Colors.transparent,
+                                                                              hoverColor: Colors.transparent,
+                                                                              highlightColor: Colors.transparent,
+                                                                              onTap: () async {
+                                                                                context.pushNamed('CrearObservaciones');
+                                                                              },
+                                                                              child: ClipRRect(
+                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                                child: Image.asset(
+                                                                                  'assets/images/lapiz__2_-removebg-preview.png',
+                                                                                  width: 306.0,
+                                                                                  height: 200.0,
+                                                                                  fit: BoxFit.contain,
                                                                                 ),
+                                                                              ),
+                                                                            ),
                                                                           ),
                                                                         ),
                                                                       ),
-                                                                    ],
-                                                                  ),
+                                                                    ),
+                                                                    Padding(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          12.0,
+                                                                          0.0),
+                                                                      child:
+                                                                          Container(
+                                                                        width:
+                                                                            38.0,
+                                                                        height:
+                                                                            40.0,
+                                                                        decoration:
+                                                                            BoxDecoration(
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).secondaryBackground,
+                                                                        ),
+                                                                        child:
+                                                                            Card(
+                                                                          clipBehavior:
+                                                                              Clip.antiAliasWithSaveLayer,
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).secondaryBackground,
+                                                                          elevation:
+                                                                              4.0,
+                                                                          shape:
+                                                                              RoundedRectangleBorder(
+                                                                            borderRadius:
+                                                                                BorderRadius.circular(8.0),
+                                                                          ),
+                                                                          child:
+                                                                              InkWell(
+                                                                            splashColor:
+                                                                                Colors.transparent,
+                                                                            focusColor:
+                                                                                Colors.transparent,
+                                                                            hoverColor:
+                                                                                Colors.transparent,
+                                                                            highlightColor:
+                                                                                Colors.transparent,
+                                                                            onTap:
+                                                                                () async {
+                                                                              var confirmDialogResponse = await showDialog<bool>(
+                                                                                    context: context,
+                                                                                    builder: (alertDialogContext) {
+                                                                                      return AlertDialog(
+                                                                                        title: const Text('Eliminar Observación'),
+                                                                                        content: const Text('¿Esta Seguro(@) de eliminar la observacion del estudiante?'),
+                                                                                        actions: [
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                            child: const Text('Cancelar'),
+                                                                                          ),
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                            child: const Text('Confirmar'),
+                                                                                          ),
+                                                                                        ],
+                                                                                      );
+                                                                                    },
+                                                                                  ) ??
+                                                                                  false;
+                                                                            },
+                                                                            child:
+                                                                                ClipRRect(
+                                                                              borderRadius: BorderRadius.circular(0.0),
+                                                                              child: Image.asset(
+                                                                                'assets/images/borrar_(1).png',
+                                                                                width: 300.0,
+                                                                                height: 200.0,
+                                                                                fit: BoxFit.contain,
+                                                                              ),
+                                                                            ),
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ],
                                                                 ),
                                                               ),
                                                             ],
                                                           ),
-                                                        ),
-                                                        Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .spaceBetween,
-                                                          children: [
-                                                            Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Text(
-                                                                  'ronal estebanfigueroa mora',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium,
-                                                                ),
-                                                              ],
-                                                            ),
-                                                            Align(
-                                                              alignment:
-                                                                  const AlignmentDirectional(
-                                                                      0.0, 0.0),
-                                                              child: Row(
+                                                          Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .spaceBetween,
+                                                            children: [
+                                                              Column(
                                                                 mainAxisSize:
                                                                     MainAxisSize
                                                                         .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .spaceEvenly,
                                                                 children: [
-                                                                  Align(
-                                                                    alignment:
-                                                                        const AlignmentDirectional(
+                                                                  Text(
+                                                                    'ronal estebanfigueroa mora',
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium,
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                              Align(
+                                                                alignment:
+                                                                    const AlignmentDirectional(
+                                                                        0.0,
+                                                                        0.0),
+                                                                child: Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .spaceEvenly,
+                                                                  children: [
+                                                                    Align(
+                                                                      alignment:
+                                                                          const AlignmentDirectional(
+                                                                              0.0,
+                                                                              0.0),
+                                                                      child:
+                                                                          Padding(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
+                                                                            0.0,
+                                                                            30.0,
                                                                             0.0),
-                                                                    child:
-                                                                        Padding(
+                                                                        child:
+                                                                            Container(
+                                                                          width:
+                                                                              38.0,
+                                                                          height:
+                                                                              40.0,
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                          ),
+                                                                          child:
+                                                                              Card(
+                                                                            clipBehavior:
+                                                                                Clip.antiAliasWithSaveLayer,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                            elevation:
+                                                                                4.0,
+                                                                            shape:
+                                                                                RoundedRectangleBorder(
+                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                            ),
+                                                                            child:
+                                                                                InkWell(
+                                                                              splashColor: Colors.transparent,
+                                                                              focusColor: Colors.transparent,
+                                                                              hoverColor: Colors.transparent,
+                                                                              highlightColor: Colors.transparent,
+                                                                              onTap: () async {
+                                                                                context.pushNamed('CrearObservaciones');
+                                                                              },
+                                                                              child: ClipRRect(
+                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                                child: Image.asset(
+                                                                                  'assets/images/lapiz__2_-removebg-preview.png',
+                                                                                  width: 306.0,
+                                                                                  height: 200.0,
+                                                                                  fit: BoxFit.contain,
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                    Padding(
                                                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
-                                                                          30.0,
+                                                                          12.0,
                                                                           0.0),
                                                                       child:
                                                                           Container(
@@ -792,14 +1210,33 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                                 Colors.transparent,
                                                                             onTap:
                                                                                 () async {
-                                                                              context.pushNamed('CrearObservaciones');
+                                                                              var confirmDialogResponse = await showDialog<bool>(
+                                                                                    context: context,
+                                                                                    builder: (alertDialogContext) {
+                                                                                      return AlertDialog(
+                                                                                        title: const Text('Eliminar Observación'),
+                                                                                        content: const Text('¿Esta Seguro(@) de eliminar la observacion del estudiante?'),
+                                                                                        actions: [
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                            child: const Text('Cancelar'),
+                                                                                          ),
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                            child: const Text('Confirmar'),
+                                                                                          ),
+                                                                                        ],
+                                                                                      );
+                                                                                    },
+                                                                                  ) ??
+                                                                                  false;
                                                                             },
                                                                             child:
                                                                                 ClipRRect(
-                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                               child: Image.asset(
-                                                                                'assets/images/lapiz__2_-removebg-preview.png',
-                                                                                width: 306.0,
+                                                                                'assets/images/borrar_(1).png',
+                                                                                width: 300.0,
                                                                                 height: 200.0,
                                                                                 fit: BoxFit.contain,
                                                                               ),
@@ -808,135 +1245,108 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                         ),
                                                                       ),
                                                                     ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                          Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .spaceBetween,
+                                                            children: [
+                                                              Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: [
+                                                                  Text(
+                                                                    'ronal estebanfigueroa mora',
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium,
                                                                   ),
-                                                                  Padding(
-                                                                    padding: const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            12.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Container(
-                                                                      width:
-                                                                          38.0,
-                                                                      height:
-                                                                          40.0,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                      ),
+                                                                ],
+                                                              ),
+                                                              Align(
+                                                                alignment:
+                                                                    const AlignmentDirectional(
+                                                                        0.0,
+                                                                        0.0),
+                                                                child: Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .spaceEvenly,
+                                                                  children: [
+                                                                    Align(
+                                                                      alignment:
+                                                                          const AlignmentDirectional(
+                                                                              0.0,
+                                                                              0.0),
                                                                       child:
-                                                                          Card(
-                                                                        clipBehavior:
-                                                                            Clip.antiAliasWithSaveLayer,
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                        elevation:
-                                                                            4.0,
-                                                                        shape:
-                                                                            RoundedRectangleBorder(
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(8.0),
-                                                                        ),
+                                                                          Padding(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            30.0,
+                                                                            0.0),
                                                                         child:
-                                                                            InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            var confirmDialogResponse = await showDialog<bool>(
-                                                                                  context: context,
-                                                                                  builder: (alertDialogContext) {
-                                                                                    return AlertDialog(
-                                                                                      title: const Text('Eliminar Observación'),
-                                                                                      content: const Text('¿Esta Seguro(@) de eliminar la observacion del estudiante?'),
-                                                                                      actions: [
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                          child: const Text('Cancelar'),
-                                                                                        ),
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                          child: const Text('Confirmar'),
-                                                                                        ),
-                                                                                      ],
-                                                                                    );
-                                                                                  },
-                                                                                ) ??
-                                                                                false;
-                                                                          },
+                                                                            Container(
+                                                                          width:
+                                                                              38.0,
+                                                                          height:
+                                                                              40.0,
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                          ),
                                                                           child:
-                                                                              ClipRRect(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(0.0),
+                                                                              Card(
+                                                                            clipBehavior:
+                                                                                Clip.antiAliasWithSaveLayer,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                            elevation:
+                                                                                4.0,
+                                                                            shape:
+                                                                                RoundedRectangleBorder(
+                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                            ),
                                                                             child:
-                                                                                Image.asset(
-                                                                              'assets/images/borrar_(1).png',
-                                                                              width: 300.0,
-                                                                              height: 200.0,
-                                                                              fit: BoxFit.contain,
+                                                                                InkWell(
+                                                                              splashColor: Colors.transparent,
+                                                                              focusColor: Colors.transparent,
+                                                                              hoverColor: Colors.transparent,
+                                                                              highlightColor: Colors.transparent,
+                                                                              onTap: () async {
+                                                                                context.pushNamed('CrearObservaciones');
+                                                                              },
+                                                                              child: ClipRRect(
+                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                                child: Image.asset(
+                                                                                  'assets/images/lapiz__2_-removebg-preview.png',
+                                                                                  width: 306.0,
+                                                                                  height: 200.0,
+                                                                                  fit: BoxFit.contain,
+                                                                                ),
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         ),
                                                                       ),
                                                                     ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                        Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .spaceBetween,
-                                                          children: [
-                                                            Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Text(
-                                                                  'ronal estebanfigueroa mora',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium,
-                                                                ),
-                                                              ],
-                                                            ),
-                                                            Align(
-                                                              alignment:
-                                                                  const AlignmentDirectional(
-                                                                      0.0, 0.0),
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .spaceEvenly,
-                                                                children: [
-                                                                  Align(
-                                                                    alignment:
-                                                                        const AlignmentDirectional(
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Padding(
+                                                                    Padding(
                                                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
-                                                                          30.0,
+                                                                          12.0,
                                                                           0.0),
                                                                       child:
                                                                           Container(
@@ -974,14 +1384,33 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                                 Colors.transparent,
                                                                             onTap:
                                                                                 () async {
-                                                                              context.pushNamed('CrearObservaciones');
+                                                                              var confirmDialogResponse = await showDialog<bool>(
+                                                                                    context: context,
+                                                                                    builder: (alertDialogContext) {
+                                                                                      return AlertDialog(
+                                                                                        title: const Text('Eliminar Observación'),
+                                                                                        content: const Text('¿Esta Seguro(@) de eliminar la observacion del estudiante?'),
+                                                                                        actions: [
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                            child: const Text('Cancelar'),
+                                                                                          ),
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                            child: const Text('Confirmar'),
+                                                                                          ),
+                                                                                        ],
+                                                                                      );
+                                                                                    },
+                                                                                  ) ??
+                                                                                  false;
                                                                             },
                                                                             child:
                                                                                 ClipRRect(
-                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                               child: Image.asset(
-                                                                                'assets/images/lapiz__2_-removebg-preview.png',
-                                                                                width: 306.0,
+                                                                                'assets/images/borrar_(1).png',
+                                                                                width: 300.0,
                                                                                 height: 200.0,
                                                                                 fit: BoxFit.contain,
                                                                               ),
@@ -990,135 +1419,108 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                         ),
                                                                       ),
                                                                     ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                          Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .spaceBetween,
+                                                            children: [
+                                                              Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: [
+                                                                  Text(
+                                                                    'ronal estebanfigueroa mora',
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium,
                                                                   ),
-                                                                  Padding(
-                                                                    padding: const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            12.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Container(
-                                                                      width:
-                                                                          38.0,
-                                                                      height:
-                                                                          40.0,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                      ),
+                                                                ],
+                                                              ),
+                                                              Align(
+                                                                alignment:
+                                                                    const AlignmentDirectional(
+                                                                        0.0,
+                                                                        0.0),
+                                                                child: Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .spaceEvenly,
+                                                                  children: [
+                                                                    Align(
+                                                                      alignment:
+                                                                          const AlignmentDirectional(
+                                                                              0.0,
+                                                                              0.0),
                                                                       child:
-                                                                          Card(
-                                                                        clipBehavior:
-                                                                            Clip.antiAliasWithSaveLayer,
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                        elevation:
-                                                                            4.0,
-                                                                        shape:
-                                                                            RoundedRectangleBorder(
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(8.0),
-                                                                        ),
+                                                                          Padding(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            30.0,
+                                                                            0.0),
                                                                         child:
-                                                                            InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            var confirmDialogResponse = await showDialog<bool>(
-                                                                                  context: context,
-                                                                                  builder: (alertDialogContext) {
-                                                                                    return AlertDialog(
-                                                                                      title: const Text('Eliminar Observación'),
-                                                                                      content: const Text('¿Esta Seguro(@) de eliminar la observacion del estudiante?'),
-                                                                                      actions: [
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                          child: const Text('Cancelar'),
-                                                                                        ),
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                          child: const Text('Confirmar'),
-                                                                                        ),
-                                                                                      ],
-                                                                                    );
-                                                                                  },
-                                                                                ) ??
-                                                                                false;
-                                                                          },
+                                                                            Container(
+                                                                          width:
+                                                                              38.0,
+                                                                          height:
+                                                                              40.0,
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                          ),
                                                                           child:
-                                                                              ClipRRect(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(0.0),
+                                                                              Card(
+                                                                            clipBehavior:
+                                                                                Clip.antiAliasWithSaveLayer,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                            elevation:
+                                                                                4.0,
+                                                                            shape:
+                                                                                RoundedRectangleBorder(
+                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                            ),
                                                                             child:
-                                                                                Image.asset(
-                                                                              'assets/images/borrar_(1).png',
-                                                                              width: 300.0,
-                                                                              height: 200.0,
-                                                                              fit: BoxFit.contain,
+                                                                                InkWell(
+                                                                              splashColor: Colors.transparent,
+                                                                              focusColor: Colors.transparent,
+                                                                              hoverColor: Colors.transparent,
+                                                                              highlightColor: Colors.transparent,
+                                                                              onTap: () async {
+                                                                                context.pushNamed('CrearObservaciones');
+                                                                              },
+                                                                              child: ClipRRect(
+                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                                child: Image.asset(
+                                                                                  'assets/images/lapiz__2_-removebg-preview.png',
+                                                                                  width: 306.0,
+                                                                                  height: 200.0,
+                                                                                  fit: BoxFit.contain,
+                                                                                ),
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         ),
                                                                       ),
                                                                     ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                        Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .spaceBetween,
-                                                          children: [
-                                                            Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Text(
-                                                                  'ronal estebanfigueroa mora',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium,
-                                                                ),
-                                                              ],
-                                                            ),
-                                                            Align(
-                                                              alignment:
-                                                                  const AlignmentDirectional(
-                                                                      0.0, 0.0),
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .spaceEvenly,
-                                                                children: [
-                                                                  Align(
-                                                                    alignment:
-                                                                        const AlignmentDirectional(
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Padding(
+                                                                    Padding(
                                                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
-                                                                          30.0,
+                                                                          12.0,
                                                                           0.0),
                                                                       child:
                                                                           Container(
@@ -1156,14 +1558,33 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                                 Colors.transparent,
                                                                             onTap:
                                                                                 () async {
-                                                                              context.pushNamed('CrearObservaciones');
+                                                                              var confirmDialogResponse = await showDialog<bool>(
+                                                                                    context: context,
+                                                                                    builder: (alertDialogContext) {
+                                                                                      return AlertDialog(
+                                                                                        title: const Text('Eliminar Observación'),
+                                                                                        content: const Text('¿Esta Seguro(@) de eliminar la observacion del estudiante?'),
+                                                                                        actions: [
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                            child: const Text('Cancelar'),
+                                                                                          ),
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                            child: const Text('Confirmar'),
+                                                                                          ),
+                                                                                        ],
+                                                                                      );
+                                                                                    },
+                                                                                  ) ??
+                                                                                  false;
                                                                             },
                                                                             child:
                                                                                 ClipRRect(
-                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                               child: Image.asset(
-                                                                                'assets/images/lapiz__2_-removebg-preview.png',
-                                                                                width: 306.0,
+                                                                                'assets/images/borrar_(1).png',
+                                                                                width: 300.0,
                                                                                 height: 200.0,
                                                                                 fit: BoxFit.contain,
                                                                               ),
@@ -1172,135 +1593,108 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                         ),
                                                                       ),
                                                                     ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                          Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .spaceBetween,
+                                                            children: [
+                                                              Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: [
+                                                                  Text(
+                                                                    'ronal estebanfigueroa mora',
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium,
                                                                   ),
-                                                                  Padding(
-                                                                    padding: const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            12.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Container(
-                                                                      width:
-                                                                          38.0,
-                                                                      height:
-                                                                          40.0,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                      ),
+                                                                ],
+                                                              ),
+                                                              Align(
+                                                                alignment:
+                                                                    const AlignmentDirectional(
+                                                                        0.0,
+                                                                        0.0),
+                                                                child: Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .spaceEvenly,
+                                                                  children: [
+                                                                    Align(
+                                                                      alignment:
+                                                                          const AlignmentDirectional(
+                                                                              0.0,
+                                                                              0.0),
                                                                       child:
-                                                                          Card(
-                                                                        clipBehavior:
-                                                                            Clip.antiAliasWithSaveLayer,
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                        elevation:
-                                                                            4.0,
-                                                                        shape:
-                                                                            RoundedRectangleBorder(
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(8.0),
-                                                                        ),
+                                                                          Padding(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            30.0,
+                                                                            0.0),
                                                                         child:
-                                                                            InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            var confirmDialogResponse = await showDialog<bool>(
-                                                                                  context: context,
-                                                                                  builder: (alertDialogContext) {
-                                                                                    return AlertDialog(
-                                                                                      title: const Text('Eliminar Observación'),
-                                                                                      content: const Text('¿Esta Seguro(@) de eliminar la observacion del estudiante?'),
-                                                                                      actions: [
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                          child: const Text('Cancelar'),
-                                                                                        ),
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                          child: const Text('Confirmar'),
-                                                                                        ),
-                                                                                      ],
-                                                                                    );
-                                                                                  },
-                                                                                ) ??
-                                                                                false;
-                                                                          },
+                                                                            Container(
+                                                                          width:
+                                                                              38.0,
+                                                                          height:
+                                                                              40.0,
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                          ),
                                                                           child:
-                                                                              ClipRRect(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(0.0),
+                                                                              Card(
+                                                                            clipBehavior:
+                                                                                Clip.antiAliasWithSaveLayer,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                            elevation:
+                                                                                4.0,
+                                                                            shape:
+                                                                                RoundedRectangleBorder(
+                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                            ),
                                                                             child:
-                                                                                Image.asset(
-                                                                              'assets/images/borrar_(1).png',
-                                                                              width: 300.0,
-                                                                              height: 200.0,
-                                                                              fit: BoxFit.contain,
+                                                                                InkWell(
+                                                                              splashColor: Colors.transparent,
+                                                                              focusColor: Colors.transparent,
+                                                                              hoverColor: Colors.transparent,
+                                                                              highlightColor: Colors.transparent,
+                                                                              onTap: () async {
+                                                                                context.pushNamed('CrearObservaciones');
+                                                                              },
+                                                                              child: ClipRRect(
+                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                                child: Image.asset(
+                                                                                  'assets/images/lapiz__2_-removebg-preview.png',
+                                                                                  width: 306.0,
+                                                                                  height: 200.0,
+                                                                                  fit: BoxFit.contain,
+                                                                                ),
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         ),
                                                                       ),
                                                                     ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                        Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .spaceBetween,
-                                                          children: [
-                                                            Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Text(
-                                                                  'ronal estebanfigueroa mora',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium,
-                                                                ),
-                                                              ],
-                                                            ),
-                                                            Align(
-                                                              alignment:
-                                                                  const AlignmentDirectional(
-                                                                      0.0, 0.0),
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .spaceEvenly,
-                                                                children: [
-                                                                  Align(
-                                                                    alignment:
-                                                                        const AlignmentDirectional(
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Padding(
+                                                                    Padding(
                                                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
-                                                                          30.0,
+                                                                          12.0,
                                                                           0.0),
                                                                       child:
                                                                           Container(
@@ -1338,14 +1732,33 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                                 Colors.transparent,
                                                                             onTap:
                                                                                 () async {
-                                                                              context.pushNamed('CrearObservaciones');
+                                                                              var confirmDialogResponse = await showDialog<bool>(
+                                                                                    context: context,
+                                                                                    builder: (alertDialogContext) {
+                                                                                      return AlertDialog(
+                                                                                        title: const Text('Eliminar Observación'),
+                                                                                        content: const Text('¿Esta Seguro(@) de eliminar la observacion del estudiante?'),
+                                                                                        actions: [
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                            child: const Text('Cancelar'),
+                                                                                          ),
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                            child: const Text('Confirmar'),
+                                                                                          ),
+                                                                                        ],
+                                                                                      );
+                                                                                    },
+                                                                                  ) ??
+                                                                                  false;
                                                                             },
                                                                             child:
                                                                                 ClipRRect(
-                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                               child: Image.asset(
-                                                                                'assets/images/lapiz__2_-removebg-preview.png',
-                                                                                width: 306.0,
+                                                                                'assets/images/borrar_(1).png',
+                                                                                width: 300.0,
                                                                                 height: 200.0,
                                                                                 fit: BoxFit.contain,
                                                                               ),
@@ -1354,135 +1767,108 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                         ),
                                                                       ),
                                                                     ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                          Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .spaceBetween,
+                                                            children: [
+                                                              Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: [
+                                                                  Text(
+                                                                    'ronal estebanfigueroa mora',
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium,
                                                                   ),
-                                                                  Padding(
-                                                                    padding: const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            12.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Container(
-                                                                      width:
-                                                                          38.0,
-                                                                      height:
-                                                                          40.0,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                      ),
+                                                                ],
+                                                              ),
+                                                              Align(
+                                                                alignment:
+                                                                    const AlignmentDirectional(
+                                                                        0.0,
+                                                                        0.0),
+                                                                child: Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .spaceEvenly,
+                                                                  children: [
+                                                                    Align(
+                                                                      alignment:
+                                                                          const AlignmentDirectional(
+                                                                              0.0,
+                                                                              0.0),
                                                                       child:
-                                                                          Card(
-                                                                        clipBehavior:
-                                                                            Clip.antiAliasWithSaveLayer,
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                        elevation:
-                                                                            4.0,
-                                                                        shape:
-                                                                            RoundedRectangleBorder(
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(8.0),
-                                                                        ),
+                                                                          Padding(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            30.0,
+                                                                            0.0),
                                                                         child:
-                                                                            InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            var confirmDialogResponse = await showDialog<bool>(
-                                                                                  context: context,
-                                                                                  builder: (alertDialogContext) {
-                                                                                    return AlertDialog(
-                                                                                      title: const Text('Eliminar Observación'),
-                                                                                      content: const Text('¿Esta Seguro(@) de eliminar la observacion del estudiante?'),
-                                                                                      actions: [
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                          child: const Text('Cancelar'),
-                                                                                        ),
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                          child: const Text('Confirmar'),
-                                                                                        ),
-                                                                                      ],
-                                                                                    );
-                                                                                  },
-                                                                                ) ??
-                                                                                false;
-                                                                          },
+                                                                            Container(
+                                                                          width:
+                                                                              38.0,
+                                                                          height:
+                                                                              40.0,
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                          ),
                                                                           child:
-                                                                              ClipRRect(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(0.0),
+                                                                              Card(
+                                                                            clipBehavior:
+                                                                                Clip.antiAliasWithSaveLayer,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                            elevation:
+                                                                                4.0,
+                                                                            shape:
+                                                                                RoundedRectangleBorder(
+                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                            ),
                                                                             child:
-                                                                                Image.asset(
-                                                                              'assets/images/borrar_(1).png',
-                                                                              width: 300.0,
-                                                                              height: 200.0,
-                                                                              fit: BoxFit.contain,
+                                                                                InkWell(
+                                                                              splashColor: Colors.transparent,
+                                                                              focusColor: Colors.transparent,
+                                                                              hoverColor: Colors.transparent,
+                                                                              highlightColor: Colors.transparent,
+                                                                              onTap: () async {
+                                                                                context.pushNamed('CrearObservaciones');
+                                                                              },
+                                                                              child: ClipRRect(
+                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                                child: Image.asset(
+                                                                                  'assets/images/lapiz__2_-removebg-preview.png',
+                                                                                  width: 306.0,
+                                                                                  height: 200.0,
+                                                                                  fit: BoxFit.contain,
+                                                                                ),
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         ),
                                                                       ),
                                                                     ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                        Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .spaceBetween,
-                                                          children: [
-                                                            Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Text(
-                                                                  'ronal estebanfigueroa mora',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium,
-                                                                ),
-                                                              ],
-                                                            ),
-                                                            Align(
-                                                              alignment:
-                                                                  const AlignmentDirectional(
-                                                                      0.0, 0.0),
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .spaceEvenly,
-                                                                children: [
-                                                                  Align(
-                                                                    alignment:
-                                                                        const AlignmentDirectional(
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Padding(
+                                                                    Padding(
                                                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
-                                                                          30.0,
+                                                                          12.0,
                                                                           0.0),
                                                                       child:
                                                                           Container(
@@ -1520,14 +1906,33 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                                 Colors.transparent,
                                                                             onTap:
                                                                                 () async {
-                                                                              context.pushNamed('CrearObservaciones');
+                                                                              var confirmDialogResponse = await showDialog<bool>(
+                                                                                    context: context,
+                                                                                    builder: (alertDialogContext) {
+                                                                                      return AlertDialog(
+                                                                                        title: const Text('Eliminar Observación'),
+                                                                                        content: const Text('¿Esta Seguro(@) de eliminar la observacion del estudiante?'),
+                                                                                        actions: [
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                            child: const Text('Cancelar'),
+                                                                                          ),
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                            child: const Text('Confirmar'),
+                                                                                          ),
+                                                                                        ],
+                                                                                      );
+                                                                                    },
+                                                                                  ) ??
+                                                                                  false;
                                                                             },
                                                                             child:
                                                                                 ClipRRect(
-                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                               child: Image.asset(
-                                                                                'assets/images/lapiz__2_-removebg-preview.png',
-                                                                                width: 306.0,
+                                                                                'assets/images/borrar_(1).png',
+                                                                                width: 300.0,
                                                                                 height: 200.0,
                                                                                 fit: BoxFit.contain,
                                                                               ),
@@ -1536,135 +1941,108 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                         ),
                                                                       ),
                                                                     ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                          Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .spaceBetween,
+                                                            children: [
+                                                              Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: [
+                                                                  Text(
+                                                                    'ronal estebanfigueroa mora',
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium,
                                                                   ),
-                                                                  Padding(
-                                                                    padding: const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            12.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Container(
-                                                                      width:
-                                                                          38.0,
-                                                                      height:
-                                                                          40.0,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                      ),
+                                                                ],
+                                                              ),
+                                                              Align(
+                                                                alignment:
+                                                                    const AlignmentDirectional(
+                                                                        0.0,
+                                                                        0.0),
+                                                                child: Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .spaceEvenly,
+                                                                  children: [
+                                                                    Align(
+                                                                      alignment:
+                                                                          const AlignmentDirectional(
+                                                                              0.0,
+                                                                              0.0),
                                                                       child:
-                                                                          Card(
-                                                                        clipBehavior:
-                                                                            Clip.antiAliasWithSaveLayer,
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                        elevation:
-                                                                            4.0,
-                                                                        shape:
-                                                                            RoundedRectangleBorder(
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(8.0),
-                                                                        ),
+                                                                          Padding(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            30.0,
+                                                                            0.0),
                                                                         child:
-                                                                            InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            var confirmDialogResponse = await showDialog<bool>(
-                                                                                  context: context,
-                                                                                  builder: (alertDialogContext) {
-                                                                                    return AlertDialog(
-                                                                                      title: const Text('Eliminar Observación'),
-                                                                                      content: const Text('¿Esta Seguro(@) de eliminar la observacion del estudiante?'),
-                                                                                      actions: [
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                          child: const Text('Cancelar'),
-                                                                                        ),
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                          child: const Text('Confirmar'),
-                                                                                        ),
-                                                                                      ],
-                                                                                    );
-                                                                                  },
-                                                                                ) ??
-                                                                                false;
-                                                                          },
+                                                                            Container(
+                                                                          width:
+                                                                              38.0,
+                                                                          height:
+                                                                              40.0,
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                          ),
                                                                           child:
-                                                                              ClipRRect(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(0.0),
+                                                                              Card(
+                                                                            clipBehavior:
+                                                                                Clip.antiAliasWithSaveLayer,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                            elevation:
+                                                                                4.0,
+                                                                            shape:
+                                                                                RoundedRectangleBorder(
+                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                            ),
                                                                             child:
-                                                                                Image.asset(
-                                                                              'assets/images/borrar_(1).png',
-                                                                              width: 300.0,
-                                                                              height: 200.0,
-                                                                              fit: BoxFit.contain,
+                                                                                InkWell(
+                                                                              splashColor: Colors.transparent,
+                                                                              focusColor: Colors.transparent,
+                                                                              hoverColor: Colors.transparent,
+                                                                              highlightColor: Colors.transparent,
+                                                                              onTap: () async {
+                                                                                context.pushNamed('CrearObservaciones');
+                                                                              },
+                                                                              child: ClipRRect(
+                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                                child: Image.asset(
+                                                                                  'assets/images/lapiz__2_-removebg-preview.png',
+                                                                                  width: 306.0,
+                                                                                  height: 200.0,
+                                                                                  fit: BoxFit.contain,
+                                                                                ),
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         ),
                                                                       ),
                                                                     ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                        Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .spaceBetween,
-                                                          children: [
-                                                            Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Text(
-                                                                  'ronal estebanfigueroa mora',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium,
-                                                                ),
-                                                              ],
-                                                            ),
-                                                            Align(
-                                                              alignment:
-                                                                  const AlignmentDirectional(
-                                                                      0.0, 0.0),
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .spaceEvenly,
-                                                                children: [
-                                                                  Align(
-                                                                    alignment:
-                                                                        const AlignmentDirectional(
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Padding(
+                                                                    Padding(
                                                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
-                                                                          30.0,
+                                                                          12.0,
                                                                           0.0),
                                                                       child:
                                                                           Container(
@@ -1702,14 +2080,33 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                                 Colors.transparent,
                                                                             onTap:
                                                                                 () async {
-                                                                              context.pushNamed('CrearObservaciones');
+                                                                              var confirmDialogResponse = await showDialog<bool>(
+                                                                                    context: context,
+                                                                                    builder: (alertDialogContext) {
+                                                                                      return AlertDialog(
+                                                                                        title: const Text('Eliminar Observación'),
+                                                                                        content: const Text('¿Esta Seguro(@) de eliminar la observacion del estudiante?'),
+                                                                                        actions: [
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                            child: const Text('Cancelar'),
+                                                                                          ),
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                            child: const Text('Confirmar'),
+                                                                                          ),
+                                                                                        ],
+                                                                                      );
+                                                                                    },
+                                                                                  ) ??
+                                                                                  false;
                                                                             },
                                                                             child:
                                                                                 ClipRRect(
-                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                               child: Image.asset(
-                                                                                'assets/images/lapiz__2_-removebg-preview.png',
-                                                                                width: 306.0,
+                                                                                'assets/images/borrar_(1).png',
+                                                                                width: 300.0,
                                                                                 height: 200.0,
                                                                                 fit: BoxFit.contain,
                                                                               ),
@@ -1718,135 +2115,108 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                         ),
                                                                       ),
                                                                     ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                          Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .spaceBetween,
+                                                            children: [
+                                                              Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: [
+                                                                  Text(
+                                                                    'ronal estebanfigueroa mora',
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium,
                                                                   ),
-                                                                  Padding(
-                                                                    padding: const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            12.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Container(
-                                                                      width:
-                                                                          38.0,
-                                                                      height:
-                                                                          40.0,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                      ),
+                                                                ],
+                                                              ),
+                                                              Align(
+                                                                alignment:
+                                                                    const AlignmentDirectional(
+                                                                        0.0,
+                                                                        0.0),
+                                                                child: Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .spaceEvenly,
+                                                                  children: [
+                                                                    Align(
+                                                                      alignment:
+                                                                          const AlignmentDirectional(
+                                                                              0.0,
+                                                                              0.0),
                                                                       child:
-                                                                          Card(
-                                                                        clipBehavior:
-                                                                            Clip.antiAliasWithSaveLayer,
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                        elevation:
-                                                                            4.0,
-                                                                        shape:
-                                                                            RoundedRectangleBorder(
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(8.0),
-                                                                        ),
+                                                                          Padding(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            30.0,
+                                                                            0.0),
                                                                         child:
-                                                                            InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            var confirmDialogResponse = await showDialog<bool>(
-                                                                                  context: context,
-                                                                                  builder: (alertDialogContext) {
-                                                                                    return AlertDialog(
-                                                                                      title: const Text('Eliminar Observación'),
-                                                                                      content: const Text('¿Esta Seguro(@) de eliminar la observacion del estudiante?'),
-                                                                                      actions: [
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                          child: const Text('Cancelar'),
-                                                                                        ),
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                          child: const Text('Confirmar'),
-                                                                                        ),
-                                                                                      ],
-                                                                                    );
-                                                                                  },
-                                                                                ) ??
-                                                                                false;
-                                                                          },
+                                                                            Container(
+                                                                          width:
+                                                                              38.0,
+                                                                          height:
+                                                                              40.0,
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                          ),
                                                                           child:
-                                                                              ClipRRect(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(0.0),
+                                                                              Card(
+                                                                            clipBehavior:
+                                                                                Clip.antiAliasWithSaveLayer,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                            elevation:
+                                                                                4.0,
+                                                                            shape:
+                                                                                RoundedRectangleBorder(
+                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                            ),
                                                                             child:
-                                                                                Image.asset(
-                                                                              'assets/images/borrar_(1).png',
-                                                                              width: 300.0,
-                                                                              height: 200.0,
-                                                                              fit: BoxFit.contain,
+                                                                                InkWell(
+                                                                              splashColor: Colors.transparent,
+                                                                              focusColor: Colors.transparent,
+                                                                              hoverColor: Colors.transparent,
+                                                                              highlightColor: Colors.transparent,
+                                                                              onTap: () async {
+                                                                                context.pushNamed('CrearObservaciones');
+                                                                              },
+                                                                              child: ClipRRect(
+                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                                child: Image.asset(
+                                                                                  'assets/images/lapiz__2_-removebg-preview.png',
+                                                                                  width: 306.0,
+                                                                                  height: 200.0,
+                                                                                  fit: BoxFit.contain,
+                                                                                ),
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         ),
                                                                       ),
                                                                     ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                        Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .spaceBetween,
-                                                          children: [
-                                                            Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Text(
-                                                                  'ronal estebanfigueroa mora',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium,
-                                                                ),
-                                                              ],
-                                                            ),
-                                                            Align(
-                                                              alignment:
-                                                                  const AlignmentDirectional(
-                                                                      0.0, 0.0),
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .spaceEvenly,
-                                                                children: [
-                                                                  Align(
-                                                                    alignment:
-                                                                        const AlignmentDirectional(
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Padding(
+                                                                    Padding(
                                                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
-                                                                          30.0,
+                                                                          12.0,
                                                                           0.0),
                                                                       child:
                                                                           Container(
@@ -1884,14 +2254,33 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                                 Colors.transparent,
                                                                             onTap:
                                                                                 () async {
-                                                                              context.pushNamed('CrearObservaciones');
+                                                                              var confirmDialogResponse = await showDialog<bool>(
+                                                                                    context: context,
+                                                                                    builder: (alertDialogContext) {
+                                                                                      return AlertDialog(
+                                                                                        title: const Text('Eliminar Observación'),
+                                                                                        content: const Text('¿Esta Seguro(@) de eliminar la observacion del estudiante?'),
+                                                                                        actions: [
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                            child: const Text('Cancelar'),
+                                                                                          ),
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                            child: const Text('Confirmar'),
+                                                                                          ),
+                                                                                        ],
+                                                                                      );
+                                                                                    },
+                                                                                  ) ??
+                                                                                  false;
                                                                             },
                                                                             child:
                                                                                 ClipRRect(
-                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                               child: Image.asset(
-                                                                                'assets/images/lapiz__2_-removebg-preview.png',
-                                                                                width: 306.0,
+                                                                                'assets/images/borrar_(1).png',
+                                                                                width: 300.0,
                                                                                 height: 200.0,
                                                                                 fit: BoxFit.contain,
                                                                               ),
@@ -1900,135 +2289,108 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                         ),
                                                                       ),
                                                                     ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                          Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .spaceBetween,
+                                                            children: [
+                                                              Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: [
+                                                                  Text(
+                                                                    'ronal estebanfigueroa mora',
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium,
                                                                   ),
-                                                                  Padding(
-                                                                    padding: const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            12.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Container(
-                                                                      width:
-                                                                          38.0,
-                                                                      height:
-                                                                          40.0,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                      ),
+                                                                ],
+                                                              ),
+                                                              Align(
+                                                                alignment:
+                                                                    const AlignmentDirectional(
+                                                                        0.0,
+                                                                        0.0),
+                                                                child: Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .spaceEvenly,
+                                                                  children: [
+                                                                    Align(
+                                                                      alignment:
+                                                                          const AlignmentDirectional(
+                                                                              0.0,
+                                                                              0.0),
                                                                       child:
-                                                                          Card(
-                                                                        clipBehavior:
-                                                                            Clip.antiAliasWithSaveLayer,
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                        elevation:
-                                                                            4.0,
-                                                                        shape:
-                                                                            RoundedRectangleBorder(
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(8.0),
-                                                                        ),
+                                                                          Padding(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            30.0,
+                                                                            0.0),
                                                                         child:
-                                                                            InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            var confirmDialogResponse = await showDialog<bool>(
-                                                                                  context: context,
-                                                                                  builder: (alertDialogContext) {
-                                                                                    return AlertDialog(
-                                                                                      title: const Text('Eliminar Observación'),
-                                                                                      content: const Text('¿Esta Seguro(@) de eliminar la observacion del estudiante?'),
-                                                                                      actions: [
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                          child: const Text('Cancelar'),
-                                                                                        ),
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                          child: const Text('Confirmar'),
-                                                                                        ),
-                                                                                      ],
-                                                                                    );
-                                                                                  },
-                                                                                ) ??
-                                                                                false;
-                                                                          },
+                                                                            Container(
+                                                                          width:
+                                                                              38.0,
+                                                                          height:
+                                                                              40.0,
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                          ),
                                                                           child:
-                                                                              ClipRRect(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(0.0),
+                                                                              Card(
+                                                                            clipBehavior:
+                                                                                Clip.antiAliasWithSaveLayer,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                            elevation:
+                                                                                4.0,
+                                                                            shape:
+                                                                                RoundedRectangleBorder(
+                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                            ),
                                                                             child:
-                                                                                Image.asset(
-                                                                              'assets/images/borrar_(1).png',
-                                                                              width: 300.0,
-                                                                              height: 200.0,
-                                                                              fit: BoxFit.contain,
+                                                                                InkWell(
+                                                                              splashColor: Colors.transparent,
+                                                                              focusColor: Colors.transparent,
+                                                                              hoverColor: Colors.transparent,
+                                                                              highlightColor: Colors.transparent,
+                                                                              onTap: () async {
+                                                                                context.pushNamed('CrearObservaciones');
+                                                                              },
+                                                                              child: ClipRRect(
+                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                                child: Image.asset(
+                                                                                  'assets/images/lapiz__2_-removebg-preview.png',
+                                                                                  width: 306.0,
+                                                                                  height: 200.0,
+                                                                                  fit: BoxFit.contain,
+                                                                                ),
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         ),
                                                                       ),
                                                                     ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                        Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .spaceBetween,
-                                                          children: [
-                                                            Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Text(
-                                                                  'ronal estebanfigueroa mora',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium,
-                                                                ),
-                                                              ],
-                                                            ),
-                                                            Align(
-                                                              alignment:
-                                                                  const AlignmentDirectional(
-                                                                      0.0, 0.0),
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .spaceEvenly,
-                                                                children: [
-                                                                  Align(
-                                                                    alignment:
-                                                                        const AlignmentDirectional(
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Padding(
+                                                                    Padding(
                                                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
-                                                                          30.0,
+                                                                          12.0,
                                                                           0.0),
                                                                       child:
                                                                           Container(
@@ -2066,14 +2428,33 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                                 Colors.transparent,
                                                                             onTap:
                                                                                 () async {
-                                                                              context.pushNamed('CrearObservaciones');
+                                                                              var confirmDialogResponse = await showDialog<bool>(
+                                                                                    context: context,
+                                                                                    builder: (alertDialogContext) {
+                                                                                      return AlertDialog(
+                                                                                        title: const Text('Eliminar Observación'),
+                                                                                        content: const Text('¿Esta Seguro(@) de eliminar la observacion del estudiante?'),
+                                                                                        actions: [
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                            child: const Text('Cancelar'),
+                                                                                          ),
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                            child: const Text('Confirmar'),
+                                                                                          ),
+                                                                                        ],
+                                                                                      );
+                                                                                    },
+                                                                                  ) ??
+                                                                                  false;
                                                                             },
                                                                             child:
                                                                                 ClipRRect(
-                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                               child: Image.asset(
-                                                                                'assets/images/lapiz__2_-removebg-preview.png',
-                                                                                width: 306.0,
+                                                                                'assets/images/borrar_(1).png',
+                                                                                width: 300.0,
                                                                                 height: 200.0,
                                                                                 fit: BoxFit.contain,
                                                                               ),
@@ -2082,135 +2463,108 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                         ),
                                                                       ),
                                                                     ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                          Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .spaceBetween,
+                                                            children: [
+                                                              Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: [
+                                                                  Text(
+                                                                    'ronal estebanfigueroa mora',
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium,
                                                                   ),
-                                                                  Padding(
-                                                                    padding: const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            12.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Container(
-                                                                      width:
-                                                                          38.0,
-                                                                      height:
-                                                                          40.0,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                      ),
+                                                                ],
+                                                              ),
+                                                              Align(
+                                                                alignment:
+                                                                    const AlignmentDirectional(
+                                                                        0.0,
+                                                                        0.0),
+                                                                child: Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .spaceEvenly,
+                                                                  children: [
+                                                                    Align(
+                                                                      alignment:
+                                                                          const AlignmentDirectional(
+                                                                              0.0,
+                                                                              0.0),
                                                                       child:
-                                                                          Card(
-                                                                        clipBehavior:
-                                                                            Clip.antiAliasWithSaveLayer,
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                        elevation:
-                                                                            4.0,
-                                                                        shape:
-                                                                            RoundedRectangleBorder(
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(8.0),
-                                                                        ),
+                                                                          Padding(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            30.0,
+                                                                            0.0),
                                                                         child:
-                                                                            InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            var confirmDialogResponse = await showDialog<bool>(
-                                                                                  context: context,
-                                                                                  builder: (alertDialogContext) {
-                                                                                    return AlertDialog(
-                                                                                      title: const Text('Eliminar Observación'),
-                                                                                      content: const Text('¿Esta Seguro(@) de eliminar la observacion del estudiante?'),
-                                                                                      actions: [
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                          child: const Text('Cancelar'),
-                                                                                        ),
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                          child: const Text('Confirmar'),
-                                                                                        ),
-                                                                                      ],
-                                                                                    );
-                                                                                  },
-                                                                                ) ??
-                                                                                false;
-                                                                          },
+                                                                            Container(
+                                                                          width:
+                                                                              38.0,
+                                                                          height:
+                                                                              40.0,
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                          ),
                                                                           child:
-                                                                              ClipRRect(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(0.0),
+                                                                              Card(
+                                                                            clipBehavior:
+                                                                                Clip.antiAliasWithSaveLayer,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                            elevation:
+                                                                                4.0,
+                                                                            shape:
+                                                                                RoundedRectangleBorder(
+                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                            ),
                                                                             child:
-                                                                                Image.asset(
-                                                                              'assets/images/borrar_(1).png',
-                                                                              width: 300.0,
-                                                                              height: 200.0,
-                                                                              fit: BoxFit.contain,
+                                                                                InkWell(
+                                                                              splashColor: Colors.transparent,
+                                                                              focusColor: Colors.transparent,
+                                                                              hoverColor: Colors.transparent,
+                                                                              highlightColor: Colors.transparent,
+                                                                              onTap: () async {
+                                                                                context.pushNamed('CrearObservaciones');
+                                                                              },
+                                                                              child: ClipRRect(
+                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                                child: Image.asset(
+                                                                                  'assets/images/lapiz__2_-removebg-preview.png',
+                                                                                  width: 306.0,
+                                                                                  height: 200.0,
+                                                                                  fit: BoxFit.contain,
+                                                                                ),
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         ),
                                                                       ),
                                                                     ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                        Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .spaceBetween,
-                                                          children: [
-                                                            Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Text(
-                                                                  'ronal estebanfigueroa mora',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium,
-                                                                ),
-                                                              ],
-                                                            ),
-                                                            Align(
-                                                              alignment:
-                                                                  const AlignmentDirectional(
-                                                                      0.0, 0.0),
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .spaceEvenly,
-                                                                children: [
-                                                                  Align(
-                                                                    alignment:
-                                                                        const AlignmentDirectional(
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Padding(
+                                                                    Padding(
                                                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
-                                                                          30.0,
+                                                                          12.0,
                                                                           0.0),
                                                                       child:
                                                                           Container(
@@ -2248,14 +2602,33 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                                 Colors.transparent,
                                                                             onTap:
                                                                                 () async {
-                                                                              context.pushNamed('CrearObservaciones');
+                                                                              var confirmDialogResponse = await showDialog<bool>(
+                                                                                    context: context,
+                                                                                    builder: (alertDialogContext) {
+                                                                                      return AlertDialog(
+                                                                                        title: const Text('Eliminar Observación'),
+                                                                                        content: const Text('¿Esta Seguro(@) de eliminar la observacion del estudiante?'),
+                                                                                        actions: [
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                            child: const Text('Cancelar'),
+                                                                                          ),
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                            child: const Text('Confirmar'),
+                                                                                          ),
+                                                                                        ],
+                                                                                      );
+                                                                                    },
+                                                                                  ) ??
+                                                                                  false;
                                                                             },
                                                                             child:
                                                                                 ClipRRect(
-                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                               child: Image.asset(
-                                                                                'assets/images/lapiz__2_-removebg-preview.png',
-                                                                                width: 306.0,
+                                                                                'assets/images/borrar_(1).png',
+                                                                                width: 300.0,
                                                                                 height: 200.0,
                                                                                 fit: BoxFit.contain,
                                                                               ),
@@ -2264,135 +2637,108 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                         ),
                                                                       ),
                                                                     ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                          Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .spaceBetween,
+                                                            children: [
+                                                              Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: [
+                                                                  Text(
+                                                                    'ronal estebanfigueroa mora',
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium,
                                                                   ),
-                                                                  Padding(
-                                                                    padding: const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            12.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Container(
-                                                                      width:
-                                                                          38.0,
-                                                                      height:
-                                                                          40.0,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                      ),
+                                                                ],
+                                                              ),
+                                                              Align(
+                                                                alignment:
+                                                                    const AlignmentDirectional(
+                                                                        0.0,
+                                                                        0.0),
+                                                                child: Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .spaceEvenly,
+                                                                  children: [
+                                                                    Align(
+                                                                      alignment:
+                                                                          const AlignmentDirectional(
+                                                                              0.0,
+                                                                              0.0),
                                                                       child:
-                                                                          Card(
-                                                                        clipBehavior:
-                                                                            Clip.antiAliasWithSaveLayer,
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                        elevation:
-                                                                            4.0,
-                                                                        shape:
-                                                                            RoundedRectangleBorder(
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(8.0),
-                                                                        ),
+                                                                          Padding(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            30.0,
+                                                                            0.0),
                                                                         child:
-                                                                            InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            var confirmDialogResponse = await showDialog<bool>(
-                                                                                  context: context,
-                                                                                  builder: (alertDialogContext) {
-                                                                                    return AlertDialog(
-                                                                                      title: const Text('Eliminar Observación'),
-                                                                                      content: const Text('¿Esta Seguro(@) de eliminar la observacion del estudiante?'),
-                                                                                      actions: [
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                          child: const Text('Cancelar'),
-                                                                                        ),
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                          child: const Text('Confirmar'),
-                                                                                        ),
-                                                                                      ],
-                                                                                    );
-                                                                                  },
-                                                                                ) ??
-                                                                                false;
-                                                                          },
+                                                                            Container(
+                                                                          width:
+                                                                              38.0,
+                                                                          height:
+                                                                              40.0,
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                          ),
                                                                           child:
-                                                                              ClipRRect(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(0.0),
+                                                                              Card(
+                                                                            clipBehavior:
+                                                                                Clip.antiAliasWithSaveLayer,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                            elevation:
+                                                                                4.0,
+                                                                            shape:
+                                                                                RoundedRectangleBorder(
+                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                            ),
                                                                             child:
-                                                                                Image.asset(
-                                                                              'assets/images/borrar_(1).png',
-                                                                              width: 300.0,
-                                                                              height: 200.0,
-                                                                              fit: BoxFit.contain,
+                                                                                InkWell(
+                                                                              splashColor: Colors.transparent,
+                                                                              focusColor: Colors.transparent,
+                                                                              hoverColor: Colors.transparent,
+                                                                              highlightColor: Colors.transparent,
+                                                                              onTap: () async {
+                                                                                context.pushNamed('CrearObservaciones');
+                                                                              },
+                                                                              child: ClipRRect(
+                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                                child: Image.asset(
+                                                                                  'assets/images/lapiz__2_-removebg-preview.png',
+                                                                                  width: 306.0,
+                                                                                  height: 200.0,
+                                                                                  fit: BoxFit.contain,
+                                                                                ),
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         ),
                                                                       ),
                                                                     ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                        Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .spaceBetween,
-                                                          children: [
-                                                            Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Text(
-                                                                  'ronal estebanfigueroa mora',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium,
-                                                                ),
-                                                              ],
-                                                            ),
-                                                            Align(
-                                                              alignment:
-                                                                  const AlignmentDirectional(
-                                                                      0.0, 0.0),
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .spaceEvenly,
-                                                                children: [
-                                                                  Align(
-                                                                    alignment:
-                                                                        const AlignmentDirectional(
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Padding(
+                                                                    Padding(
                                                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
-                                                                          30.0,
+                                                                          12.0,
                                                                           0.0),
                                                                       child:
                                                                           Container(
@@ -2430,14 +2776,33 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                                 Colors.transparent,
                                                                             onTap:
                                                                                 () async {
-                                                                              context.pushNamed('CrearObservaciones');
+                                                                              var confirmDialogResponse = await showDialog<bool>(
+                                                                                    context: context,
+                                                                                    builder: (alertDialogContext) {
+                                                                                      return AlertDialog(
+                                                                                        title: const Text('Eliminar Observación'),
+                                                                                        content: const Text('¿Esta Seguro(@) de eliminar la observacion del estudiante?'),
+                                                                                        actions: [
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                            child: const Text('Cancelar'),
+                                                                                          ),
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                            child: const Text('Confirmar'),
+                                                                                          ),
+                                                                                        ],
+                                                                                      );
+                                                                                    },
+                                                                                  ) ??
+                                                                                  false;
                                                                             },
                                                                             child:
                                                                                 ClipRRect(
-                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                               child: Image.asset(
-                                                                                'assets/images/lapiz__2_-removebg-preview.png',
-                                                                                width: 306.0,
+                                                                                'assets/images/borrar_(1).png',
+                                                                                width: 300.0,
                                                                                 height: 200.0,
                                                                                 fit: BoxFit.contain,
                                                                               ),
@@ -2446,135 +2811,108 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                         ),
                                                                       ),
                                                                     ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                          Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .spaceBetween,
+                                                            children: [
+                                                              Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: [
+                                                                  Text(
+                                                                    'ronal estebanfigueroa mora',
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium,
                                                                   ),
-                                                                  Padding(
-                                                                    padding: const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            12.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Container(
-                                                                      width:
-                                                                          38.0,
-                                                                      height:
-                                                                          40.0,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                      ),
+                                                                ],
+                                                              ),
+                                                              Align(
+                                                                alignment:
+                                                                    const AlignmentDirectional(
+                                                                        0.0,
+                                                                        0.0),
+                                                                child: Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .spaceEvenly,
+                                                                  children: [
+                                                                    Align(
+                                                                      alignment:
+                                                                          const AlignmentDirectional(
+                                                                              0.0,
+                                                                              0.0),
                                                                       child:
-                                                                          Card(
-                                                                        clipBehavior:
-                                                                            Clip.antiAliasWithSaveLayer,
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                        elevation:
-                                                                            4.0,
-                                                                        shape:
-                                                                            RoundedRectangleBorder(
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(8.0),
-                                                                        ),
+                                                                          Padding(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            30.0,
+                                                                            0.0),
                                                                         child:
-                                                                            InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            var confirmDialogResponse = await showDialog<bool>(
-                                                                                  context: context,
-                                                                                  builder: (alertDialogContext) {
-                                                                                    return AlertDialog(
-                                                                                      title: const Text('Eliminar Observación'),
-                                                                                      content: const Text('¿Esta Seguro(@) de eliminar la observacion del estudiante?'),
-                                                                                      actions: [
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                          child: const Text('Cancelar'),
-                                                                                        ),
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                          child: const Text('Confirmar'),
-                                                                                        ),
-                                                                                      ],
-                                                                                    );
-                                                                                  },
-                                                                                ) ??
-                                                                                false;
-                                                                          },
+                                                                            Container(
+                                                                          width:
+                                                                              38.0,
+                                                                          height:
+                                                                              40.0,
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                          ),
                                                                           child:
-                                                                              ClipRRect(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(0.0),
+                                                                              Card(
+                                                                            clipBehavior:
+                                                                                Clip.antiAliasWithSaveLayer,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                            elevation:
+                                                                                4.0,
+                                                                            shape:
+                                                                                RoundedRectangleBorder(
+                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                            ),
                                                                             child:
-                                                                                Image.asset(
-                                                                              'assets/images/borrar_(1).png',
-                                                                              width: 300.0,
-                                                                              height: 200.0,
-                                                                              fit: BoxFit.contain,
+                                                                                InkWell(
+                                                                              splashColor: Colors.transparent,
+                                                                              focusColor: Colors.transparent,
+                                                                              hoverColor: Colors.transparent,
+                                                                              highlightColor: Colors.transparent,
+                                                                              onTap: () async {
+                                                                                context.pushNamed('CrearObservaciones');
+                                                                              },
+                                                                              child: ClipRRect(
+                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                                child: Image.asset(
+                                                                                  'assets/images/lapiz__2_-removebg-preview.png',
+                                                                                  width: 306.0,
+                                                                                  height: 200.0,
+                                                                                  fit: BoxFit.contain,
+                                                                                ),
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         ),
                                                                       ),
                                                                     ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                        Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .spaceBetween,
-                                                          children: [
-                                                            Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Text(
-                                                                  'ronal estebanfigueroa mora',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium,
-                                                                ),
-                                                              ],
-                                                            ),
-                                                            Align(
-                                                              alignment:
-                                                                  const AlignmentDirectional(
-                                                                      0.0, 0.0),
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .spaceEvenly,
-                                                                children: [
-                                                                  Align(
-                                                                    alignment:
-                                                                        const AlignmentDirectional(
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Padding(
+                                                                    Padding(
                                                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
-                                                                          30.0,
+                                                                          12.0,
                                                                           0.0),
                                                                       child:
                                                                           Container(
@@ -2612,14 +2950,33 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                                 Colors.transparent,
                                                                             onTap:
                                                                                 () async {
-                                                                              context.pushNamed('CrearObservaciones');
+                                                                              var confirmDialogResponse = await showDialog<bool>(
+                                                                                    context: context,
+                                                                                    builder: (alertDialogContext) {
+                                                                                      return AlertDialog(
+                                                                                        title: const Text('Eliminar Observación'),
+                                                                                        content: const Text('¿Esta Seguro(@) de eliminar la observacion del estudiante?'),
+                                                                                        actions: [
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                            child: const Text('Cancelar'),
+                                                                                          ),
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                            child: const Text('Confirmar'),
+                                                                                          ),
+                                                                                        ],
+                                                                                      );
+                                                                                    },
+                                                                                  ) ??
+                                                                                  false;
                                                                             },
                                                                             child:
                                                                                 ClipRRect(
-                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                               child: Image.asset(
-                                                                                'assets/images/lapiz__2_-removebg-preview.png',
-                                                                                width: 306.0,
+                                                                                'assets/images/borrar_(1).png',
+                                                                                width: 300.0,
                                                                                 height: 200.0,
                                                                                 fit: BoxFit.contain,
                                                                               ),
@@ -2628,135 +2985,108 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                         ),
                                                                       ),
                                                                     ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                          Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .spaceBetween,
+                                                            children: [
+                                                              Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: [
+                                                                  Text(
+                                                                    'ronal ',
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium,
                                                                   ),
-                                                                  Padding(
-                                                                    padding: const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            12.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Container(
-                                                                      width:
-                                                                          38.0,
-                                                                      height:
-                                                                          40.0,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                      ),
+                                                                ],
+                                                              ),
+                                                              Align(
+                                                                alignment:
+                                                                    const AlignmentDirectional(
+                                                                        0.0,
+                                                                        0.0),
+                                                                child: Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .spaceEvenly,
+                                                                  children: [
+                                                                    Align(
+                                                                      alignment:
+                                                                          const AlignmentDirectional(
+                                                                              0.0,
+                                                                              0.0),
                                                                       child:
-                                                                          Card(
-                                                                        clipBehavior:
-                                                                            Clip.antiAliasWithSaveLayer,
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                        elevation:
-                                                                            4.0,
-                                                                        shape:
-                                                                            RoundedRectangleBorder(
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(8.0),
-                                                                        ),
+                                                                          Padding(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            30.0,
+                                                                            0.0),
                                                                         child:
-                                                                            InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            var confirmDialogResponse = await showDialog<bool>(
-                                                                                  context: context,
-                                                                                  builder: (alertDialogContext) {
-                                                                                    return AlertDialog(
-                                                                                      title: const Text('Eliminar Observación'),
-                                                                                      content: const Text('¿Esta Seguro(@) de eliminar la observacion del estudiante?'),
-                                                                                      actions: [
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                          child: const Text('Cancelar'),
-                                                                                        ),
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                          child: const Text('Confirmar'),
-                                                                                        ),
-                                                                                      ],
-                                                                                    );
-                                                                                  },
-                                                                                ) ??
-                                                                                false;
-                                                                          },
+                                                                            Container(
+                                                                          width:
+                                                                              38.0,
+                                                                          height:
+                                                                              40.0,
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                          ),
                                                                           child:
-                                                                              ClipRRect(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(0.0),
+                                                                              Card(
+                                                                            clipBehavior:
+                                                                                Clip.antiAliasWithSaveLayer,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                            elevation:
+                                                                                4.0,
+                                                                            shape:
+                                                                                RoundedRectangleBorder(
+                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                            ),
                                                                             child:
-                                                                                Image.asset(
-                                                                              'assets/images/borrar_(1).png',
-                                                                              width: 300.0,
-                                                                              height: 200.0,
-                                                                              fit: BoxFit.contain,
+                                                                                InkWell(
+                                                                              splashColor: Colors.transparent,
+                                                                              focusColor: Colors.transparent,
+                                                                              hoverColor: Colors.transparent,
+                                                                              highlightColor: Colors.transparent,
+                                                                              onTap: () async {
+                                                                                context.pushNamed('CrearObservaciones');
+                                                                              },
+                                                                              child: ClipRRect(
+                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                                child: Image.asset(
+                                                                                  'assets/images/lapiz__2_-removebg-preview.png',
+                                                                                  width: 306.0,
+                                                                                  height: 200.0,
+                                                                                  fit: BoxFit.contain,
+                                                                                ),
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         ),
                                                                       ),
                                                                     ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                        Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .spaceBetween,
-                                                          children: [
-                                                            Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Text(
-                                                                  'ronal estebanfigueroa mora',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium,
-                                                                ),
-                                                              ],
-                                                            ),
-                                                            Align(
-                                                              alignment:
-                                                                  const AlignmentDirectional(
-                                                                      0.0, 0.0),
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .spaceEvenly,
-                                                                children: [
-                                                                  Align(
-                                                                    alignment:
-                                                                        const AlignmentDirectional(
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Padding(
+                                                                    Padding(
                                                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
-                                                                          30.0,
+                                                                          12.0,
                                                                           0.0),
                                                                       child:
                                                                           Container(
@@ -2794,14 +3124,33 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                                 Colors.transparent,
                                                                             onTap:
                                                                                 () async {
-                                                                              context.pushNamed('CrearObservaciones');
+                                                                              var confirmDialogResponse = await showDialog<bool>(
+                                                                                    context: context,
+                                                                                    builder: (alertDialogContext) {
+                                                                                      return AlertDialog(
+                                                                                        title: const Text('Eliminar Observación'),
+                                                                                        content: const Text('¿Esta Seguro(@) de eliminar la observacion del estudiante?'),
+                                                                                        actions: [
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                            child: const Text('Cancelar'),
+                                                                                          ),
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                            child: const Text('Confirmar'),
+                                                                                          ),
+                                                                                        ],
+                                                                                      );
+                                                                                    },
+                                                                                  ) ??
+                                                                                  false;
                                                                             },
                                                                             child:
                                                                                 ClipRRect(
-                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                               child: Image.asset(
-                                                                                'assets/images/lapiz__2_-removebg-preview.png',
-                                                                                width: 306.0,
+                                                                                'assets/images/borrar_(1).png',
+                                                                                width: 300.0,
                                                                                 height: 200.0,
                                                                                 fit: BoxFit.contain,
                                                                               ),
@@ -2810,135 +3159,108 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                         ),
                                                                       ),
                                                                     ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                          Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .spaceBetween,
+                                                            children: [
+                                                              Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: [
+                                                                  Text(
+                                                                    'ronal estebanfigueroa mora',
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium,
                                                                   ),
-                                                                  Padding(
-                                                                    padding: const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            12.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Container(
-                                                                      width:
-                                                                          38.0,
-                                                                      height:
-                                                                          40.0,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                      ),
+                                                                ],
+                                                              ),
+                                                              Align(
+                                                                alignment:
+                                                                    const AlignmentDirectional(
+                                                                        0.0,
+                                                                        0.0),
+                                                                child: Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .spaceEvenly,
+                                                                  children: [
+                                                                    Align(
+                                                                      alignment:
+                                                                          const AlignmentDirectional(
+                                                                              0.0,
+                                                                              0.0),
                                                                       child:
-                                                                          Card(
-                                                                        clipBehavior:
-                                                                            Clip.antiAliasWithSaveLayer,
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                        elevation:
-                                                                            4.0,
-                                                                        shape:
-                                                                            RoundedRectangleBorder(
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(8.0),
-                                                                        ),
+                                                                          Padding(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            30.0,
+                                                                            0.0),
                                                                         child:
-                                                                            InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            var confirmDialogResponse = await showDialog<bool>(
-                                                                                  context: context,
-                                                                                  builder: (alertDialogContext) {
-                                                                                    return AlertDialog(
-                                                                                      title: const Text('Eliminar Observación'),
-                                                                                      content: const Text('¿Esta Seguro(@) de eliminar la observacion del estudiante?'),
-                                                                                      actions: [
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                          child: const Text('Cancelar'),
-                                                                                        ),
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                          child: const Text('Confirmar'),
-                                                                                        ),
-                                                                                      ],
-                                                                                    );
-                                                                                  },
-                                                                                ) ??
-                                                                                false;
-                                                                          },
+                                                                            Container(
+                                                                          width:
+                                                                              38.0,
+                                                                          height:
+                                                                              40.0,
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                          ),
                                                                           child:
-                                                                              ClipRRect(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(0.0),
+                                                                              Card(
+                                                                            clipBehavior:
+                                                                                Clip.antiAliasWithSaveLayer,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                            elevation:
+                                                                                4.0,
+                                                                            shape:
+                                                                                RoundedRectangleBorder(
+                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                            ),
                                                                             child:
-                                                                                Image.asset(
-                                                                              'assets/images/borrar_(1).png',
-                                                                              width: 300.0,
-                                                                              height: 200.0,
-                                                                              fit: BoxFit.contain,
+                                                                                InkWell(
+                                                                              splashColor: Colors.transparent,
+                                                                              focusColor: Colors.transparent,
+                                                                              hoverColor: Colors.transparent,
+                                                                              highlightColor: Colors.transparent,
+                                                                              onTap: () async {
+                                                                                context.pushNamed('CrearObservaciones');
+                                                                              },
+                                                                              child: ClipRRect(
+                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                                child: Image.asset(
+                                                                                  'assets/images/lapiz__2_-removebg-preview.png',
+                                                                                  width: 306.0,
+                                                                                  height: 200.0,
+                                                                                  fit: BoxFit.contain,
+                                                                                ),
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         ),
                                                                       ),
                                                                     ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                        Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .spaceBetween,
-                                                          children: [
-                                                            Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Text(
-                                                                  'ronal estebanfigueroa mora',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium,
-                                                                ),
-                                                              ],
-                                                            ),
-                                                            Align(
-                                                              alignment:
-                                                                  const AlignmentDirectional(
-                                                                      0.0, 0.0),
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .spaceEvenly,
-                                                                children: [
-                                                                  Align(
-                                                                    alignment:
-                                                                        const AlignmentDirectional(
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Padding(
+                                                                    Padding(
                                                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
-                                                                          30.0,
+                                                                          12.0,
                                                                           0.0),
                                                                       child:
                                                                           Container(
@@ -2976,14 +3298,33 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                                 Colors.transparent,
                                                                             onTap:
                                                                                 () async {
-                                                                              context.pushNamed('CrearObservaciones');
+                                                                              var confirmDialogResponse = await showDialog<bool>(
+                                                                                    context: context,
+                                                                                    builder: (alertDialogContext) {
+                                                                                      return AlertDialog(
+                                                                                        title: const Text('Eliminar Observación'),
+                                                                                        content: const Text('¿Esta Seguro(@) de eliminar la observacion del estudiante?'),
+                                                                                        actions: [
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                            child: const Text('Cancelar'),
+                                                                                          ),
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                            child: const Text('Confirmar'),
+                                                                                          ),
+                                                                                        ],
+                                                                                      );
+                                                                                    },
+                                                                                  ) ??
+                                                                                  false;
                                                                             },
                                                                             child:
                                                                                 ClipRRect(
-                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                               child: Image.asset(
-                                                                                'assets/images/lapiz__2_-removebg-preview.png',
-                                                                                width: 306.0,
+                                                                                'assets/images/borrar_(1).png',
+                                                                                width: 300.0,
                                                                                 height: 200.0,
                                                                                 fit: BoxFit.contain,
                                                                               ),
@@ -2992,135 +3333,108 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                         ),
                                                                       ),
                                                                     ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                          Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .spaceBetween,
+                                                            children: [
+                                                              Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: [
+                                                                  Text(
+                                                                    'ronal estebanfigueroa mora',
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium,
                                                                   ),
-                                                                  Padding(
-                                                                    padding: const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            12.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Container(
-                                                                      width:
-                                                                          38.0,
-                                                                      height:
-                                                                          40.0,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                      ),
+                                                                ],
+                                                              ),
+                                                              Align(
+                                                                alignment:
+                                                                    const AlignmentDirectional(
+                                                                        0.0,
+                                                                        0.0),
+                                                                child: Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .spaceEvenly,
+                                                                  children: [
+                                                                    Align(
+                                                                      alignment:
+                                                                          const AlignmentDirectional(
+                                                                              0.0,
+                                                                              0.0),
                                                                       child:
-                                                                          Card(
-                                                                        clipBehavior:
-                                                                            Clip.antiAliasWithSaveLayer,
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                        elevation:
-                                                                            4.0,
-                                                                        shape:
-                                                                            RoundedRectangleBorder(
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(8.0),
-                                                                        ),
+                                                                          Padding(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            30.0,
+                                                                            0.0),
                                                                         child:
-                                                                            InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            var confirmDialogResponse = await showDialog<bool>(
-                                                                                  context: context,
-                                                                                  builder: (alertDialogContext) {
-                                                                                    return AlertDialog(
-                                                                                      title: const Text('Eliminar Observación'),
-                                                                                      content: const Text('¿Esta Seguro(@) de eliminar la observacion del estudiante?'),
-                                                                                      actions: [
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                          child: const Text('Cancelar'),
-                                                                                        ),
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                          child: const Text('Confirmar'),
-                                                                                        ),
-                                                                                      ],
-                                                                                    );
-                                                                                  },
-                                                                                ) ??
-                                                                                false;
-                                                                          },
+                                                                            Container(
+                                                                          width:
+                                                                              38.0,
+                                                                          height:
+                                                                              40.0,
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                          ),
                                                                           child:
-                                                                              ClipRRect(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(0.0),
+                                                                              Card(
+                                                                            clipBehavior:
+                                                                                Clip.antiAliasWithSaveLayer,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                            elevation:
+                                                                                4.0,
+                                                                            shape:
+                                                                                RoundedRectangleBorder(
+                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                            ),
                                                                             child:
-                                                                                Image.asset(
-                                                                              'assets/images/borrar_(1).png',
-                                                                              width: 300.0,
-                                                                              height: 200.0,
-                                                                              fit: BoxFit.contain,
+                                                                                InkWell(
+                                                                              splashColor: Colors.transparent,
+                                                                              focusColor: Colors.transparent,
+                                                                              hoverColor: Colors.transparent,
+                                                                              highlightColor: Colors.transparent,
+                                                                              onTap: () async {
+                                                                                context.pushNamed('CrearObservaciones');
+                                                                              },
+                                                                              child: ClipRRect(
+                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                                child: Image.asset(
+                                                                                  'assets/images/lapiz__2_-removebg-preview.png',
+                                                                                  width: 306.0,
+                                                                                  height: 200.0,
+                                                                                  fit: BoxFit.contain,
+                                                                                ),
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         ),
                                                                       ),
                                                                     ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                        Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .spaceBetween,
-                                                          children: [
-                                                            Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Text(
-                                                                  'ronal ',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium,
-                                                                ),
-                                                              ],
-                                                            ),
-                                                            Align(
-                                                              alignment:
-                                                                  const AlignmentDirectional(
-                                                                      0.0, 0.0),
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .spaceEvenly,
-                                                                children: [
-                                                                  Align(
-                                                                    alignment:
-                                                                        const AlignmentDirectional(
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Padding(
+                                                                    Padding(
                                                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
-                                                                          30.0,
+                                                                          12.0,
                                                                           0.0),
                                                                       child:
                                                                           Container(
@@ -3158,14 +3472,33 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                                 Colors.transparent,
                                                                             onTap:
                                                                                 () async {
-                                                                              context.pushNamed('CrearObservaciones');
+                                                                              var confirmDialogResponse = await showDialog<bool>(
+                                                                                    context: context,
+                                                                                    builder: (alertDialogContext) {
+                                                                                      return AlertDialog(
+                                                                                        title: const Text('Eliminar Observación'),
+                                                                                        content: const Text('¿Esta Seguro(@) de eliminar la observacion del estudiante?'),
+                                                                                        actions: [
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                            child: const Text('Cancelar'),
+                                                                                          ),
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                            child: const Text('Confirmar'),
+                                                                                          ),
+                                                                                        ],
+                                                                                      );
+                                                                                    },
+                                                                                  ) ??
+                                                                                  false;
                                                                             },
                                                                             child:
                                                                                 ClipRRect(
-                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                               child: Image.asset(
-                                                                                'assets/images/lapiz__2_-removebg-preview.png',
-                                                                                width: 306.0,
+                                                                                'assets/images/borrar_(1).png',
+                                                                                width: 300.0,
                                                                                 height: 200.0,
                                                                                 fit: BoxFit.contain,
                                                                               ),
@@ -3174,135 +3507,108 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                         ),
                                                                       ),
                                                                     ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                          Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .spaceBetween,
+                                                            children: [
+                                                              Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: [
+                                                                  Text(
+                                                                    'ronal estebanfigueroa mora',
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium,
                                                                   ),
-                                                                  Padding(
-                                                                    padding: const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            12.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Container(
-                                                                      width:
-                                                                          38.0,
-                                                                      height:
-                                                                          40.0,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                      ),
+                                                                ],
+                                                              ),
+                                                              Align(
+                                                                alignment:
+                                                                    const AlignmentDirectional(
+                                                                        0.0,
+                                                                        0.0),
+                                                                child: Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .spaceEvenly,
+                                                                  children: [
+                                                                    Align(
+                                                                      alignment:
+                                                                          const AlignmentDirectional(
+                                                                              0.0,
+                                                                              0.0),
                                                                       child:
-                                                                          Card(
-                                                                        clipBehavior:
-                                                                            Clip.antiAliasWithSaveLayer,
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                        elevation:
-                                                                            4.0,
-                                                                        shape:
-                                                                            RoundedRectangleBorder(
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(8.0),
-                                                                        ),
+                                                                          Padding(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            30.0,
+                                                                            0.0),
                                                                         child:
-                                                                            InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            var confirmDialogResponse = await showDialog<bool>(
-                                                                                  context: context,
-                                                                                  builder: (alertDialogContext) {
-                                                                                    return AlertDialog(
-                                                                                      title: const Text('Eliminar Observación'),
-                                                                                      content: const Text('¿Esta Seguro(@) de eliminar la observacion del estudiante?'),
-                                                                                      actions: [
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                          child: const Text('Cancelar'),
-                                                                                        ),
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                          child: const Text('Confirmar'),
-                                                                                        ),
-                                                                                      ],
-                                                                                    );
-                                                                                  },
-                                                                                ) ??
-                                                                                false;
-                                                                          },
+                                                                            Container(
+                                                                          width:
+                                                                              38.0,
+                                                                          height:
+                                                                              40.0,
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                          ),
                                                                           child:
-                                                                              ClipRRect(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(0.0),
+                                                                              Card(
+                                                                            clipBehavior:
+                                                                                Clip.antiAliasWithSaveLayer,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                            elevation:
+                                                                                4.0,
+                                                                            shape:
+                                                                                RoundedRectangleBorder(
+                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                            ),
                                                                             child:
-                                                                                Image.asset(
-                                                                              'assets/images/borrar_(1).png',
-                                                                              width: 300.0,
-                                                                              height: 200.0,
-                                                                              fit: BoxFit.contain,
+                                                                                InkWell(
+                                                                              splashColor: Colors.transparent,
+                                                                              focusColor: Colors.transparent,
+                                                                              hoverColor: Colors.transparent,
+                                                                              highlightColor: Colors.transparent,
+                                                                              onTap: () async {
+                                                                                context.pushNamed('CrearObservaciones');
+                                                                              },
+                                                                              child: ClipRRect(
+                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                                child: Image.asset(
+                                                                                  'assets/images/lapiz__2_-removebg-preview.png',
+                                                                                  width: 306.0,
+                                                                                  height: 200.0,
+                                                                                  fit: BoxFit.contain,
+                                                                                ),
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         ),
                                                                       ),
                                                                     ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                        Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .spaceBetween,
-                                                          children: [
-                                                            Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Text(
-                                                                  'ronal estebanfigueroa mora',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium,
-                                                                ),
-                                                              ],
-                                                            ),
-                                                            Align(
-                                                              alignment:
-                                                                  const AlignmentDirectional(
-                                                                      0.0, 0.0),
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .spaceEvenly,
-                                                                children: [
-                                                                  Align(
-                                                                    alignment:
-                                                                        const AlignmentDirectional(
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Padding(
+                                                                    Padding(
                                                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
-                                                                          30.0,
+                                                                          12.0,
                                                                           0.0),
                                                                       child:
                                                                           Container(
@@ -3340,14 +3646,33 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                                 Colors.transparent,
                                                                             onTap:
                                                                                 () async {
-                                                                              context.pushNamed('CrearObservaciones');
+                                                                              var confirmDialogResponse = await showDialog<bool>(
+                                                                                    context: context,
+                                                                                    builder: (alertDialogContext) {
+                                                                                      return AlertDialog(
+                                                                                        title: const Text('Eliminar Observación'),
+                                                                                        content: const Text('¿Esta Seguro(@) de eliminar la observacion del estudiante?'),
+                                                                                        actions: [
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                            child: const Text('Cancelar'),
+                                                                                          ),
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                            child: const Text('Confirmar'),
+                                                                                          ),
+                                                                                        ],
+                                                                                      );
+                                                                                    },
+                                                                                  ) ??
+                                                                                  false;
                                                                             },
                                                                             child:
                                                                                 ClipRRect(
-                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                               child: Image.asset(
-                                                                                'assets/images/lapiz__2_-removebg-preview.png',
-                                                                                width: 306.0,
+                                                                                'assets/images/borrar_(1).png',
+                                                                                width: 300.0,
                                                                                 height: 200.0,
                                                                                 fit: BoxFit.contain,
                                                                               ),
@@ -3356,135 +3681,108 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                         ),
                                                                       ),
                                                                     ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                          Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .spaceBetween,
+                                                            children: [
+                                                              Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: [
+                                                                  Text(
+                                                                    'ronal estebanfigueroa mora',
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium,
                                                                   ),
-                                                                  Padding(
-                                                                    padding: const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            12.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Container(
-                                                                      width:
-                                                                          38.0,
-                                                                      height:
-                                                                          40.0,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                      ),
+                                                                ],
+                                                              ),
+                                                              Align(
+                                                                alignment:
+                                                                    const AlignmentDirectional(
+                                                                        0.0,
+                                                                        0.0),
+                                                                child: Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .spaceEvenly,
+                                                                  children: [
+                                                                    Align(
+                                                                      alignment:
+                                                                          const AlignmentDirectional(
+                                                                              0.0,
+                                                                              0.0),
                                                                       child:
-                                                                          Card(
-                                                                        clipBehavior:
-                                                                            Clip.antiAliasWithSaveLayer,
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                        elevation:
-                                                                            4.0,
-                                                                        shape:
-                                                                            RoundedRectangleBorder(
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(8.0),
-                                                                        ),
+                                                                          Padding(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            30.0,
+                                                                            0.0),
                                                                         child:
-                                                                            InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            var confirmDialogResponse = await showDialog<bool>(
-                                                                                  context: context,
-                                                                                  builder: (alertDialogContext) {
-                                                                                    return AlertDialog(
-                                                                                      title: const Text('Eliminar Observación'),
-                                                                                      content: const Text('¿Esta Seguro(@) de eliminar la observacion del estudiante?'),
-                                                                                      actions: [
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                          child: const Text('Cancelar'),
-                                                                                        ),
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                          child: const Text('Confirmar'),
-                                                                                        ),
-                                                                                      ],
-                                                                                    );
-                                                                                  },
-                                                                                ) ??
-                                                                                false;
-                                                                          },
+                                                                            Container(
+                                                                          width:
+                                                                              38.0,
+                                                                          height:
+                                                                              40.0,
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                          ),
                                                                           child:
-                                                                              ClipRRect(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(0.0),
+                                                                              Card(
+                                                                            clipBehavior:
+                                                                                Clip.antiAliasWithSaveLayer,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                            elevation:
+                                                                                4.0,
+                                                                            shape:
+                                                                                RoundedRectangleBorder(
+                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                            ),
                                                                             child:
-                                                                                Image.asset(
-                                                                              'assets/images/borrar_(1).png',
-                                                                              width: 300.0,
-                                                                              height: 200.0,
-                                                                              fit: BoxFit.contain,
+                                                                                InkWell(
+                                                                              splashColor: Colors.transparent,
+                                                                              focusColor: Colors.transparent,
+                                                                              hoverColor: Colors.transparent,
+                                                                              highlightColor: Colors.transparent,
+                                                                              onTap: () async {
+                                                                                context.pushNamed('CrearObservaciones');
+                                                                              },
+                                                                              child: ClipRRect(
+                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                                child: Image.asset(
+                                                                                  'assets/images/lapiz__2_-removebg-preview.png',
+                                                                                  width: 306.0,
+                                                                                  height: 200.0,
+                                                                                  fit: BoxFit.contain,
+                                                                                ),
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         ),
                                                                       ),
                                                                     ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                        Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .spaceBetween,
-                                                          children: [
-                                                            Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Text(
-                                                                  'ronal estebanfigueroa mora',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium,
-                                                                ),
-                                                              ],
-                                                            ),
-                                                            Align(
-                                                              alignment:
-                                                                  const AlignmentDirectional(
-                                                                      0.0, 0.0),
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .spaceEvenly,
-                                                                children: [
-                                                                  Align(
-                                                                    alignment:
-                                                                        const AlignmentDirectional(
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Padding(
+                                                                    Padding(
                                                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
-                                                                          30.0,
+                                                                          12.0,
                                                                           0.0),
                                                                       child:
                                                                           Container(
@@ -3522,14 +3820,33 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                                 Colors.transparent,
                                                                             onTap:
                                                                                 () async {
-                                                                              context.pushNamed('CrearObservaciones');
+                                                                              var confirmDialogResponse = await showDialog<bool>(
+                                                                                    context: context,
+                                                                                    builder: (alertDialogContext) {
+                                                                                      return AlertDialog(
+                                                                                        title: const Text('Eliminar Observación'),
+                                                                                        content: const Text('¿Esta Seguro(@) de eliminar la observacion del estudiante?'),
+                                                                                        actions: [
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                            child: const Text('Cancelar'),
+                                                                                          ),
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                            child: const Text('Confirmar'),
+                                                                                          ),
+                                                                                        ],
+                                                                                      );
+                                                                                    },
+                                                                                  ) ??
+                                                                                  false;
                                                                             },
                                                                             child:
                                                                                 ClipRRect(
-                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                               child: Image.asset(
-                                                                                'assets/images/lapiz__2_-removebg-preview.png',
-                                                                                width: 306.0,
+                                                                                'assets/images/borrar_(1).png',
+                                                                                width: 300.0,
                                                                                 height: 200.0,
                                                                                 fit: BoxFit.contain,
                                                                               ),
@@ -3538,135 +3855,108 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                         ),
                                                                       ),
                                                                     ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                          Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .spaceBetween,
+                                                            children: [
+                                                              Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: [
+                                                                  Text(
+                                                                    'ronal estebanfigueroa mora',
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium,
                                                                   ),
-                                                                  Padding(
-                                                                    padding: const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            12.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Container(
-                                                                      width:
-                                                                          38.0,
-                                                                      height:
-                                                                          40.0,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                      ),
+                                                                ],
+                                                              ),
+                                                              Align(
+                                                                alignment:
+                                                                    const AlignmentDirectional(
+                                                                        0.0,
+                                                                        0.0),
+                                                                child: Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .spaceEvenly,
+                                                                  children: [
+                                                                    Align(
+                                                                      alignment:
+                                                                          const AlignmentDirectional(
+                                                                              0.0,
+                                                                              0.0),
                                                                       child:
-                                                                          Card(
-                                                                        clipBehavior:
-                                                                            Clip.antiAliasWithSaveLayer,
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                        elevation:
-                                                                            4.0,
-                                                                        shape:
-                                                                            RoundedRectangleBorder(
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(8.0),
-                                                                        ),
+                                                                          Padding(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            30.0,
+                                                                            0.0),
                                                                         child:
-                                                                            InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            var confirmDialogResponse = await showDialog<bool>(
-                                                                                  context: context,
-                                                                                  builder: (alertDialogContext) {
-                                                                                    return AlertDialog(
-                                                                                      title: const Text('Eliminar Observación'),
-                                                                                      content: const Text('¿Esta Seguro(@) de eliminar la observacion del estudiante?'),
-                                                                                      actions: [
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                          child: const Text('Cancelar'),
-                                                                                        ),
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                          child: const Text('Confirmar'),
-                                                                                        ),
-                                                                                      ],
-                                                                                    );
-                                                                                  },
-                                                                                ) ??
-                                                                                false;
-                                                                          },
+                                                                            Container(
+                                                                          width:
+                                                                              38.0,
+                                                                          height:
+                                                                              40.0,
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                          ),
                                                                           child:
-                                                                              ClipRRect(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(0.0),
+                                                                              Card(
+                                                                            clipBehavior:
+                                                                                Clip.antiAliasWithSaveLayer,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                            elevation:
+                                                                                4.0,
+                                                                            shape:
+                                                                                RoundedRectangleBorder(
+                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                            ),
                                                                             child:
-                                                                                Image.asset(
-                                                                              'assets/images/borrar_(1).png',
-                                                                              width: 300.0,
-                                                                              height: 200.0,
-                                                                              fit: BoxFit.contain,
+                                                                                InkWell(
+                                                                              splashColor: Colors.transparent,
+                                                                              focusColor: Colors.transparent,
+                                                                              hoverColor: Colors.transparent,
+                                                                              highlightColor: Colors.transparent,
+                                                                              onTap: () async {
+                                                                                context.pushNamed('CrearObservaciones');
+                                                                              },
+                                                                              child: ClipRRect(
+                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                                child: Image.asset(
+                                                                                  'assets/images/lapiz__2_-removebg-preview.png',
+                                                                                  width: 306.0,
+                                                                                  height: 200.0,
+                                                                                  fit: BoxFit.contain,
+                                                                                ),
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         ),
                                                                       ),
                                                                     ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                        Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .spaceBetween,
-                                                          children: [
-                                                            Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Text(
-                                                                  'ronal estebanfigueroa mora',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium,
-                                                                ),
-                                                              ],
-                                                            ),
-                                                            Align(
-                                                              alignment:
-                                                                  const AlignmentDirectional(
-                                                                      0.0, 0.0),
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .spaceEvenly,
-                                                                children: [
-                                                                  Align(
-                                                                    alignment:
-                                                                        const AlignmentDirectional(
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Padding(
+                                                                    Padding(
                                                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
-                                                                          30.0,
+                                                                          12.0,
                                                                           0.0),
                                                                       child:
                                                                           Container(
@@ -3704,14 +3994,33 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                                 Colors.transparent,
                                                                             onTap:
                                                                                 () async {
-                                                                              context.pushNamed('CrearObservaciones');
+                                                                              var confirmDialogResponse = await showDialog<bool>(
+                                                                                    context: context,
+                                                                                    builder: (alertDialogContext) {
+                                                                                      return AlertDialog(
+                                                                                        title: const Text('Eliminar Observación'),
+                                                                                        content: const Text('¿Esta Seguro(@) de eliminar la observacion del estudiante?'),
+                                                                                        actions: [
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                            child: const Text('Cancelar'),
+                                                                                          ),
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                            child: const Text('Confirmar'),
+                                                                                          ),
+                                                                                        ],
+                                                                                      );
+                                                                                    },
+                                                                                  ) ??
+                                                                                  false;
                                                                             },
                                                                             child:
                                                                                 ClipRRect(
-                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                               child: Image.asset(
-                                                                                'assets/images/lapiz__2_-removebg-preview.png',
-                                                                                width: 306.0,
+                                                                                'assets/images/borrar_(1).png',
+                                                                                width: 300.0,
                                                                                 height: 200.0,
                                                                                 fit: BoxFit.contain,
                                                                               ),
@@ -3720,135 +4029,108 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                         ),
                                                                       ),
                                                                     ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                          Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .spaceBetween,
+                                                            children: [
+                                                              Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: [
+                                                                  Text(
+                                                                    'ronal esteba',
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium,
                                                                   ),
-                                                                  Padding(
-                                                                    padding: const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            12.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Container(
-                                                                      width:
-                                                                          38.0,
-                                                                      height:
-                                                                          40.0,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                      ),
+                                                                ],
+                                                              ),
+                                                              Align(
+                                                                alignment:
+                                                                    const AlignmentDirectional(
+                                                                        0.0,
+                                                                        0.0),
+                                                                child: Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .spaceEvenly,
+                                                                  children: [
+                                                                    Align(
+                                                                      alignment:
+                                                                          const AlignmentDirectional(
+                                                                              0.0,
+                                                                              0.0),
                                                                       child:
-                                                                          Card(
-                                                                        clipBehavior:
-                                                                            Clip.antiAliasWithSaveLayer,
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                        elevation:
-                                                                            4.0,
-                                                                        shape:
-                                                                            RoundedRectangleBorder(
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(8.0),
-                                                                        ),
+                                                                          Padding(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            30.0,
+                                                                            0.0),
                                                                         child:
-                                                                            InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            var confirmDialogResponse = await showDialog<bool>(
-                                                                                  context: context,
-                                                                                  builder: (alertDialogContext) {
-                                                                                    return AlertDialog(
-                                                                                      title: const Text('Eliminar Observación'),
-                                                                                      content: const Text('¿Esta Seguro(@) de eliminar la observacion del estudiante?'),
-                                                                                      actions: [
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                          child: const Text('Cancelar'),
-                                                                                        ),
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                          child: const Text('Confirmar'),
-                                                                                        ),
-                                                                                      ],
-                                                                                    );
-                                                                                  },
-                                                                                ) ??
-                                                                                false;
-                                                                          },
+                                                                            Container(
+                                                                          width:
+                                                                              38.0,
+                                                                          height:
+                                                                              40.0,
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                          ),
                                                                           child:
-                                                                              ClipRRect(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(0.0),
+                                                                              Card(
+                                                                            clipBehavior:
+                                                                                Clip.antiAliasWithSaveLayer,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                            elevation:
+                                                                                4.0,
+                                                                            shape:
+                                                                                RoundedRectangleBorder(
+                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                            ),
                                                                             child:
-                                                                                Image.asset(
-                                                                              'assets/images/borrar_(1).png',
-                                                                              width: 300.0,
-                                                                              height: 200.0,
-                                                                              fit: BoxFit.contain,
+                                                                                InkWell(
+                                                                              splashColor: Colors.transparent,
+                                                                              focusColor: Colors.transparent,
+                                                                              hoverColor: Colors.transparent,
+                                                                              highlightColor: Colors.transparent,
+                                                                              onTap: () async {
+                                                                                context.pushNamed('CrearObservaciones');
+                                                                              },
+                                                                              child: ClipRRect(
+                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                                child: Image.asset(
+                                                                                  'assets/images/lapiz__2_-removebg-preview.png',
+                                                                                  width: 306.0,
+                                                                                  height: 200.0,
+                                                                                  fit: BoxFit.contain,
+                                                                                ),
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         ),
                                                                       ),
                                                                     ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                        Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .spaceBetween,
-                                                          children: [
-                                                            Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Text(
-                                                                  'ronal estebanfigueroa mora',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium,
-                                                                ),
-                                                              ],
-                                                            ),
-                                                            Align(
-                                                              alignment:
-                                                                  const AlignmentDirectional(
-                                                                      0.0, 0.0),
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .spaceEvenly,
-                                                                children: [
-                                                                  Align(
-                                                                    alignment:
-                                                                        const AlignmentDirectional(
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Padding(
+                                                                    Padding(
                                                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
-                                                                          30.0,
+                                                                          12.0,
                                                                           0.0),
                                                                       child:
                                                                           Container(
@@ -3886,14 +4168,33 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                                 Colors.transparent,
                                                                             onTap:
                                                                                 () async {
-                                                                              context.pushNamed('CrearObservaciones');
+                                                                              var confirmDialogResponse = await showDialog<bool>(
+                                                                                    context: context,
+                                                                                    builder: (alertDialogContext) {
+                                                                                      return AlertDialog(
+                                                                                        title: const Text('Eliminar Observación'),
+                                                                                        content: const Text('¿Esta Seguro(@) de eliminar la observacion del estudiante?'),
+                                                                                        actions: [
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                            child: const Text('Cancelar'),
+                                                                                          ),
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                            child: const Text('Confirmar'),
+                                                                                          ),
+                                                                                        ],
+                                                                                      );
+                                                                                    },
+                                                                                  ) ??
+                                                                                  false;
                                                                             },
                                                                             child:
                                                                                 ClipRRect(
-                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                               child: Image.asset(
-                                                                                'assets/images/lapiz__2_-removebg-preview.png',
-                                                                                width: 306.0,
+                                                                                'assets/images/borrar_(1).png',
+                                                                                width: 300.0,
                                                                                 height: 200.0,
                                                                                 fit: BoxFit.contain,
                                                                               ),
@@ -3902,135 +4203,108 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                         ),
                                                                       ),
                                                                     ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                          Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .spaceBetween,
+                                                            children: [
+                                                              Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: [
+                                                                  Text(
+                                                                    'ronal estebanfigueroa mora',
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium,
                                                                   ),
-                                                                  Padding(
-                                                                    padding: const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            12.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Container(
-                                                                      width:
-                                                                          38.0,
-                                                                      height:
-                                                                          40.0,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                      ),
+                                                                ],
+                                                              ),
+                                                              Align(
+                                                                alignment:
+                                                                    const AlignmentDirectional(
+                                                                        0.0,
+                                                                        0.0),
+                                                                child: Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .spaceEvenly,
+                                                                  children: [
+                                                                    Align(
+                                                                      alignment:
+                                                                          const AlignmentDirectional(
+                                                                              0.0,
+                                                                              0.0),
                                                                       child:
-                                                                          Card(
-                                                                        clipBehavior:
-                                                                            Clip.antiAliasWithSaveLayer,
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                        elevation:
-                                                                            4.0,
-                                                                        shape:
-                                                                            RoundedRectangleBorder(
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(8.0),
-                                                                        ),
+                                                                          Padding(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            30.0,
+                                                                            0.0),
                                                                         child:
-                                                                            InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            var confirmDialogResponse = await showDialog<bool>(
-                                                                                  context: context,
-                                                                                  builder: (alertDialogContext) {
-                                                                                    return AlertDialog(
-                                                                                      title: const Text('Eliminar Observación'),
-                                                                                      content: const Text('¿Esta Seguro(@) de eliminar la observacion del estudiante?'),
-                                                                                      actions: [
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                          child: const Text('Cancelar'),
-                                                                                        ),
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                          child: const Text('Confirmar'),
-                                                                                        ),
-                                                                                      ],
-                                                                                    );
-                                                                                  },
-                                                                                ) ??
-                                                                                false;
-                                                                          },
+                                                                            Container(
+                                                                          width:
+                                                                              38.0,
+                                                                          height:
+                                                                              40.0,
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                          ),
                                                                           child:
-                                                                              ClipRRect(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(0.0),
+                                                                              Card(
+                                                                            clipBehavior:
+                                                                                Clip.antiAliasWithSaveLayer,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                            elevation:
+                                                                                4.0,
+                                                                            shape:
+                                                                                RoundedRectangleBorder(
+                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                            ),
                                                                             child:
-                                                                                Image.asset(
-                                                                              'assets/images/borrar_(1).png',
-                                                                              width: 300.0,
-                                                                              height: 200.0,
-                                                                              fit: BoxFit.contain,
+                                                                                InkWell(
+                                                                              splashColor: Colors.transparent,
+                                                                              focusColor: Colors.transparent,
+                                                                              hoverColor: Colors.transparent,
+                                                                              highlightColor: Colors.transparent,
+                                                                              onTap: () async {
+                                                                                context.pushNamed('CrearObservaciones');
+                                                                              },
+                                                                              child: ClipRRect(
+                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                                child: Image.asset(
+                                                                                  'assets/images/lapiz__2_-removebg-preview.png',
+                                                                                  width: 306.0,
+                                                                                  height: 200.0,
+                                                                                  fit: BoxFit.contain,
+                                                                                ),
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         ),
                                                                       ),
                                                                     ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                        Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .spaceBetween,
-                                                          children: [
-                                                            Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Text(
-                                                                  'ronal estebanfigueroa mora',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium,
-                                                                ),
-                                                              ],
-                                                            ),
-                                                            Align(
-                                                              alignment:
-                                                                  const AlignmentDirectional(
-                                                                      0.0, 0.0),
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .spaceEvenly,
-                                                                children: [
-                                                                  Align(
-                                                                    alignment:
-                                                                        const AlignmentDirectional(
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Padding(
+                                                                    Padding(
                                                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
-                                                                          30.0,
+                                                                          12.0,
                                                                           0.0),
                                                                       child:
                                                                           Container(
@@ -4068,14 +4342,33 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                                 Colors.transparent,
                                                                             onTap:
                                                                                 () async {
-                                                                              context.pushNamed('CrearObservaciones');
+                                                                              var confirmDialogResponse = await showDialog<bool>(
+                                                                                    context: context,
+                                                                                    builder: (alertDialogContext) {
+                                                                                      return AlertDialog(
+                                                                                        title: const Text('Eliminar Observación'),
+                                                                                        content: const Text('¿Esta Seguro(@) de eliminar la observacion del estudiante?'),
+                                                                                        actions: [
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                            child: const Text('Cancelar'),
+                                                                                          ),
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                            child: const Text('Confirmar'),
+                                                                                          ),
+                                                                                        ],
+                                                                                      );
+                                                                                    },
+                                                                                  ) ??
+                                                                                  false;
                                                                             },
                                                                             child:
                                                                                 ClipRRect(
-                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                               child: Image.asset(
-                                                                                'assets/images/lapiz__2_-removebg-preview.png',
-                                                                                width: 306.0,
+                                                                                'assets/images/borrar_(1).png',
+                                                                                width: 300.0,
                                                                                 height: 200.0,
                                                                                 fit: BoxFit.contain,
                                                                               ),
@@ -4084,135 +4377,108 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                         ),
                                                                       ),
                                                                     ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                          Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .spaceBetween,
+                                                            children: [
+                                                              Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: [
+                                                                  Text(
+                                                                    'ronal estebanfigueroa mora',
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium,
                                                                   ),
-                                                                  Padding(
-                                                                    padding: const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            12.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Container(
-                                                                      width:
-                                                                          38.0,
-                                                                      height:
-                                                                          40.0,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                      ),
+                                                                ],
+                                                              ),
+                                                              Align(
+                                                                alignment:
+                                                                    const AlignmentDirectional(
+                                                                        0.0,
+                                                                        0.0),
+                                                                child: Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .spaceEvenly,
+                                                                  children: [
+                                                                    Align(
+                                                                      alignment:
+                                                                          const AlignmentDirectional(
+                                                                              0.0,
+                                                                              0.0),
                                                                       child:
-                                                                          Card(
-                                                                        clipBehavior:
-                                                                            Clip.antiAliasWithSaveLayer,
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                        elevation:
-                                                                            4.0,
-                                                                        shape:
-                                                                            RoundedRectangleBorder(
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(8.0),
-                                                                        ),
+                                                                          Padding(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            30.0,
+                                                                            0.0),
                                                                         child:
-                                                                            InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            var confirmDialogResponse = await showDialog<bool>(
-                                                                                  context: context,
-                                                                                  builder: (alertDialogContext) {
-                                                                                    return AlertDialog(
-                                                                                      title: const Text('Eliminar Observación'),
-                                                                                      content: const Text('¿Esta Seguro(@) de eliminar la observacion del estudiante?'),
-                                                                                      actions: [
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                          child: const Text('Cancelar'),
-                                                                                        ),
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                          child: const Text('Confirmar'),
-                                                                                        ),
-                                                                                      ],
-                                                                                    );
-                                                                                  },
-                                                                                ) ??
-                                                                                false;
-                                                                          },
+                                                                            Container(
+                                                                          width:
+                                                                              38.0,
+                                                                          height:
+                                                                              40.0,
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                          ),
                                                                           child:
-                                                                              ClipRRect(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(0.0),
+                                                                              Card(
+                                                                            clipBehavior:
+                                                                                Clip.antiAliasWithSaveLayer,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                            elevation:
+                                                                                4.0,
+                                                                            shape:
+                                                                                RoundedRectangleBorder(
+                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                            ),
                                                                             child:
-                                                                                Image.asset(
-                                                                              'assets/images/borrar_(1).png',
-                                                                              width: 300.0,
-                                                                              height: 200.0,
-                                                                              fit: BoxFit.contain,
+                                                                                InkWell(
+                                                                              splashColor: Colors.transparent,
+                                                                              focusColor: Colors.transparent,
+                                                                              hoverColor: Colors.transparent,
+                                                                              highlightColor: Colors.transparent,
+                                                                              onTap: () async {
+                                                                                context.pushNamed('CrearObservaciones');
+                                                                              },
+                                                                              child: ClipRRect(
+                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                                child: Image.asset(
+                                                                                  'assets/images/lapiz__2_-removebg-preview.png',
+                                                                                  width: 306.0,
+                                                                                  height: 200.0,
+                                                                                  fit: BoxFit.contain,
+                                                                                ),
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         ),
                                                                       ),
                                                                     ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                        Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .spaceBetween,
-                                                          children: [
-                                                            Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Text(
-                                                                  'ronal esteba',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium,
-                                                                ),
-                                                              ],
-                                                            ),
-                                                            Align(
-                                                              alignment:
-                                                                  const AlignmentDirectional(
-                                                                      0.0, 0.0),
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .spaceEvenly,
-                                                                children: [
-                                                                  Align(
-                                                                    alignment:
-                                                                        const AlignmentDirectional(
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Padding(
+                                                                    Padding(
                                                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
-                                                                          30.0,
+                                                                          12.0,
                                                                           0.0),
                                                                       child:
                                                                           Container(
@@ -4250,14 +4516,33 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                                 Colors.transparent,
                                                                             onTap:
                                                                                 () async {
-                                                                              context.pushNamed('CrearObservaciones');
+                                                                              var confirmDialogResponse = await showDialog<bool>(
+                                                                                    context: context,
+                                                                                    builder: (alertDialogContext) {
+                                                                                      return AlertDialog(
+                                                                                        title: const Text('Eliminar Observación'),
+                                                                                        content: const Text('¿Esta Seguro(@) de eliminar la observacion del estudiante?'),
+                                                                                        actions: [
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                            child: const Text('Cancelar'),
+                                                                                          ),
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                            child: const Text('Confirmar'),
+                                                                                          ),
+                                                                                        ],
+                                                                                      );
+                                                                                    },
+                                                                                  ) ??
+                                                                                  false;
                                                                             },
                                                                             child:
                                                                                 ClipRRect(
-                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                               child: Image.asset(
-                                                                                'assets/images/lapiz__2_-removebg-preview.png',
-                                                                                width: 306.0,
+                                                                                'assets/images/borrar_(1).png',
+                                                                                width: 300.0,
                                                                                 height: 200.0,
                                                                                 fit: BoxFit.contain,
                                                                               ),
@@ -4266,135 +4551,108 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                         ),
                                                                       ),
                                                                     ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                          Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .spaceBetween,
+                                                            children: [
+                                                              Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: [
+                                                                  Text(
+                                                                    'ronal estebanfigueroa mora',
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium,
                                                                   ),
-                                                                  Padding(
-                                                                    padding: const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            12.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Container(
-                                                                      width:
-                                                                          38.0,
-                                                                      height:
-                                                                          40.0,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                      ),
+                                                                ],
+                                                              ),
+                                                              Align(
+                                                                alignment:
+                                                                    const AlignmentDirectional(
+                                                                        0.0,
+                                                                        0.0),
+                                                                child: Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .spaceEvenly,
+                                                                  children: [
+                                                                    Align(
+                                                                      alignment:
+                                                                          const AlignmentDirectional(
+                                                                              0.0,
+                                                                              0.0),
                                                                       child:
-                                                                          Card(
-                                                                        clipBehavior:
-                                                                            Clip.antiAliasWithSaveLayer,
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                        elevation:
-                                                                            4.0,
-                                                                        shape:
-                                                                            RoundedRectangleBorder(
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(8.0),
-                                                                        ),
+                                                                          Padding(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            30.0,
+                                                                            0.0),
                                                                         child:
-                                                                            InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            var confirmDialogResponse = await showDialog<bool>(
-                                                                                  context: context,
-                                                                                  builder: (alertDialogContext) {
-                                                                                    return AlertDialog(
-                                                                                      title: const Text('Eliminar Observación'),
-                                                                                      content: const Text('¿Esta Seguro(@) de eliminar la observacion del estudiante?'),
-                                                                                      actions: [
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                          child: const Text('Cancelar'),
-                                                                                        ),
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                          child: const Text('Confirmar'),
-                                                                                        ),
-                                                                                      ],
-                                                                                    );
-                                                                                  },
-                                                                                ) ??
-                                                                                false;
-                                                                          },
+                                                                            Container(
+                                                                          width:
+                                                                              38.0,
+                                                                          height:
+                                                                              40.0,
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                          ),
                                                                           child:
-                                                                              ClipRRect(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(0.0),
+                                                                              Card(
+                                                                            clipBehavior:
+                                                                                Clip.antiAliasWithSaveLayer,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                            elevation:
+                                                                                4.0,
+                                                                            shape:
+                                                                                RoundedRectangleBorder(
+                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                            ),
                                                                             child:
-                                                                                Image.asset(
-                                                                              'assets/images/borrar_(1).png',
-                                                                              width: 300.0,
-                                                                              height: 200.0,
-                                                                              fit: BoxFit.contain,
+                                                                                InkWell(
+                                                                              splashColor: Colors.transparent,
+                                                                              focusColor: Colors.transparent,
+                                                                              hoverColor: Colors.transparent,
+                                                                              highlightColor: Colors.transparent,
+                                                                              onTap: () async {
+                                                                                context.pushNamed('CrearObservaciones');
+                                                                              },
+                                                                              child: ClipRRect(
+                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                                child: Image.asset(
+                                                                                  'assets/images/lapiz__2_-removebg-preview.png',
+                                                                                  width: 306.0,
+                                                                                  height: 200.0,
+                                                                                  fit: BoxFit.contain,
+                                                                                ),
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         ),
                                                                       ),
                                                                     ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                        Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .spaceBetween,
-                                                          children: [
-                                                            Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Text(
-                                                                  'ronal estebanfigueroa mora',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium,
-                                                                ),
-                                                              ],
-                                                            ),
-                                                            Align(
-                                                              alignment:
-                                                                  const AlignmentDirectional(
-                                                                      0.0, 0.0),
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .spaceEvenly,
-                                                                children: [
-                                                                  Align(
-                                                                    alignment:
-                                                                        const AlignmentDirectional(
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Padding(
+                                                                    Padding(
                                                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
-                                                                          30.0,
+                                                                          12.0,
                                                                           0.0),
                                                                       child:
                                                                           Container(
@@ -4432,14 +4690,33 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                                 Colors.transparent,
                                                                             onTap:
                                                                                 () async {
-                                                                              context.pushNamed('CrearObservaciones');
+                                                                              var confirmDialogResponse = await showDialog<bool>(
+                                                                                    context: context,
+                                                                                    builder: (alertDialogContext) {
+                                                                                      return AlertDialog(
+                                                                                        title: const Text('Eliminar Observación'),
+                                                                                        content: const Text('¿Esta Seguro(@) de eliminar la observacion del estudiante?'),
+                                                                                        actions: [
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                            child: const Text('Cancelar'),
+                                                                                          ),
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                            child: const Text('Confirmar'),
+                                                                                          ),
+                                                                                        ],
+                                                                                      );
+                                                                                    },
+                                                                                  ) ??
+                                                                                  false;
                                                                             },
                                                                             child:
                                                                                 ClipRRect(
-                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                               child: Image.asset(
-                                                                                'assets/images/lapiz__2_-removebg-preview.png',
-                                                                                width: 306.0,
+                                                                                'assets/images/borrar_(1).png',
+                                                                                width: 300.0,
                                                                                 height: 200.0,
                                                                                 fit: BoxFit.contain,
                                                                               ),
@@ -4448,457 +4725,13 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                         ),
                                                                       ),
                                                                     ),
-                                                                  ),
-                                                                  Padding(
-                                                                    padding: const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            12.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Container(
-                                                                      width:
-                                                                          38.0,
-                                                                      height:
-                                                                          40.0,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                      ),
-                                                                      child:
-                                                                          Card(
-                                                                        clipBehavior:
-                                                                            Clip.antiAliasWithSaveLayer,
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                        elevation:
-                                                                            4.0,
-                                                                        shape:
-                                                                            RoundedRectangleBorder(
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(8.0),
-                                                                        ),
-                                                                        child:
-                                                                            InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            var confirmDialogResponse = await showDialog<bool>(
-                                                                                  context: context,
-                                                                                  builder: (alertDialogContext) {
-                                                                                    return AlertDialog(
-                                                                                      title: const Text('Eliminar Observación'),
-                                                                                      content: const Text('¿Esta Seguro(@) de eliminar la observacion del estudiante?'),
-                                                                                      actions: [
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                          child: const Text('Cancelar'),
-                                                                                        ),
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                          child: const Text('Confirmar'),
-                                                                                        ),
-                                                                                      ],
-                                                                                    );
-                                                                                  },
-                                                                                ) ??
-                                                                                false;
-                                                                          },
-                                                                          child:
-                                                                              ClipRRect(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(0.0),
-                                                                            child:
-                                                                                Image.asset(
-                                                                              'assets/images/borrar_(1).png',
-                                                                              width: 300.0,
-                                                                              height: 200.0,
-                                                                              fit: BoxFit.contain,
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                        Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .spaceBetween,
-                                                          children: [
-                                                            Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Text(
-                                                                  'ronal estebanfigueroa mora',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium,
+                                                                  ],
                                                                 ),
-                                                              ],
-                                                            ),
-                                                            Align(
-                                                              alignment:
-                                                                  const AlignmentDirectional(
-                                                                      0.0, 0.0),
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .spaceEvenly,
-                                                                children: [
-                                                                  Align(
-                                                                    alignment:
-                                                                        const AlignmentDirectional(
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          30.0,
-                                                                          0.0),
-                                                                      child:
-                                                                          Container(
-                                                                        width:
-                                                                            38.0,
-                                                                        height:
-                                                                            40.0,
-                                                                        decoration:
-                                                                            BoxDecoration(
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).secondaryBackground,
-                                                                        ),
-                                                                        child:
-                                                                            Card(
-                                                                          clipBehavior:
-                                                                              Clip.antiAliasWithSaveLayer,
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).secondaryBackground,
-                                                                          elevation:
-                                                                              4.0,
-                                                                          shape:
-                                                                              RoundedRectangleBorder(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(8.0),
-                                                                          ),
-                                                                          child:
-                                                                              InkWell(
-                                                                            splashColor:
-                                                                                Colors.transparent,
-                                                                            focusColor:
-                                                                                Colors.transparent,
-                                                                            hoverColor:
-                                                                                Colors.transparent,
-                                                                            highlightColor:
-                                                                                Colors.transparent,
-                                                                            onTap:
-                                                                                () async {
-                                                                              context.pushNamed('CrearObservaciones');
-                                                                            },
-                                                                            child:
-                                                                                ClipRRect(
-                                                                              borderRadius: BorderRadius.circular(8.0),
-                                                                              child: Image.asset(
-                                                                                'assets/images/lapiz__2_-removebg-preview.png',
-                                                                                width: 306.0,
-                                                                                height: 200.0,
-                                                                                fit: BoxFit.contain,
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                  Padding(
-                                                                    padding: const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            12.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Container(
-                                                                      width:
-                                                                          38.0,
-                                                                      height:
-                                                                          40.0,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                      ),
-                                                                      child:
-                                                                          Card(
-                                                                        clipBehavior:
-                                                                            Clip.antiAliasWithSaveLayer,
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                        elevation:
-                                                                            4.0,
-                                                                        shape:
-                                                                            RoundedRectangleBorder(
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(8.0),
-                                                                        ),
-                                                                        child:
-                                                                            InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            var confirmDialogResponse = await showDialog<bool>(
-                                                                                  context: context,
-                                                                                  builder: (alertDialogContext) {
-                                                                                    return AlertDialog(
-                                                                                      title: const Text('Eliminar Observación'),
-                                                                                      content: const Text('¿Esta Seguro(@) de eliminar la observacion del estudiante?'),
-                                                                                      actions: [
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                          child: const Text('Cancelar'),
-                                                                                        ),
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                          child: const Text('Confirmar'),
-                                                                                        ),
-                                                                                      ],
-                                                                                    );
-                                                                                  },
-                                                                                ) ??
-                                                                                false;
-                                                                          },
-                                                                          child:
-                                                                              ClipRRect(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(0.0),
-                                                                            child:
-                                                                                Image.asset(
-                                                                              'assets/images/borrar_(1).png',
-                                                                              width: 300.0,
-                                                                              height: 200.0,
-                                                                              fit: BoxFit.contain,
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                ],
                                                               ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                        Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .spaceBetween,
-                                                          children: [
-                                                            Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Text(
-                                                                  'ronal estebanfigueroa mora',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium,
-                                                                ),
-                                                              ],
-                                                            ),
-                                                            Align(
-                                                              alignment:
-                                                                  const AlignmentDirectional(
-                                                                      0.0, 0.0),
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .spaceEvenly,
-                                                                children: [
-                                                                  Align(
-                                                                    alignment:
-                                                                        const AlignmentDirectional(
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          30.0,
-                                                                          0.0),
-                                                                      child:
-                                                                          Container(
-                                                                        width:
-                                                                            38.0,
-                                                                        height:
-                                                                            40.0,
-                                                                        decoration:
-                                                                            BoxDecoration(
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).secondaryBackground,
-                                                                        ),
-                                                                        child:
-                                                                            Card(
-                                                                          clipBehavior:
-                                                                              Clip.antiAliasWithSaveLayer,
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).secondaryBackground,
-                                                                          elevation:
-                                                                              4.0,
-                                                                          shape:
-                                                                              RoundedRectangleBorder(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(8.0),
-                                                                          ),
-                                                                          child:
-                                                                              InkWell(
-                                                                            splashColor:
-                                                                                Colors.transparent,
-                                                                            focusColor:
-                                                                                Colors.transparent,
-                                                                            hoverColor:
-                                                                                Colors.transparent,
-                                                                            highlightColor:
-                                                                                Colors.transparent,
-                                                                            onTap:
-                                                                                () async {
-                                                                              context.pushNamed('CrearObservaciones');
-                                                                            },
-                                                                            child:
-                                                                                ClipRRect(
-                                                                              borderRadius: BorderRadius.circular(8.0),
-                                                                              child: Image.asset(
-                                                                                'assets/images/lapiz__2_-removebg-preview.png',
-                                                                                width: 306.0,
-                                                                                height: 200.0,
-                                                                                fit: BoxFit.contain,
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                  Padding(
-                                                                    padding: const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            12.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Container(
-                                                                      width:
-                                                                          38.0,
-                                                                      height:
-                                                                          40.0,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                      ),
-                                                                      child:
-                                                                          Card(
-                                                                        clipBehavior:
-                                                                            Clip.antiAliasWithSaveLayer,
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                        elevation:
-                                                                            4.0,
-                                                                        shape:
-                                                                            RoundedRectangleBorder(
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(8.0),
-                                                                        ),
-                                                                        child:
-                                                                            InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            var confirmDialogResponse = await showDialog<bool>(
-                                                                                  context: context,
-                                                                                  builder: (alertDialogContext) {
-                                                                                    return AlertDialog(
-                                                                                      title: const Text('Eliminar Observación'),
-                                                                                      content: const Text('¿Esta Seguro(@) de eliminar la observacion del estudiante?'),
-                                                                                      actions: [
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                          child: const Text('Cancelar'),
-                                                                                        ),
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                          child: const Text('Confirmar'),
-                                                                                        ),
-                                                                                      ],
-                                                                                    );
-                                                                                  },
-                                                                                ) ??
-                                                                                false;
-                                                                          },
-                                                                          child:
-                                                                              ClipRRect(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(0.0),
-                                                                            child:
-                                                                                Image.asset(
-                                                                              'assets/images/borrar_(1).png',
-                                                                              width: 300.0,
-                                                                              height: 200.0,
-                                                                              fit: BoxFit.contain,
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                      ],
+                                                            ],
+                                                          ),
+                                                        ],
+                                                      ),
                                                     ),
                                                   ),
                                                 ),

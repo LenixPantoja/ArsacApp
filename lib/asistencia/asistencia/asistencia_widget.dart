@@ -2,6 +2,7 @@ import '/componentes/menu/menu_widget.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'asistencia_model.dart';
@@ -89,7 +90,7 @@ class _AsistenciaWidgetState extends State<AsistenciaWidget> {
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 Container(
-                                  width: 250.0,
+                                  width: 233.0,
                                   height: 73.0,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
@@ -117,7 +118,7 @@ class _AsistenciaWidgetState extends State<AsistenciaWidget> {
                                             options: const ['Option 1'],
                                             onChanged: (val) => setState(() =>
                                                 _model.dropDownValue1 = val),
-                                            width: 292.0,
+                                            width: 355.0,
                                             height: 53.0,
                                             textStyle:
                                                 FlutterFlowTheme.of(context)
@@ -145,63 +146,68 @@ class _AsistenciaWidgetState extends State<AsistenciaWidget> {
                                     ],
                                   ),
                                 ),
-                                Align(
-                                  alignment: const AlignmentDirectional(0.0, 1.0),
-                                  child: Container(
-                                    width: 130.0,
-                                    height: 74.0,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
-                                    ),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Expanded(
-                                          child: Card(
-                                            clipBehavior:
-                                                Clip.antiAliasWithSaveLayer,
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            elevation: 12.0,
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(8.0),
-                                            ),
-                                            child: FlutterFlowDropDown<String>(
-                                              controller: _model
-                                                      .dropDownValueController2 ??=
-                                                  FormFieldController<String>(
-                                                      null),
-                                              options: const ['Option 1'],
-                                              onChanged: (val) => setState(() =>
-                                                  _model.dropDownValue2 = val),
-                                              width: 292.0,
-                                              height: 43.0,
-                                              textStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium,
-                                              hintText: 'Grado',
-                                              fillColor:
+                                Expanded(
+                                  child: Align(
+                                    alignment: const AlignmentDirectional(0.0, 1.0),
+                                    child: Container(
+                                      width: 130.0,
+                                      height: 74.0,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                      ),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Expanded(
+                                            child: Card(
+                                              clipBehavior:
+                                                  Clip.antiAliasWithSaveLayer,
+                                              color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
-                                              elevation: 2.0,
-                                              borderColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .alternate,
-                                              borderWidth: 2.0,
-                                              borderRadius: 8.0,
-                                              margin: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      16.0, 4.0, 16.0, 4.0),
-                                              hidesUnderline: true,
-                                              isOverButton: true,
-                                              isSearchable: false,
-                                              isMultiSelect: false,
+                                              elevation: 12.0,
+                                              shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              child:
+                                                  FlutterFlowDropDown<String>(
+                                                controller: _model
+                                                        .dropDownValueController2 ??=
+                                                    FormFieldController<String>(
+                                                        null),
+                                                options: const ['Option 1'],
+                                                onChanged: (val) => setState(
+                                                    () => _model
+                                                        .dropDownValue2 = val),
+                                                width: 292.0,
+                                                height: 43.0,
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium,
+                                                hintText: 'Grado',
+                                                fillColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryBackground,
+                                                elevation: 2.0,
+                                                borderColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .alternate,
+                                                borderWidth: 2.0,
+                                                borderRadius: 8.0,
+                                                margin: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        16.0, 4.0, 16.0, 4.0),
+                                                hidesUnderline: true,
+                                                isOverButton: true,
+                                                isSearchable: false,
+                                                isMultiSelect: false,
+                                              ),
                                             ),
                                           ),
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -262,6 +268,37 @@ class _AsistenciaWidgetState extends State<AsistenciaWidget> {
                                 ),
                               ),
                             ],
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            0.0, 12.0, 0.0, 12.0),
+                        child: FFButtonWidget(
+                          onPressed: () {
+                            print('Button pressed ...');
+                          },
+                          text: 'Generar',
+                          options: FFButtonOptions(
+                            height: 40.0,
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                24.0, 0.0, 24.0, 0.0),
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            color: const Color(0xFF57E84E),
+                            textStyle: FlutterFlowTheme.of(context)
+                                .titleSmall
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                ),
+                            elevation: 3.0,
+                            borderSide: const BorderSide(
+                              color: Colors.transparent,
+                              width: 1.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
                           ),
                         ),
                       ),
@@ -3615,6 +3652,27 @@ class _AsistenciaWidgetState extends State<AsistenciaWidget> {
                                   ),
                                 ),
                               ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                        child: Container(
+                          width: 150.0,
+                          height: 50.0,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                          ),
+                          child: Card(
+                            clipBehavior: Clip.antiAliasWithSaveLayer,
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            elevation: 12.0,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(14.0),
                             ),
                           ),
                         ),
