@@ -580,6 +580,8 @@ class _ObservacionesWidgetState extends State<ObservacionesWidget> {
                                                                 0.0, 0.0),
                                                         child: Text(
                                                           'Lista De Observaciones Estudiante',
+                                                          textAlign:
+                                                              TextAlign.center,
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodyMedium

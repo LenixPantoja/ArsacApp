@@ -134,7 +134,7 @@ class _SeleccionarReporteWidgetState extends State<SeleccionarReporteWidget> {
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(8.0),
                                       child: SvgPicture.asset(
-                                        'assets/images/Reporte_(1).svg',
+                                        'assets/images/Reporte_(20).svg',
                                         width: 278.0,
                                         height: 200.0,
                                         fit: BoxFit.fill,
@@ -206,7 +206,7 @@ class _SeleccionarReporteWidgetState extends State<SeleccionarReporteWidget> {
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(8.0),
                                       child: SvgPicture.asset(
-                                        'assets/images/Reporte_(2).svg',
+                                        'assets/images/Reporte_(22).svg',
                                         width: 300.0,
                                         height: 200.0,
                                         fit: BoxFit.fill,

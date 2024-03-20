@@ -1009,85 +1009,10 @@ class _ReportePorEstudianteWidgetState
                                             mainAxisAlignment:
                                                 MainAxisAlignment.spaceEvenly,
                                             children: [
-                                              Container(
-                                                width: 149.0,
-                                                height: 73.0,
-                                                decoration: BoxDecoration(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryBackground,
-                                                ),
-                                                child: Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Expanded(
-                                                      child: Card(
-                                                        clipBehavior: Clip
-                                                            .antiAliasWithSaveLayer,
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
-                                                        elevation: 12.0,
-                                                        shape:
-                                                            RoundedRectangleBorder(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      8.0),
-                                                        ),
-                                                        child:
-                                                            FlutterFlowDropDown<
-                                                                String>(
-                                                          controller: _model
-                                                                  .dropDownValueController3 ??=
-                                                              FormFieldController<
-                                                                  String>(null),
-                                                          options: const ['Option 1'],
-                                                          onChanged: (val) =>
-                                                              setState(() =>
-                                                                  _model.dropDownValue3 =
-                                                                      val),
-                                                          width: 292.0,
-                                                          height: 53.0,
-                                                          textStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium,
-                                                          hintText: 'Materias',
-                                                          fillColor: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryBackground,
-                                                          elevation: 2.0,
-                                                          borderColor:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .alternate,
-                                                          borderWidth: 2.0,
-                                                          borderRadius: 8.0,
-                                                          margin:
-                                                              const EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      16.0,
-                                                                      4.0,
-                                                                      16.0,
-                                                                      4.0),
-                                                          hidesUnderline: true,
-                                                          isOverButton: true,
-                                                          isSearchable: false,
-                                                          isMultiSelect: false,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                              Align(
-                                                alignment: const AlignmentDirectional(
-                                                    0.0, 1.0),
+                                              Expanded(
                                                 child: Container(
-                                                  width: 162.0,
-                                                  height: 74.0,
+                                                  width: 149.0,
+                                                  height: 73.0,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
@@ -1116,7 +1041,7 @@ class _ReportePorEstudianteWidgetState
                                                               FlutterFlowDropDown<
                                                                   String>(
                                                             controller: _model
-                                                                    .dropDownValueController4 ??=
+                                                                    .dropDownValueController3 ??=
                                                                 FormFieldController<
                                                                         String>(
                                                                     null),
@@ -1125,15 +1050,16 @@ class _ReportePorEstudianteWidgetState
                                                             ],
                                                             onChanged: (val) =>
                                                                 setState(() =>
-                                                                    _model.dropDownValue4 =
+                                                                    _model.dropDownValue3 =
                                                                         val),
                                                             width: 292.0,
-                                                            height: 43.0,
+                                                            height: 53.0,
                                                             textStyle:
                                                                 FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyMedium,
-                                                            hintText: 'Curso',
+                                                            hintText:
+                                                                'Materias',
                                                             fillColor: FlutterFlowTheme
                                                                     .of(context)
                                                                 .secondaryBackground,

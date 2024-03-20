@@ -60,7 +60,7 @@ class _ReportePorFechaWidgetState extends State<ReportePorFechaWidget> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(8.0),
                   child: SvgPicture.asset(
-                    'assets/images/Reporte_(6).svg',
+                    'assets/images/Reporte_(23).svg',
                     width: 300.0,
                     height: 200.0,
                     fit: BoxFit.fill,
@@ -88,7 +88,7 @@ class _ReportePorFechaWidgetState extends State<ReportePorFechaWidget> {
                         child: Align(
                           alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Text(
-                            'Seleccione Por Fechas',
+                            'Seleccione Por Curso',
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(

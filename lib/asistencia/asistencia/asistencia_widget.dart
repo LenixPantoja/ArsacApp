@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'asistencia_model.dart';
 export 'asistencia_model.dart';
 
@@ -57,8 +58,8 @@ class _AsistenciaWidgetState extends State<AsistenciaWidget> {
                 ),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(8.0),
-                  child: Image.asset(
-                    'assets/images/Reporte_(12).png',
+                  child: SvgPicture.asset(
+                    'assets/images/Reporte_(25).svg',
                     width: 300.0,
                     height: 222.0,
                     fit: BoxFit.fill,

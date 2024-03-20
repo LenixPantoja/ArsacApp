@@ -5,26 +5,25 @@ import '/flutter_flow/flutter_flow_util.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'
     as smooth_page_indicator;
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'inicio_model.dart';
-export 'inicio_model.dart';
+import 'estudiante_model.dart';
+export 'estudiante_model.dart';
 
-class InicioWidget extends StatefulWidget {
-  const InicioWidget({super.key});
+class EstudianteWidget extends StatefulWidget {
+  const EstudianteWidget({super.key});
 
   @override
-  State<InicioWidget> createState() => _InicioWidgetState();
+  State<EstudianteWidget> createState() => _EstudianteWidgetState();
 }
 
-class _InicioWidgetState extends State<InicioWidget> {
-  late InicioModel _model;
+class _EstudianteWidgetState extends State<EstudianteWidget> {
+  late EstudianteModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => InicioModel());
+    _model = createModel(context, () => EstudianteModel());
   }
 
   @override
@@ -224,7 +223,6 @@ class _InicioWidgetState extends State<InicioWidget> {
                             children: [
                               Column(
                                 mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Card(
                                     clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -274,7 +272,6 @@ class _InicioWidgetState extends State<InicioWidget> {
                               ),
                               Column(
                                 mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Card(
                                     clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -331,44 +328,6 @@ class _InicioWidgetState extends State<InicioWidget> {
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Card(
-                                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                                    color: const Color(0xFFFAD02C),
-                                    elevation: 4.0,
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(8.0),
-                                    ),
-                                    child: FlutterFlowIconButton(
-                                      borderColor: Colors.white,
-                                      borderRadius: 10.0,
-                                      borderWidth: 2.0,
-                                      buttonSize: 140.0,
-                                      fillColor: const Color(0xFFDE5C1C),
-                                      icon: const FaIcon(
-                                        FontAwesomeIcons.clipboardList,
-                                        color: Color(0xFFFAF3E3),
-                                        size: 80.0,
-                                      ),
-                                      onPressed: () async {
-                                        context.pushNamed('SeleccionarReporte');
-                                      },
-                                    ),
-                                  ),
-                                  Text(
-                                    'Reportes ',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Roboto',
-                                          fontSize: 18.0,
-                                          fontWeight: FontWeight.w800,
-                                        ),
-                                  ),
-                                ],
-                              ),
                               Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [

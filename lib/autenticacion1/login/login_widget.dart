@@ -286,10 +286,16 @@ class _LoginWidgetState extends State<LoginWidget> {
                                             const AlignmentDirectional(0.0, -1.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
-                                            _model.apiResulteti =
-                                                await LoginCall.call();
+                                            _model.apiResultnmd =
+                                                await ApiArsacGroup.apiLoginCall
+                                                    .call(
+                                              username: _model
+                                                  .txtUsuarioController.text,
+                                              password: _model
+                                                  .txtContrasenaController.text,
+                                            );
                                             if ((_model
-                                                    .apiResulteti?.succeeded ??
+                                                    .apiResultnmd?.succeeded ??
                                                 true)) {
                                               context.pushNamed(
                                                 'Inicio',
@@ -312,7 +318,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                   return AlertDialog(
                                                     title: const Text('Error'),
                                                     content: const Text(
-                                                        'Usuario o Contraseña incorrecto verifique y vuelva a intentarlo'),
+                                                        'Usuario o Contraseña es incorrecto verifique y vuelva a intentarlo'),
                                                     actions: [
                                                       TextButton(
                                                         onPressed: () =>

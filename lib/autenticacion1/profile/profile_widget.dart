@@ -380,7 +380,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                     .titleSmall
                                     .override(
                                       fontFamily: 'Plus Jakarta Sans',
-                                      color: Colors.white,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
                                       fontSize: 20.0,
                                       fontWeight: FontWeight.w500,
                                     ),

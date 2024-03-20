@@ -15,8 +15,8 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
   TextEditingController? txtContrasenaController;
   late bool txtContrasenaVisibility;
   String? Function(BuildContext, String?)? txtContrasenaControllerValidator;
-  // Stores action output result for [Backend Call - API (Login)] action in Button widget.
-  ApiCallResponse? apiResulteti;
+  // Stores action output result for [Backend Call - API (ApiLogin)] action in Button widget.
+  ApiCallResponse? apiResultnmd;
 
   /// Initialization and disposal methods.
 

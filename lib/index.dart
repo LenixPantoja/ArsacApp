@@ -33,3 +33,5 @@ export '/notificaciones/notificaciones/notificaciones_widget.dart'
 export '/boton/boton/boton_widget.dart' show BotonWidget;
 export '/editar_observacion/editar_observacion/editar_observacion_widget.dart'
     show EditarObservacionWidget;
+export '/autenticacion1/estudiante/estudiante_widget.dart'
+    show EstudianteWidget;
