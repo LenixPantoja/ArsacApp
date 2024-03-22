@@ -1,12 +1,29 @@
 import 'dart:convert';
 
+import 'package:http/http.dart' as http;
+
 import 'api_manager.dart';
 
 export 'api_manager.dart' show ApiCallResponse;
 
 const _kPrivateApiFunctionName = 'ffPrivateApiCall';
 
+String username = "";
+String token = "";
+
 /// Start ApiArsac Group Code
+class Usuario {
+  String nombreUsuario = username;
+  String tokenUsuario = token;
+
+  String getNombreUsuario() {
+    return nombreUsuario;
+  }
+
+  String getTokenUsuario() {
+    return tokenUsuario;
+  }
+}
 
 class ApiArsacGroup {
   static String baseUrl = 'https://06e8-8-242-169-8.ngrok-free.app/';
@@ -24,6 +41,7 @@ class ApiArsacGroup {
       ApiAsistenciaEstudianteCall();
   static ApiObservacionesEstudianteCall apiObservacionesEstudianteCall =
       ApiObservacionesEstudianteCall();
+  static ApiMateriasPorDocente ApiMateriasDocentes = ApiMateriasPorDocente();
 }
 
 class ApiLoginCall {
@@ -33,10 +51,10 @@ class ApiLoginCall {
   }) async {
     final ffApiRequestBody = '''
 {
-        "username": "$username",
-        "password": "$password"
+        "username": "${username}",
+        "password": "${password}"
 }   ''';
-    return ApiManager.instance.makeApiCall(
+    final response = await ApiManager.instance.makeApiCall(
       callName: 'ApiLogin',
       apiUrl: '${ApiArsacGroup.baseUrl}api/Login/',
       callType: ApiCallType.POST,
@@ -50,23 +68,65 @@ class ApiLoginCall {
       cache: false,
       alwaysAllowBody: false,
     );
+
+    if (response.statusCode == 200) {
+      token = response.jsonBody["access"];
+      print(token);
+    } else {
+      print(
+          "Error al llamar a la API Login. Código de estado: ${response.statusCode}");
+    }
+    return response;
   }
 }
 
+// Api para obtener el nombre del usuario
 class ApiGetUserCall {
-  Future<ApiCallResponse> call() async {
-    return ApiManager.instance.makeApiCall(
-      callName: 'ApiGetUser',
-      apiUrl: '${ApiArsacGroup.baseUrl}api/getUser/',
-      callType: ApiCallType.GET,
-      headers: {},
-      params: {},
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      alwaysAllowBody: false,
-    );
+  Future<Map<String, dynamic>> fetchUsername() async {
+    try {
+      final String apiUrl = '${ApiArsacGroup.baseUrl}/api/getUser/';
+      final http.Response response = await http
+          .get(Uri.parse(apiUrl), headers: {'Authorization': 'Bearer $token'});
+
+      if (response.statusCode == 200) {
+        Map<String, dynamic> jsonData = json.decode(response.body);
+       
+        return jsonData;
+      } else {
+        print(
+            "Error al llamar a la API. Código de estado: ${response.statusCode}");
+        return {};
+      }
+    } catch (error) {
+      print("Error al llamar a la API obtener username: $error");
+      return {};
+    }
+  }
+}
+
+class ApiMateriasPorDocente {
+  Future<List<dynamic>> fetchMaterias() async {
+    try {
+      final String apiUrl =
+          '${ApiArsacGroup.baseUrl}/api/MateriasDocente/?pUser=$username';
+
+      final http.Response response = await http.get(
+        Uri.parse(apiUrl),
+        headers: {'Authorization': 'Bearer $token'},
+      );
+
+      if (response.statusCode == 200) {
+        List<dynamic> jsonData = json.decode(response.body);
+        return jsonData;
+      } else {
+        print(
+            "Error al llamar a la API. Código de estado: ${response.statusCode}");
+        return [];
+      }
+    } catch (error) {
+      print("Error al llamar a la API materias por Docente: $error");
+      return [];
+    }
   }
 }
 

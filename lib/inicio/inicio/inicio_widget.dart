@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'inicio_model.dart';
 export 'inicio_model.dart';
+import '/backend/api_requests/api_calls.dart';
 
 class InicioWidget extends StatefulWidget {
   const InicioWidget({super.key});
@@ -19,19 +20,31 @@ class InicioWidget extends StatefulWidget {
 class _InicioWidgetState extends State<InicioWidget> {
   late InicioModel _model;
 
+  Map<String, dynamic> userData = {};
+  String username = "";
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
+    _fetchUserData();
     _model = createModel(context, () => InicioModel());
   }
 
   @override
   void dispose() {
     _model.dispose();
-
     super.dispose();
+  }
+
+  Future<void> _fetchUserData() async {
+    // Crea una instancia de la clase ApiGetUserCall
+    ApiGetUserCall apiCall = ApiGetUserCall();
+    // Llama a la función para obtener los datos del usuario
+    Map<String, dynamic> data = await apiCall.fetchUsername();
+    setState(() {
+      username = data["full_name"];
+    });
   }
 
   @override
@@ -92,8 +105,13 @@ class _InicioWidgetState extends State<InicioWidget> {
                             ],
                           ),
                           Text(
-                            'Ronal Esteban Figueroa Mora',
-                            style: FlutterFlowTheme.of(context).bodyMedium,
+                            '$username',
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .copyWith(
+                                  fontSize:
+                                      20, // Cambia este valor al tamaño de fuente deseado
+                                ),
                           ),
                         ],
                       ),
@@ -121,8 +139,9 @@ class _InicioWidgetState extends State<InicioWidget> {
                               child: Stack(
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 40.0),
+                                    padding:
+                                        const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 0.0, 40.0),
                                     child: PageView(
                                       controller: _model
                                               .paginaFotosSecuenciales1Controller ??=
@@ -163,10 +182,12 @@ class _InicioWidgetState extends State<InicioWidget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment: const AlignmentDirectional(-1.0, 1.0),
+                                    alignment:
+                                        const AlignmentDirectional(-1.0, 1.0),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 0.0, 0.0, 16.0),
+                                      padding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              16.0, 0.0, 0.0, 16.0),
                                       child: smooth_page_indicator
                                           .SmoothPageIndicator(
                                         controller: _model
@@ -179,8 +200,8 @@ class _InicioWidgetState extends State<InicioWidget> {
                                               .paginaFotosSecuenciales1Controller!
                                               .animateToPage(
                                             i,
-                                            duration:
-                                                const Duration(milliseconds: 500),
+                                            duration: const Duration(
+                                                milliseconds: 500),
                                             curve: Curves.ease,
                                           );
                                         },
@@ -210,8 +231,8 @@ class _InicioWidgetState extends State<InicioWidget> {
                     ),
                     Flexible(
                       child: Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            0.0, 12.0, 0.0, 0.0),
                         child: Container(
                           height: 300.0,
                           decoration: BoxDecoration(
@@ -248,7 +269,8 @@ class _InicioWidgetState extends State<InicioWidget> {
                                         context.pushNamed(
                                           'Horario',
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: const TransitionInfo(
+                                            kTransitionInfoKey:
+                                                const TransitionInfo(
                                               hasTransition: true,
                                               transitionType: PageTransitionType
                                                   .bottomToTop,
@@ -318,8 +340,8 @@ class _InicioWidgetState extends State<InicioWidget> {
                     ),
                     Flexible(
                       child: Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            0.0, 12.0, 0.0, 0.0),
                         child: Container(
                           height: 220.0,
                           decoration: BoxDecoration(
