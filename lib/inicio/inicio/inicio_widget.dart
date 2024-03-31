@@ -20,7 +20,6 @@ class InicioWidget extends StatefulWidget {
 class _InicioWidgetState extends State<InicioWidget> {
   late InicioModel _model;
 
-  Map<String, dynamic> userData = {};
   String username = "";
   final scaffoldKey = GlobalKey<ScaffoldState>();
 

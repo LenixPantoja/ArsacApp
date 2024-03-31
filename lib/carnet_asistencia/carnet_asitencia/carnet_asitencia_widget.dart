@@ -127,13 +127,15 @@ class _CarnetAsitenciaWidgetState extends State<CarnetAsitenciaWidget> {
                                 onPressed: () async {
                                   _model.scanner =
                                       await FlutterBarcodeScanner.scanBarcode(
-                                    '#C62828', // scanning line color
+                                    '#007D2D', // scanning line color
                                     'Cancel', // cancel button text
                                     true, // whether to show the flash icon
                                     ScanMode.QR,
                                   );
 
-                                  setState(() {});
+                                  setState(() {
+                                    print(_model.scanner);
+                                  });
                                 },
                                 text: 'Scanear QR',
                                 options: FFButtonOptions(

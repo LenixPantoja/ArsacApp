@@ -19,6 +19,10 @@ class AsistenciaModel extends FlutterFlowModel<AsistenciaWidget> {
   // Model for Menu component.
   late MenuModel menuModel;
 
+  Object? get scanner => null;
+
+  set scanner(scanner) {}
+
   /// Initialization and disposal methods.
 
   @override

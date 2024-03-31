@@ -30,18 +30,17 @@ class ApiArsacGroup {
   static Map<String, String> headers = {};
   static ApiLoginCall apiLoginCall = ApiLoginCall();
   static ApiGetUserCall apiGetUserCall = ApiGetUserCall();
-  static ApiDocenteCall apiDocenteCall = ApiDocenteCall();
-  static ApiEstudiantesCall apiEstudiantesCall = ApiEstudiantesCall();
+  static ApiMateriaCursoEstudianteCall apiMateriaCursoEstudianteCall =
+      ApiMateriaCursoEstudianteCall();
   static ApiCrearHorarioCall apiCrearHorarioCall = ApiCrearHorarioCall();
-  static ApiParticipanteCall apiParticipanteCall = ApiParticipanteCall();
-  static ApiCrearMateriaCall apiCrearMateriaCall = ApiCrearMateriaCall();
   static ApiCrearPeriodoCall apiCrearPeriodoCall = ApiCrearPeriodoCall();
-  static ApiCrearCursoCall apiCrearCursoCall = ApiCrearCursoCall();
+  static ApiCursoCall apiCrearCursoCall = ApiCursoCall();
   static ApiAsistenciaEstudianteCall apiAsistenciaEstudianteCall =
       ApiAsistenciaEstudianteCall();
   static ApiObservacionesEstudianteCall apiObservacionesEstudianteCall =
       ApiObservacionesEstudianteCall();
-  static ApiMateriasPorDocente ApiMateriasDocentes = ApiMateriasPorDocente();
+  static ApiMateriasPorDocenteCall ApiMateriasDocentes =
+      ApiMateriasPorDocenteCall();
 }
 
 class ApiLoginCall {
@@ -51,8 +50,8 @@ class ApiLoginCall {
   }) async {
     final ffApiRequestBody = '''
 {
-        "username": "${username}",
-        "password": "${password}"
+        "username": "$username",
+        "password": "$password"
 }   ''';
     final response = await ApiManager.instance.makeApiCall(
       callName: 'ApiLogin',
@@ -90,7 +89,7 @@ class ApiGetUserCall {
 
       if (response.statusCode == 200) {
         Map<String, dynamic> jsonData = json.decode(response.body);
-       
+        username = jsonData["username"];
         return jsonData;
       } else {
         print(
@@ -104,7 +103,7 @@ class ApiGetUserCall {
   }
 }
 
-class ApiMateriasPorDocente {
+class ApiMateriasPorDocenteCall {
   Future<List<dynamic>> fetchMaterias() async {
     try {
       final String apiUrl =
@@ -116,56 +115,115 @@ class ApiMateriasPorDocente {
       );
 
       if (response.statusCode == 200) {
-        List<dynamic> jsonData = json.decode(response.body);
-        return jsonData;
+        // Check if the response body is not empty
+        if (response.body.isNotEmpty) {
+          List<dynamic> jsonData = json.decode(response.body);
+          return jsonData;
+        } else {
+          // Return an empty list if the response body is empty
+          return [];
+        }
       } else {
+        // Handle non-200 status codes
         print(
             "Error al llamar a la API. Código de estado: ${response.statusCode}");
         return [];
       }
     } catch (error) {
+      // Handle other exceptions
       print("Error al llamar a la API materias por Docente: $error");
       return [];
     }
   }
 }
 
-class ApiDocenteCall {
-  Future<ApiCallResponse> call() async {
-    return ApiManager.instance.makeApiCall(
-      callName: 'ApiDocente',
-      apiUrl: '${ApiArsacGroup.baseUrl}api/Docente/',
-      callType: ApiCallType.GET,
-      headers: {
-        'Authorization':
-            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEwNTQ4MjkxLCJpYXQiOjE3MTA0NzYyOTEsImp0aSI6IjE4Yjg5MGJiMGQzYzRiZWRiOTI2NTlhZmY3N2ZhMTFjIiwidXNlcl9pZCI6MX0.1ZVUi6xCqI6Bu8dkS1pEhj9AqkEKbyqWazx0SloPr9g',
-      },
-      params: {},
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      alwaysAllowBody: false,
-    );
+class ApiCursoCall {
+  Future<List<dynamic>> fetchCursos() async {
+    try {
+      final String apiUrl =
+          '${ApiArsacGroup.baseUrl}/api/crearCurso/?pDocente=$username';
+
+      final http.Response response = await http.get(
+        Uri.parse(apiUrl),
+        headers: {'Authorization': 'Bearer $token'},
+      );
+
+      if (response.statusCode == 200) {
+        // Check if the response body is not empty
+        if (response.body.isNotEmpty) {
+          List<dynamic> jsonData = json.decode(response.body);
+          return jsonData;
+        } else {
+          // Return an empty list if the response body is empty
+          return [];
+        }
+      } else {
+        // Handle non-200 status codes
+        print(
+            "Error al llamar a la API. Código de estado: ${response.statusCode}");
+        return [];
+      }
+    } catch (error) {
+      // Handle other exceptions
+      print("Error al llamar a la API cursos por Docente: $error");
+      return [];
+    }
   }
 }
 
-class ApiEstudiantesCall {
-  Future<ApiCallResponse> call() async {
-    return ApiManager.instance.makeApiCall(
-      callName: 'ApiEstudiantes',
-      apiUrl: '${ApiArsacGroup.baseUrl}api/Estudiantes',
-      callType: ApiCallType.GET,
-      headers: {},
-      params: {},
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      alwaysAllowBody: false,
-    );
+class ApiMateriaCursoEstudianteCall {
+  Future<List<dynamic>> fetchEstudiantes(int pMateria, int pCurso) async {
+    try {
+      final String apiUrl =
+          '${ApiArsacGroup.baseUrl}/api/EstudiantesCursoMaterias?pMateria=$pMateria&pCurso=$pCurso';
+
+      final http.Response response = await http.get(
+        Uri.parse(apiUrl),
+        headers: {'Authorization': 'Bearer $token'},
+      );
+
+      if (response.statusCode == 200) {
+        // Check if the response body is not empty
+        if (response.body.isNotEmpty) {
+          List<dynamic> jsonData = json.decode(response.body);
+          return jsonData;
+        } else {
+          // Return an empty list if the response body is empty
+          return [];
+        }
+      } else {
+        // Handle non-200 status codes
+        print(
+            "Error al llamar a la API. Código de estado: ${response.statusCode}");
+        return [];
+      }
+    } catch (error) {
+      // Handle other exceptions
+      print("Error al llamar a la API estudiante por materia y curso: $error");
+      return [];
+    }
   }
 }
+
+class ApiAsistenciaEstudianteCall {
+  final String apiUrl =
+          '${ApiArsacGroup.baseUrl}/api/AsistenciaEstudiante/';
+
+  Future<void> postAsistenciaEstudiante(Map<String, dynamic> data) async {
+    final response = await http.post(
+      Uri.parse(apiUrl),
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+      body: jsonEncode(data),
+    );
+
+    if (response.statusCode != 201) {
+      throw Exception('Failed to post data');
+    }
+  }
+}
+
 
 class ApiCrearHorarioCall {
   Future<ApiCallResponse> call() async {
@@ -184,39 +242,6 @@ class ApiCrearHorarioCall {
   }
 }
 
-class ApiParticipanteCall {
-  Future<ApiCallResponse> call() async {
-    return ApiManager.instance.makeApiCall(
-      callName: 'ApiParticipante',
-      apiUrl: '${ApiArsacGroup.baseUrl}api/Participante',
-      callType: ApiCallType.GET,
-      headers: {},
-      params: {},
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      alwaysAllowBody: false,
-    );
-  }
-}
-
-class ApiCrearMateriaCall {
-  Future<ApiCallResponse> call() async {
-    return ApiManager.instance.makeApiCall(
-      callName: 'ApiCrearMateria',
-      apiUrl: '${ApiArsacGroup.baseUrl}api/crearMateria/',
-      callType: ApiCallType.GET,
-      headers: {},
-      params: {},
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      alwaysAllowBody: false,
-    );
-  }
-}
 
 class ApiCrearPeriodoCall {
   Future<ApiCallResponse> call() async {
@@ -226,62 +251,6 @@ class ApiCrearPeriodoCall {
       callType: ApiCallType.GET,
       headers: {},
       params: {},
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      alwaysAllowBody: false,
-    );
-  }
-}
-
-class ApiCrearCursoCall {
-  Future<ApiCallResponse> call({
-    String? pDocente = '',
-  }) async {
-    return ApiManager.instance.makeApiCall(
-      callName: 'ApiCrearCurso',
-      apiUrl: '${ApiArsacGroup.baseUrl}api/crearCurso/',
-      callType: ApiCallType.GET,
-      headers: {},
-      params: {
-        'pDocente': "lenix",
-      },
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      alwaysAllowBody: false,
-    );
-  }
-}
-
-class ApiAsistenciaEstudianteCall {
-  Future<ApiCallResponse> call({
-    String? tipoAsistencia = 'presenteGeneral5',
-    String? descripcion = 'descripcion anticuiada',
-    String? horaLlegada = '2024-04-26 14:00',
-    String? estudiante = '1',
-    String? curso = '7',
-    String? soporte = '',
-  }) async {
-    return ApiManager.instance.makeApiCall(
-      callName: 'ApiAsistenciaEstudiante',
-      apiUrl: '${ApiArsacGroup.baseUrl}api/AsistenciaEstudiante/',
-      callType: ApiCallType.POST,
-      headers: {
-        'Authorization':
-            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEwNTUxNTg0LCJpYXQiOjE3MTA0Nzk1ODQsImp0aSI6ImIzNmU3YzQzNzJmZjQyZmQ4MTc1ZDY5YTYxODQ3ZDgzIiwidXNlcl9pZCI6MX0.jM9OCuPdYGFjqYnIce4MnPt0ldvv4BmbsnLB5Mk2iyQ',
-      },
-      params: {
-        'tipo_asistencia': tipoAsistencia,
-        'descripcion': descripcion,
-        'hora_llegada': horaLlegada,
-        'estudiante': estudiante,
-        'curso': curso,
-        'soporte': soporte,
-      },
-      bodyType: BodyType.MULTIPART,
       returnBody: true,
       encodeBodyUtf8: false,
       decodeUtf8: false,
